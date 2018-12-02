@@ -115,7 +115,7 @@ fi
 if [[ "${IMAGEMAGICK_VERSION}" == "6.8.7-0" ]]; then
     cflagsArray+=("-Wno-sign-compare")
     cflagsArray+=("-Wno-unused-parameter")
-elif [[ "${TRAVIS_PHP_VERSION}" == "6.9.2-0" ]]; then
+elif [[ "${IMAGEMAGICK_VERSION}" == "6.9.2-0" ]]; then
     cflagsArray+=("-Wno-unused-parameter")
 fi
 
