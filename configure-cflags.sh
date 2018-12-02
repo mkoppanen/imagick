@@ -24,7 +24,6 @@ function contains() {
     return 0
 }
 
-#
 #superWeakPHPVersions=()
 #superWeakPHPVersions+=("5.4")
 #superWeakPHPVersions+=("5.5")
@@ -56,11 +55,6 @@ echo "IMAGEMAGICK_VERSION is ${IMAGEMAGICK_VERSION}"
 #echo "superWeakPHPVersion is ${superWeakPHPVersion}"
 #echo "weakPHP is ${weakPHP}"
 
-
-
-# function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
-
-
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
 cflagsArray=()
@@ -70,35 +64,49 @@ if [[ "${TRAVIS_PHP_VERSION}" == "5.4" || "${TRAVIS_PHP_VERSION}" == "5.5"  ]]; 
 elif [[ "${TRAVIS_PHP_VERSION}" == "5.6" ]]; then
 	CFLAGS="-Wno-deprecated-declarations -Werror -Wall -Wimplicit-function-declaration";
 else
+    # works locally
     cflagsArray+=("-Wall")
+
+
+    #works on travis
     cflagsArray+=("-Wdeclaration-after-statement")
-    #cflagsArray+=("-Wbool-conversion")
-    cflagsArray+=("-Wduplicate-enum")
+
     cflagsArray+=("-Wenum-compare")
     cflagsArray+=("-Wempty-body")
     cflagsArray+=("-Werror")
     cflagsArray+=("-Wextra")
+    cflagsArray+=("-Wimplicit-function-declaration")
+    cflagsArray+=("-Wno-deprecated-declarations")
+
+
+    #cflagsArray+=("-Wbool-conversion")
     #cflagsArray+=("-Wformat-security")
     #cflagsArray+=("-Wformat-nonliteral")
     #cflagsArray+=("-Wheader-guard")
-    cflagsArray+=("-Wimplicit-function-declaration")
+
     #cflagsArray+=("-Wimplicit-fallthrough")
     #cflagsArray+=("-Winit-self")
     cflagsArray+=("-Wmaybe-uninitialized")
-    #cflagsArray+=("-Wmissing-format-attribute")
-    #cflagsArray+=("-Wlogical-not-parentheses")
-    #cflagsArray+=("-Wlogical-op")
-    #cflagsArray+=("-Wlogical-op-parentheses")
-    #cflagsArray+=("-Wloop-analysis")
-    #cflagsArray+=("-Wno-variadic-macros")
-    #cflagsArray+=("-Wno-sign-compare")
-    cflagsArray+=("-Wno-deprecated-declarations")
+    cflagsArray+=("-Wmissing-format-attribute")
+    cflagsArray+=("-Wlogical-not-parentheses")
+    cflagsArray+=("-Wlogical-op")
+
+
+    cflagsArray+=("-Wno-variadic-macros")
+    cflagsArray+=("-Wno-sign-compare")
+
     #cflagsArray+=("-Wparentheses
     #cflagsArray+=("-Wpointer-bool-conversion
     #cflagsArray+=("-Wsizeof-array-argument
     #cflagsArray+=("-Wstring-conversion
     #cflagsArray+=("-Wwrite-strings
 fi
+
+
+# Unrecognised flags
+# cflagsArray+=("-Wduplicate-enum")
+# cflagsArray+=("-Wlogical-op-parentheses")
+# cflagsArray+=("-Wloop-analysis")
 
 
 if [[ "${IMAGEMAGICK_VERSION}" == "6.8.7-0" ]]; then
@@ -109,13 +117,9 @@ elif [[ "${TRAVIS_PHP_VERSION}" == "6.9.2-0" ]]; then
 fi
 
 
-
-
+set -x
 CFLAGS=$(IFS=" " ; echo "${cflagsArray[*]}")
-
--Werror=sign-compare
-
-
+set +x
 
 echo "Setting CFLAGS to ${CFLAGS}";
 
