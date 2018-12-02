@@ -111,7 +111,7 @@ fi
 
 
 
-CFLAGS=$(IFS=, ; echo "${cflagsArray[*]}")
+CFLAGS=$(IFS=" " ; echo "${cflagsArray[*]}")
 
 -Werror=sign-compare
 
