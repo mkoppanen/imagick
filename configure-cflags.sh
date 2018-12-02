@@ -63,7 +63,7 @@ echo "IMAGEMAGICK_VERSION is ${IMAGEMAGICK_VERSION}"
 if [[ "${TRAVIS_PHP_VERSION}" == "5.4" || "${TRAVIS_PHP_VERSION}" == "5.5"  ]]; then
 	CFLAGS="-Wno-deprecated-declarations";
 elif [[ "${TRAVIS_PHP_VERSION}" == "5.6" ]]; then
-	CFLAGS="-Wno-deprecated-declarations -Wdeclaration-after-statement -Werror -Wall -Wimplicit-function-declaration";
+	CFLAGS="-Wno-deprecated-declarations -Werror -Wall -Wimplicit-function-declaration";
 else
     CFLAGS="-Wno-deprecated-declarations -Wdeclaration-after-statement -Werror -Wall -Wextra -Wimplicit-function-declaration";
 fi
