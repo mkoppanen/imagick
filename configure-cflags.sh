@@ -88,7 +88,7 @@ else
     #cflagsArray+=("-Winit-self")
     cflagsArray+=("-Wmaybe-uninitialized")
     cflagsArray+=("-Wmissing-format-attribute")
-    cflagsArray+=("-Wlogical-not-parentheses")
+
     cflagsArray+=("-Wlogical-op")
 
 
@@ -107,6 +107,9 @@ fi
 # cflagsArray+=("-Wduplicate-enum")
 # cflagsArray+=("-Wlogical-op-parentheses")
 # cflagsArray+=("-Wloop-analysis")
+
+# Doesn't work on travis
+# cflagsArray+=("-Wlogical-not-parentheses")
 
 
 if [[ "${IMAGEMAGICK_VERSION}" == "6.8.7-0" ]]; then
