@@ -30,16 +30,12 @@ if (file_exists($pathToImageMagick) == false ||
 	exit(-1);
 }
 
-echo "debug 1 \n";
-
 $includeDir = null;
 
 $enumToCheck = [];
 
 $im6Directory = $pathToImageMagick.'/'.'magick';
 $im7Directory = $pathToImageMagick.'/'.'MagickCore';
-
-echo "debug 1a \n";
 
 if (file_exists($im6Directory) == true) {
     echo "debug 1b \n";
@@ -199,22 +195,16 @@ else if (file_exists($im7Directory) == true) {
 else {
     echo "debug 1e \n";
     echo "Failed to read header files from either [$im6Directory] or [$im7Directory]\n";
-    
+
     exit(-1);
 }
 
-echo "debug 2 \n";
-
 $imagickHelperContents = file_get_contents(__DIR__ . "/../imagick_helpers.c");
-
-echo "debug 3 \n";
 
 if ($imagickHelperContents == false) {
 	echo "failed to read ../imagick_helpers.c\n";
 	exit(-1);
 }
-
-echo "debug 4 \n";
 
 // We don't use these enums currently.
 $skipEnumList = [
@@ -243,16 +233,12 @@ foreach ($enumToCheck as $filename => $enums) {
 	}
 }
 
-echo "debug 5 \n";
-
 if ($anyMissing === true) {
     echo "Some enums are missing, so exiting with error.\n";
     exit(-1);
 }
 
-echo "debug 6 \n";
-
-echo "Looks okay";
+// echo "Looks okay";
 
 exit(0);
 
