@@ -39,8 +39,10 @@ $enumToCheck = [];
 $im6Directory = $pathToImageMagick.'/'.'magick';
 $im7Directory = $pathToImageMagick.'/'.'MagickCore';
 
+echo "debug 1a \n";
 
 if (file_exists($im6Directory) == true) {
+    echo "debug 1b \n";
 	$enumToCheck = [
 		'magick/compare.h' => [
 			'MetricType',
@@ -118,6 +120,7 @@ if (file_exists($im6Directory) == true) {
 	];
 }
 else if (file_exists($im7Directory) == true) {
+    echo "debug 1c \n";
 	$enumToCheck = [
 		'MagickCore/compare.h' => [
 			'MetricType',
@@ -191,10 +194,12 @@ else if (file_exists($im7Directory) == true) {
 			'StyleType',
 		],
 	];
-
+    echo "debug 1d \n";
 }
 else {
-    echo "Failed to read header files from either [$im6Directory] or [$im7Directory]";
+    echo "debug 1e \n";
+    echo "Failed to read header files from either [$im6Directory] or [$im7Directory]\n";
+    
     exit(-1);
 }
 
