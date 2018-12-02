@@ -57,17 +57,77 @@ echo "IMAGEMAGICK_VERSION is ${IMAGEMAGICK_VERSION}"
 #echo "weakPHP is ${weakPHP}"
 
 
-# TODO - test if this flag is usable for the tests on all appropriate platforms
-# -Wmaybe-uninitialized
+
+# function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
+
+
+function join_by { local IFS="$1"; shift; echo "$*"; }
+
+cflagsArray=()
 
 if [[ "${TRAVIS_PHP_VERSION}" == "5.4" || "${TRAVIS_PHP_VERSION}" == "5.5"  ]]; then
-	CFLAGS="-Wno-deprecated-declarations";
+	cflagsArray+=("-Wno-deprecated-declarations")
 elif [[ "${TRAVIS_PHP_VERSION}" == "5.6" ]]; then
 	CFLAGS="-Wno-deprecated-declarations -Werror -Wall -Wimplicit-function-declaration";
 else
-    CFLAGS="-Wno-deprecated-declarations -Wdeclaration-after-statement -Werror -Wall -Wextra -Wimplicit-function-declaration";
+    cflagsArray+=("-Wall")
+    cflagsArray+=("-Wdeclaration-after-statement")
+    #cflagsArray+=("-Wbool-conversion")
+    cflagsArray+=("-Wduplicate-enum")
+    cflagsArray+=("-Wenum-compare")
+    cflagsArray+=("-Wempty-body")
+    cflagsArray+=("-Werror")
+    cflagsArray+=("-Wextra")
+    #cflagsArray+=("-Wformat-security")
+    #cflagsArray+=("-Wformat-nonliteral")
+    #cflagsArray+=("-Wheader-guard")
+    cflagsArray+=("-Wimplicit-function-declaration")
+    #cflagsArray+=("-Wimplicit-fallthrough")
+    #cflagsArray+=("-Winit-self")
+    cflagsArray+=("-Wmaybe-uninitialized")
+    #cflagsArray+=("-Wmissing-format-attribute")
+    #cflagsArray+=("-Wlogical-not-parentheses")
+    #cflagsArray+=("-Wlogical-op")
+    #cflagsArray+=("-Wlogical-op-parentheses")
+    #cflagsArray+=("-Wloop-analysis")
+    #cflagsArray+=("-Wno-variadic-macros")
+    #cflagsArray+=("-Wno-sign-compare")
+    cflagsArray+=("-Wno-deprecated-declarations")
+    #cflagsArray+=("-Wparentheses
+    #cflagsArray+=("-Wpointer-bool-conversion
+    #cflagsArray+=("-Wsizeof-array-argument
+    #cflagsArray+=("-Wstring-conversion
+    #cflagsArray+=("-Wwrite-strings
 fi
+
+
+if [[ "${IMAGEMAGICK_VERSION}" == "6.8.7-0" ]]; then
+    cflagsArray+=("-Wno-sign-compare")
+    cflagsArray+=("-Wno-unused-parameter")
+elif [[ "${TRAVIS_PHP_VERSION}" == "6.9.2-0" ]]; then
+    cflagsArray+=("-Wno-unused-parameter")
+fi
+
+
+
+
+CFLAGS=$(IFS=, ; echo "${cflagsArray[*]}")
+
+-Werror=sign-compare
+
+
 
 echo "Setting CFLAGS to ${CFLAGS}";
 
 export CFLAGS=$CFLAGS;
+
+
+#-fsanitize-address
+#-fno-omit-frame-pointer
+#-fno-optimize-sibling-calls
+#-fstack-protector
+#-fno-exceptions
+
+#-Wno-unused-parameter
+#-Wno-unused-but-set-variable
+#-Wno-missing-field-initializers
