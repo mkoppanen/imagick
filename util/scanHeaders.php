@@ -18,6 +18,8 @@ else {
 	$pathToImageMagick = $argv[1];
 }
 
+echo "pathToImageMagick is $pathToImageMagick \n";
+
 if (strrpos($pathToImageMagick, '/') !== 0) {
     $pathToImageMagick .= '/';
 }
@@ -195,12 +197,6 @@ else {
 }
 
 
-
-
-
-
-
-
 $imagickHelperContents = file_get_contents(__DIR__ . "/../imagick_helpers.c");
 
 if ($imagickHelperContents == false) {
@@ -215,8 +211,7 @@ $skipEnumList = [
 //	'PixelIntensityMethod', // Used by GrayscaleImage function that is not expose in wand api
 ];
 
-
-var_dump($enumToCheck);
+$anyMissing = false;
 
 foreach ($enumToCheck as $filename => $enums) {
 	foreach ($enums as $enum) {
@@ -230,13 +225,17 @@ foreach ($enumToCheck as $filename => $enums) {
 			//echo "checking for $enumName\n";
 			if (stripos($imagickHelperContents, $enumName) === false) {
 				echo "value '$enumName' is missing for enum $enum.\n";
+                $anyMissing = true;
 			}
 		}
 	}
 }
 
 
-
+if ($anyMissing === true) {
+    echo "Some enums are missing, so exiting with error.\n";
+    exit(-1);
+}
 
 
 function getEnumList($enum, $filename)
