@@ -54,6 +54,7 @@ script:
     - php run-tests.php -d extension=imagick.so -d extension_dir=modules -n ./tests/*.phpt
     - for i in `ls tests/*.out 2>/dev/null`; do echo "-- START ${i}"; cat $i; echo "-- END"; done
     - php ./util/check_version.php
+    - php ./util/scanHeaders.php "${HOME}/im/imagemagick-${IMAGEMAGICK_VERSION}"
 
 matrix:
   allow_failures:

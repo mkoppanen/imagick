@@ -4,7 +4,7 @@
 
 $directory = false; 
 // Either pass in the directory to scan or set it here.
-$directory = "/home/github/BastionRPM/zips/ImageMagick/ImageMagick-7.0.1-9";
+// $directory = "/home/github/BastionRPM/zips/ImageMagick/ImageMagick-7.0.1-9";
 
 if ($directory) {
 	$pathToImageMagick = $directory;
@@ -18,7 +18,9 @@ else {
 	$pathToImageMagick = $argv[1];
 }
 
-$pathToImageMagick .= '/';
+if (strrpos($pathToImageMagick, '/') !== 0) {
+    $pathToImageMagick .= '/';
+}
 
 if (file_exists($pathToImageMagick) == false || 
 	is_dir($pathToImageMagick) == false) {
@@ -28,10 +30,13 @@ if (file_exists($pathToImageMagick) == false ||
 
 $includeDir = null;
 
+$enumToCheck = [];
+
+$im6Directory = $pathToImageMagick.'/'.'magick';
+$im7Directory = $pathToImageMagick.'/'.'MagickCore';
 
 
-
-if (file_exists($directory.'/'.'magick') == true) {
+if (file_exists($im6Directory) == true) {
 	$enumToCheck = [
 		'magick/compare.h' => [
 			'MetricType',
@@ -108,7 +113,7 @@ if (file_exists($directory.'/'.'magick') == true) {
 		],
 	];
 }
-else if (file_exists($directory.'/'.'MagickCore') == true) {
+else if (file_exists($im7Directory) == true) {
 	$enumToCheck = [
 		'MagickCore/compare.h' => [
 			'MetricType',
@@ -184,6 +189,10 @@ else if (file_exists($directory.'/'.'MagickCore') == true) {
 	];
 
 }
+else {
+    echo "Failed to read header files from either [$im6Directory] or [$im7Directory]";
+    exit(-1);
+}
 
 
 
@@ -192,7 +201,7 @@ else if (file_exists($directory.'/'.'MagickCore') == true) {
 
 
 
-$imagickHelperContents = file_get_contents("../imagick_helpers.c");
+$imagickHelperContents = file_get_contents(__DIR__ . "/../imagick_helpers.c");
 
 if ($imagickHelperContents == false) {
 	echo "failed to read ../imagick_helpers.c\n";
@@ -206,6 +215,8 @@ $skipEnumList = [
 //	'PixelIntensityMethod', // Used by GrayscaleImage function that is not expose in wand api
 ];
 
+
+var_dump($enumToCheck);
 
 foreach ($enumToCheck as $filename => $enums) {
 	foreach ($enums as $enum) {
