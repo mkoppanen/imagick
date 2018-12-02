@@ -62,12 +62,12 @@ echo "IMAGEMAGICK_VERSION is ${IMAGEMAGICK_VERSION}"
 
 if [[ "${TRAVIS_PHP_VERSION}" == "5.4" || "${TRAVIS_PHP_VERSION}" == "5.5"  ]]; then
 	CFLAGS="-Wno-deprecated-declarations";
-else if [[ "${TRAVIS_PHP_VERSION}" == "5.6" ]]; then
+elif [[ "${TRAVIS_PHP_VERSION}" == "5.6" ]]; then
 	CFLAGS="-Wno-deprecated-declarations -Wdeclaration-after-statement -Werror -Wall -Wimplicit-function-declaration";
 else
     CFLAGS="-Wno-deprecated-declarations -Wdeclaration-after-statement -Werror -Wall -Wextra -Wimplicit-function-declaration";
 fi
 
-echo "Setting CFLAGS to ${CFLAGS}"
+echo "Setting CFLAGS to ${CFLAGS}";
 
-export CFLAGS=$CFLAGS
+export CFLAGS=$CFLAGS;
