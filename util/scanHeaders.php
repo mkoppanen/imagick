@@ -30,6 +30,8 @@ if (file_exists($pathToImageMagick) == false ||
 	exit(-1);
 }
 
+echo "debug 1 \n";
+
 $includeDir = null;
 
 $enumToCheck = [];
@@ -196,13 +198,18 @@ else {
     exit(-1);
 }
 
+echo "debug 2 \n";
 
 $imagickHelperContents = file_get_contents(__DIR__ . "/../imagick_helpers.c");
+
+echo "debug 3 \n";
 
 if ($imagickHelperContents == false) {
 	echo "failed to read ../imagick_helpers.c\n";
 	exit(-1);
 }
+
+echo "debug 4 \n";
 
 // We don't use these enums currently.
 $skipEnumList = [
@@ -231,11 +238,18 @@ foreach ($enumToCheck as $filename => $enums) {
 	}
 }
 
+echo "debug 5 \n";
 
 if ($anyMissing === true) {
     echo "Some enums are missing, so exiting with error.\n";
     exit(-1);
 }
+
+echo "debug 6 \n";
+
+echo "Looks okay";
+
+exit(0);
 
 
 function getEnumList($enum, $filename)
