@@ -48,7 +48,7 @@ script:
     - export PHP_IMAGICK_VERSION=$(php -r '$sxe = simplexml_load_file ("package.xml"); echo (string) $sxe->version->release;')
     - . ./configure-cflags.sh
     - phpize
-    - ./configure --with-imagick="${HOME}/im/imagemagick-${IMAGEMAGICK_VERSION}"
+    - ./configure --with-imagick="${HOME}/im/imagemagick-${IMAGEMAGICK_VERSION}" || cat config.log
     - make
     - php run-tests.php -d extension=imagick.so -d extension_dir=modules -n ./*.phpt
     - php run-tests.php -d extension=imagick.so -d extension_dir=modules -n ./tests/*.phpt
