@@ -47,6 +47,19 @@ ZEND_DECLARE_MODULE_GLOBALS(imagick)
 	#endif
 #endif
 
+#if MAGICKCORE_HDRI_ENABLE
+	#define IMAGICK_QUANTUM_TYPE IS_DOUBLE
+#else
+	#define IMAGICK_QUANTUM_TYPE IS_LONG
+#endif
+
+#if PHP_VERSION_ID < 80000
+// Allow the generated stubs to work on previous versions of PHP
+
+#define ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(pass_by_ref, name, type_hint, allow_null, default_value) ZEND_ARG_INFO(pass_by_ref, name)
+#endif
+
+
 zend_class_entry *php_imagick_sc_entry;
 zend_class_entry *php_imagick_exception_class_entry;
 zend_class_entry *php_imagickdraw_sc_entry;

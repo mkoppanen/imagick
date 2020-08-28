@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: 189cfe9d9c9437d1a32db68e5b6663721d94d55c */
+ * Stub hash: a83d6e9a84ad34bb03ebc6934924faaae4d74bda */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 1)
@@ -23,13 +23,11 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorQuantum, 0, 0, IS_ARRAY, 0)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 1, IS_DOUBLE, 0)
+ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 1, IMAGICK_QUANTUM_TYPE, 0)
 	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorValueQuantum, 0, 1, IS_MIXED, 0)
-	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
-ZEND_END_ARG_INFO()
+#define arginfo_class_ImagickPixel_getColorValueQuantum arginfo_class_ImagickPixel_getColorValue
 
 #define arginfo_class_ImagickPixel_getHSL arginfo_class_ImagickPixel_getColorQuantum
 

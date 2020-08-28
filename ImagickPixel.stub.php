@@ -2,6 +2,8 @@
 
 /** @generate-function-entries */
 
+
+
 class ImagickPixel
 {
     public function __construct(?string $color) {}
@@ -19,7 +21,7 @@ class ImagickPixel
 
     public function getColorQuantum(): array {}
 
-    public function getColorValue(int $color): float {}
+    public function getColorValue(int $color): IMAGICK_QUANTUM_TYPE {}
 
     /**
      * @param int $color
@@ -27,7 +29,7 @@ class ImagickPixel
      * - Float if IM compiled with HDRI
      * - int if IM compiled with fixed point math
      */
-    public function getColorValueQuantum(int $color): mixed {}
+    public function getColorValueQuantum(int $color): IMAGICK_QUANTUM_TYPE {}
 
     public function getHSL(): array {}
 
