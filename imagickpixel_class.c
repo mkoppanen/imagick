@@ -27,7 +27,7 @@
 /* {{{ proto array ImagickPixel::getHSL()
 	Returns the normalized HSL color of the pixel wand in an array with the keys "hue", "saturation", and "luminosity".
 */
-PHP_METHOD(imagickpixel, gethsl)
+PHP_METHOD(ImagickPixel, getHSL)
 {
 	php_imagickpixel_object *internp;
 	double hue, saturation, luminosity;
@@ -54,7 +54,7 @@ PHP_METHOD(imagickpixel, gethsl)
 /* {{{ proto bool ImagickPixel::setHSL(float hue, float saturation, float luminosity)
 	Sets the normalized HSL color of the pixel wand.
 */
-PHP_METHOD(imagickpixel, sethsl)
+PHP_METHOD(ImagickPixel, setHSL)
 {
 	php_imagickpixel_object *internp;
 	double hue, saturation, luminosity;
@@ -78,7 +78,7 @@ PHP_METHOD(imagickpixel, sethsl)
 	Gets the quantum value of a color in the ImagickPixel. Quantum is a float if ImageMagick was compiled with HDRI
 	otherwise an integer.
 */
-PHP_METHOD(imagickpixel, getcolorvaluequantum)
+PHP_METHOD(ImagickPixel, getColorValueQuantum)
 {
 	php_imagickpixel_object *internp;
 	im_long color;
@@ -151,7 +151,7 @@ PHP_METHOD(imagickpixel, getcolorvaluequantum)
 /* {{{ proto bool ImagickPixel::setColorValueQuantum(int color, float value)
 	Sets the quantum color of the ImagickPixel.
 */
-PHP_METHOD(imagickpixel, setcolorvaluequantum)
+PHP_METHOD(ImagickPixel, setColorValueQuantum)
 {
 	php_imagickpixel_object *internp;
 	im_long color;
@@ -227,7 +227,7 @@ PHP_METHOD(imagickpixel, setcolorvaluequantum)
 /* {{{ proto bool ImagickPixel::getIndex()
 	Gets the colormap index of the pixel wand 
 */
-PHP_METHOD(imagickpixel, getindex)
+PHP_METHOD(ImagickPixel, getIndex)
 {
 	php_imagickpixel_object *internp;
 
@@ -247,7 +247,7 @@ PHP_METHOD(imagickpixel, getindex)
 /* {{{ proto bool ImagickPixel::setIndex(int pixel_packet)
 	Sets the colormap index of the pixel wand 
 */
-PHP_METHOD(imagickpixel, setindex)
+PHP_METHOD(ImagickPixel, setIndex)
 {
 	php_imagickpixel_object *internp;
 	im_long index;
@@ -271,7 +271,7 @@ PHP_METHOD(imagickpixel, setindex)
 /* {{{ proto ImagickPixel ImagickPixel::__construct([string color] )
    The ImagickPixel constructor
 */
-PHP_METHOD(imagickpixel, __construct)
+PHP_METHOD(ImagickPixel, __construct)
 {
 	php_imagickpixel_object *internp;
 	char *color_name = NULL;
@@ -310,7 +310,7 @@ PHP_METHOD(imagickpixel, __construct)
 /* {{{ proto bool ImagickPixel::setColor(string color)
 	Sets the color of the pixel wand with a string (e.g. "blue", "#0000ff", "rgb(0,0,255)", "cmyk(100,100,100,10)", etc.).
 */
-PHP_METHOD(imagickpixel, setcolor)
+PHP_METHOD(ImagickPixel, setColor)
 {
 	char *color_name;
 	IM_LEN_TYPE color_name_len;
@@ -342,7 +342,7 @@ PHP_METHOD(imagickpixel, setcolor)
 /* {{{ proto bool ImagickPixel::clear()
 	Clears resources associated with the wand.
 */
-PHP_METHOD(imagickpixel, clear)
+PHP_METHOD(ImagickPixel, clear)
 {
 	php_imagickpixel_object *internp;
 
@@ -405,7 +405,7 @@ void s_is_pixelwand_similar(INTERNAL_FUNCTION_PARAMETERS, zend_bool use_quantum)
 	The maximum value represents the longest possible distance in the colorspace.
 	e.g. from RGB(0, 0, 0) to RGB(255, 255, 255) for the RGB colorspace
 */
-PHP_METHOD(imagickpixel, ispixelsimilarquantum)
+PHP_METHOD(ImagickPixel, isPixelSimilarQuantum)
 {
 	s_is_pixelwand_similar (INTERNAL_FUNCTION_PARAM_PASSTHRU, 0);
 }
@@ -417,7 +417,7 @@ PHP_METHOD(imagickpixel, ispixelsimilarquantum)
 	The maximum value represents the longest possible distance in the colorspace.
 	e.g. from RGB(0, 0, 0) to RGB(255, 255, 255) for the RGB colorspace
 */
-PHP_METHOD(imagickpixel, ispixelsimilar)
+PHP_METHOD(ImagickPixel, isPixelSimilar)
 {
 	s_is_pixelwand_similar (INTERNAL_FUNCTION_PARAM_PASSTHRU, 1);
 }
@@ -426,7 +426,7 @@ PHP_METHOD(imagickpixel, ispixelsimilar)
 /* {{{ proto float ImagickPixel::getColorValue(int color)
 	Gets the normalized value of a color in the ImagickPixel.
 */
-PHP_METHOD(imagickpixel, getcolorvalue)
+PHP_METHOD(ImagickPixel, getColorValue)
 {
 	php_imagick_color_t color_enum;
 	php_imagickpixel_object *internp;
@@ -508,7 +508,7 @@ PHP_METHOD(imagickpixel, getcolorvalue)
 /* {{{ proto float ImagickPixel::setColorValue(int color, float value )
 	Sets the normalized color of the ImagickPixel.
 */
-PHP_METHOD(imagickpixel, setcolorvalue)
+PHP_METHOD(ImagickPixel, setColorValue)
 {
 	php_imagick_color_t color_enum;
 	php_imagickpixel_object *internp;
@@ -595,7 +595,7 @@ PHP_METHOD(imagickpixel, setcolorvalue)
 	normalization - 2 - values returned in the range 0,255 and will be ints including alpha
 	values i.e. float if ImageMagick was compiled with HDRI, or integers normally.
 */
-PHP_METHOD(imagickpixel, getcolor)
+PHP_METHOD(ImagickPixel, getColor)
 {
 	php_imagickpixel_object *internp;
 	im_long normalization = 0;
@@ -667,7 +667,7 @@ PHP_METHOD(imagickpixel, getcolor)
 	Returns the color of the pixel in an array as Quantum values. If ImageMagick was compiled
 	as HDRI these will be floats, otherwise they will be integers
 */
-PHP_METHOD(imagickpixel, getcolorquantum)
+PHP_METHOD(ImagickPixel, getColorQuantum)
 {
 	php_imagickpixel_object *internp;
 	Quantum red, green, blue, alpha;
@@ -707,7 +707,7 @@ PHP_METHOD(imagickpixel, getcolorquantum)
 /* {{{ proto array ImagickPixel::getColorAsString(void )
         Returns the color as a string
 */
-PHP_METHOD(imagickpixel, getcolorasstring)
+PHP_METHOD(ImagickPixel, getColorAsString)
 {
 	php_imagickpixel_object *internp;
 	char *color_string;
@@ -732,7 +732,7 @@ PHP_METHOD(imagickpixel, getcolorasstring)
 /* {{{ proto ImagickPixel ImagickPixel::clone(void)
         Clones the ImagickPixel
 */
-PHP_METHOD(imagickpixel, clone)
+PHP_METHOD(ImagickPixel, clone)
 {
 	php_imagickpixel_object *internp;
 	php_imagickpixel_object *intern_return;
@@ -763,7 +763,7 @@ PHP_METHOD(imagickpixel, clone)
 /* {{{ proto int ImagickPixel::getColorCount()
 	Returns the color count associated with this color.
 */
-PHP_METHOD(imagickpixel, getcolorcount)
+PHP_METHOD(ImagickPixel, getColorCount)
 {
 	php_imagickpixel_object *internp;
 
@@ -783,7 +783,7 @@ PHP_METHOD(imagickpixel, getcolorcount)
 /* {{{ proto int ImagickPixel::setColorCount(int colorCount)
 	Sets the color count associated with this color.
 */
-PHP_METHOD(imagickpixel, setcolorcount)
+PHP_METHOD(ImagickPixel, setColorCount)
 {
 	php_imagickpixel_object *internp;
 	im_long color_count;
@@ -807,7 +807,7 @@ PHP_METHOD(imagickpixel, setcolorcount)
 /* {{{ proto bool ImagickPixel::setColorFromPixel(ImagickPixel $srcPixel)
 	Sets the color count associated with this color from another ImagickPixel object.
 */
-PHP_METHOD(imagickpixel, setcolorfrompixel)
+PHP_METHOD(ImagickPixel, setColorFromPixel)
 {
 	php_imagickpixel_object *internp, *src_pixel;
 	zval *objvar;

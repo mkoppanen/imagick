@@ -210,7 +210,7 @@ static void createKernelZval(zval *pzval, KernelInfo *kernel_info TSRMLS_DC) {
 /* {{{ proto ImagickKernel ImagickKernel::__construct()
    The ImagickKernel constructor
 */
-PHP_METHOD(imagickkernel, __construct)
+PHP_METHOD(ImagickKernel, __construct)
 {
 	// This suppresses an 'unused parameter' warning.
 	(void)return_value;
@@ -234,7 +234,7 @@ PHP_METHOD(imagickkernel, __construct)
 	to the centre of the kernel. For all other kernel sizes the origin pixel must be specified.
 */
 #ifdef ZEND_ENGINE_3
-PHP_METHOD(imagickkernel, frommatrix)
+PHP_METHOD(ImagickKernel, fromMatrix)
 {
 	zval *kernel_array;
 	zval *origin_array;
@@ -407,7 +407,7 @@ cleanup:
 #else //not ZEND_ENGINE_3
 
 
-PHP_METHOD(imagickkernel, frommatrix)
+PHP_METHOD(ImagickKernel, fromMatrix)
 {
 	zval *kernel_array;
 	zval *origin_array;
@@ -645,7 +645,7 @@ static void imagick_fiddle_with_geometry_info(ssize_t type, GeometryFlags flags,
  Create a kernel from a builtin in kernel. See http://www.imagemagick.org/Usage/morphology/#kernel for examples. Currently the 'rotation' symbols are not supported. Example:
  $diamondKernel = ImagickKernel::fromBuiltIn(\Imagick::KERNEL_DIAMOND, "2");
 */
-PHP_METHOD(imagickkernel, frombuiltin)
+PHP_METHOD(ImagickKernel, fromBuiltin)
 {
 	im_long kernel_type;
 	GeometryInfo geometry_info = {
@@ -687,7 +687,7 @@ PHP_METHOD(imagickkernel, frombuiltin)
 /* {{{ proto void ImagickKernel::addKernel(ImagickKernel kernel)
 	Attach another kernel to this kernel to allow them to both be applied in a single morphology or filter function. Returns the new combined kernel.
 */
-PHP_METHOD(imagickkernel, addkernel)
+PHP_METHOD(ImagickKernel, addKernel)
 {
 	zval *objvar;
 	KernelInfo *kernel_info_add_clone;
@@ -727,7 +727,7 @@ PHP_METHOD(imagickkernel, addkernel)
 /* {{{ proto ImagickKernel[] ImagickKernel::separate(void)
 	Separates a linked set of kernels and returns an array of ImagickKernels.
 */
-PHP_METHOD(imagickkernel, separate)
+PHP_METHOD(ImagickKernel, separate)
 {
 	php_imagickkernel_object *internp;
 	KernelInfo *kernel_info;
@@ -784,7 +784,7 @@ PHP_METHOD(imagickkernel, separate)
 	Get the 2d matrix of values used in this kernel. The elements are either 
 	float for elements that are used or 'false' if the element should be skipped.
 */
-PHP_METHOD(imagickkernel, getmatrix)
+PHP_METHOD(ImagickKernel, getMatrix)
 {
 	php_imagickkernel_object *internp;
 
@@ -816,7 +816,7 @@ PHP_METHOD(imagickkernel, getmatrix)
 	Flag should be one of NORMALIZE_KERNEL_VALUE, NORMALIZE_KERNEL_CORRELATE, 
 	NORMALIZE_KERNEL_PERCENT or not set.
 */
-PHP_METHOD(imagickkernel, scale)
+PHP_METHOD(ImagickKernel, scale)
 {
 	php_imagickkernel_object *internp;
 	double scale;
@@ -843,7 +843,7 @@ PHP_METHOD(imagickkernel, scale)
 	into the resulting convolution kernel. The resulting effect is to convert the
 	defined kernels into blended soft-blurs, unsharp kernels or into sharpening kernels.
 */
-PHP_METHOD(imagickkernel, addunitykernel)
+PHP_METHOD(ImagickKernel, addUnityKernel)
 {
 	php_imagickkernel_object *internp;
 	double scale;

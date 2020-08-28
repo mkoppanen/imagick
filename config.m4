@@ -13,6 +13,8 @@ if test "$ext_shared" != "yes" && test "$ext_shared" != "shared"; then
 fi
 m4_include(ifdef('PHP_IMAGICK_STATIC',PHP_EXT_BUILDDIR(imagick)[/],)[imagemagick.m4])
 
+# This line checks that ImageMagick is available, and
+# meets our minimum supported version. TODO change to 6.7.0
 IM_FIND_IMAGEMAGICK([6.2.4], [$PHP_IMAGICK])
 
 #
