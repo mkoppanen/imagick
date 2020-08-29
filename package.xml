@@ -90,7 +90,7 @@ This extension requires ImageMagick version 6.5.3-10+ and PHP 5.4.0+.
 			<file name="imagickdraw_class.c" role="src" />
 			<file name="imagickpixel_class.c" role="src" />
 			<file name="imagickpixeliterator_class.c" role="src" />
-            <file name="imagickkernel_class.c" role="src" />
+			<file name="imagickkernel_class.c" role="src" />
 			<file name="imagick_helpers.c" role="src" />
 			<file name="imagick_file.c" role="src" />
 			<file name="php_imagick.h" role="src">
@@ -103,6 +103,8 @@ This extension requires ImageMagick version 6.5.3-10+ and PHP 5.4.0+.
 			<file name="php_imagick_file.h" role="src" />
 			<file name="shim_im6_to_im7.c" role="src" />
 			<file name="shim_im6_to_im7.h" role="src" />
+			<file name="ImagickKernel_arginfo.h" role="src" />
+			<file name="ImagickPixel_arginfo.h" role="src" />
 			<file name="ChangeLog" role="doc" />
 			<file name="LICENSE" role="doc" />
 			<dir name="examples">

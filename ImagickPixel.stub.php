@@ -58,7 +58,7 @@ class ImagickPixel
      * - int if IM compiled with fixed point math
      *
      */
-    public function setColorValueQuantum(int $color, mixed $value): bool{}
+    public function setColorValueQuantum(int $color, IMAGICK_QUANTUM_TYPE $value): bool{}
 
     public function setHSL(float $hue, float $saturation , float $luminosity): bool{}
 

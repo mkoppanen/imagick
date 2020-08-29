@@ -30,12 +30,12 @@
 #include "ext/standard/php_smart_str.h"
 #endif
 
-
-
 /* For the countable interface */
 #if defined(HAVE_SPL)
 #include "ext/spl/spl_iterators.h"
 #endif
+
+#include "shim_php7_to_php8.h"
 
 ZEND_DECLARE_MODULE_GLOBALS(imagick)
 
@@ -52,13 +52,6 @@ ZEND_DECLARE_MODULE_GLOBALS(imagick)
 #else
 	#define IMAGICK_QUANTUM_TYPE IS_LONG
 #endif
-
-#if PHP_VERSION_ID < 80000
-// Allow the generated stubs to work on previous versions of PHP
-
-#define ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(pass_by_ref, name, type_hint, allow_null, default_value) ZEND_ARG_INFO(pass_by_ref, name)
-#endif
-
 
 zend_class_entry *php_imagick_sc_entry;
 zend_class_entry *php_imagick_exception_class_entry;
