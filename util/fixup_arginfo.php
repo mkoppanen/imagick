@@ -49,7 +49,7 @@ $search[] = "#ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX\((\w*), (\w*), (\w*), (\w*
 #define ZEND_BEGIN_ARG_INFO_EX(name, _unused, return_reference, required_num_args)
 $replace[] = "
 #if PHP_VERSION_ID >= 80000
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX\($1, $2, $3, $4, $5\)
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX($1, $2, $3, $4, $5)
 #else
 ZEND_BEGIN_ARG_INFO_EX($1, 0, $2, $3)
 #endif
