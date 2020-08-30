@@ -1,5 +1,5 @@
 /* This is a generated file, edit the .stub.php file instead.
- * Stub hash: cea724dacd3ab819e5188931be2fa5036dbf1b8c */
+* Stub hash: always needs regen */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel___construct, 0, 0, 1)
 	ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 1)
@@ -23,7 +23,13 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorQuantum, 0, 0, IS_ARRAY, 0)
 ZEND_END_ARG_INFO()
 
-ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 1, IMAGICK_QUANTUM_TYPE, 0)
+
+#if MAGICKCORE_HDRI_ENABLE 
+	ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 0, IS_DOUBLE, 0)
+#else
+	ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 0, IS_LONG, 0)
+#endif
+
 	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
 ZEND_END_ARG_INFO()
 
@@ -57,7 +63,13 @@ ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setColorValueQuantum, 0, 2, _IS_BOOL, 0)
 	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
-	ZEND_ARG_OBJ_INFO(0, value, IMAGICK_QUANTUM_TYPE, 0)
+	
+#if MAGICKCORE_HDRI_ENABLE 
+	ZEND_ARG_TYPE_INFO(0, value, IS_DOUBLE, 0)
+#else
+	ZEND_ARG_TYPE_INFO(0, value, IS_LONG, 0)
+#endif
+
 ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setHSL, 0, 3, _IS_BOOL, 0)

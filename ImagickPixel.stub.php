@@ -2,8 +2,6 @@
 
 /** @generate-function-entries */
 
-
-
 class ImagickPixel
 {
     public function __construct(?string $color) {}
