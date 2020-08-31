@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types = 1);
 
 // Run with something like:
 // export CLFAGS=$(php util/calculate_cflags.php "8.0" "7.0.1-0")
