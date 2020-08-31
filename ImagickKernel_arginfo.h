@@ -4,13 +4,7 @@
 #if defined(IMAGICK_WITH_KERNEL)
 
 #if PHP_VERSION_ID >= 80000
-
-#if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_addKernel, 0, 1, IS_VOID, 0)
-#else
-ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_addKernel, 0, 0, 1)
-#endif
-
 #else
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_addKernel, 0, 0, 1)
 #endif
@@ -22,13 +16,7 @@ ZEND_END_ARG_INFO()
 #if defined(IMAGICK_WITH_KERNEL)
 
 #if PHP_VERSION_ID >= 80000
-
-#if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_addUnityKernel, 0, 1, IS_VOID, 0)
-#else
-ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_addUnityKernel, 0, 0, 1)
-#endif
-
 #else
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_addUnityKernel, 0, 0, 1)
 #endif
@@ -66,13 +54,7 @@ ZEND_END_ARG_INFO()
 #if defined(IMAGICK_WITH_KERNEL)
 
 #if PHP_VERSION_ID >= 80000
-
-#if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_getMatrix, 0, 0, IS_ARRAY, 0)
-#else
-ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_getMatrix, 0, 0, 0)
-#endif
-
 #else
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_getMatrix, 0, 0, 0)
 #endif
@@ -83,13 +65,7 @@ ZEND_END_ARG_INFO()
 #if defined(IMAGICK_WITH_KERNEL)
 
 #if PHP_VERSION_ID >= 80000
-
-#if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_scale, 0, 2, IS_VOID, 0)
-#else
-ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_scale, 0, 0, 2)
-#endif
-
 #else
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_scale, 0, 0, 2)
 #endif
