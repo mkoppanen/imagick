@@ -7,7 +7,7 @@ cache:
         - $HOME/im
 
 # dist: bionic
-dist: trusty
+# dist: trusty
 
 php:
     - nightly
@@ -33,10 +33,23 @@ env:
 # Include individual commits like this:
   # - IMAGEMAGICK_VERSION=commit_25553302a6d5f736b55e60109600dfbce5fbea48
 
+jobs:
+  include:
+    - php: 5.4
+      dist: trusty
+    - php: 5.5
+      dist: trusty
+
+
 matrix:
+  allow_failures:
+    - env: IMAGEMAGICK_VERSION=git6
+    - env: IMAGEMAGICK_VERSION=git7
   exclude:
     - php: 5.4
       env: IMAGEMAGICK_VERSION=6.8.7-0
+
+
 
 before_install:
     - sudo apt-get update
@@ -67,7 +80,4 @@ script:
     - for i in `ls tests/*.diff 2>/dev/null`; do echo "-- START ${i}"; cat $i; echo "-- END"; done
     - php ./util/check_version.php
 
-matrix:
-  allow_failures:
-    - env: IMAGEMAGICK_VERSION=git6
-    - env: IMAGEMAGICK_VERSION=git7
+
