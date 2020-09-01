@@ -2,7 +2,12 @@
 * Stub hash: regen with 'sh regen_arginfo.sh' */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel___construct, 0, 0, 1)
-	ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 1)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 1)
+#else
+    ZEND_ARG_INFO(0, color)
+#endif
 ZEND_END_ARG_INFO()
 
 
@@ -72,7 +77,12 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_getColorValue, 0, 0, 0)
 
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, color)
+#endif
 ZEND_END_ARG_INFO()
 
 #define arginfo_class_ImagickPixel_getColorValueQuantum arginfo_class_ImagickPixel_getColorValue
@@ -89,7 +99,12 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_isPixelSimilar, 0, 0, 2)
 #endif
 
 	ZEND_ARG_OBJ_TYPE_MASK(0, color, ImagickPixel, MAY_BE_STRING, NULL)
-	ZEND_ARG_TYPE_INFO(0, fuzz, IS_DOUBLE, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, fuzz, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, fuzz)
+#endif
 ZEND_END_ARG_INFO()
 
 #define arginfo_class_ImagickPixel_isPixelSimilarQuantum arginfo_class_ImagickPixel_isPixelSimilar
@@ -103,7 +118,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setColor, 0, 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setColor, 0, 0, 1)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, color, IS_STRING, 0)
+#else
+    ZEND_ARG_INFO(0, color)
+#endif
 ZEND_END_ARG_INFO()
 
 
@@ -113,7 +133,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setColorCount
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setColorCount, 0, 0, 1)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, colorCount, IS_LONG, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, colorCount, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, colorCount)
+#endif
 ZEND_END_ARG_INFO()
 
 
@@ -123,8 +148,18 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setColorValue
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setColorValue, 0, 0, 2)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
-	ZEND_ARG_TYPE_INFO(0, value, IS_DOUBLE, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, color)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, value, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, value)
+#endif
 ZEND_END_ARG_INFO()
 
 
@@ -134,12 +169,27 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setColorValue
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setColorValueQuantum, 0, 0, 2)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, color, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, color)
+#endif
 	
 #if MAGICKCORE_HDRI_ENABLE 
-	ZEND_ARG_TYPE_INFO(0, value, IS_DOUBLE, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, value, IS_DOUBLE, 0)
 #else
-	ZEND_ARG_TYPE_INFO(0, value, IS_LONG, 0)
+    ZEND_ARG_INFO(0, value)
+#endif
+#else
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, value, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, value)
+#endif
 #endif
 
 ZEND_END_ARG_INFO()
@@ -151,9 +201,24 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setHSL, 0, 3,
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setHSL, 0, 0, 3)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, hue, IS_DOUBLE, 0)
-	ZEND_ARG_TYPE_INFO(0, saturation, IS_DOUBLE, 0)
-	ZEND_ARG_TYPE_INFO(0, luminosity, IS_DOUBLE, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, hue, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, hue)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, saturation, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, saturation)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, luminosity, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, luminosity)
+#endif
 ZEND_END_ARG_INFO()
 
 
@@ -163,7 +228,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_setIndex, 0, 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setIndex, 0, 0, 1)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, index, IS_LONG, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, index, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, index)
+#endif
 ZEND_END_ARG_INFO()
 
 #if MagickLibVersion >= 0x693

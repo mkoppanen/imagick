@@ -32,6 +32,16 @@ $replace[] = "
 ";
 
 
+// ZEND_ARG_TYPE_INFO(pass_by_ref, name, type_hint, allow_null)
+// ZEND_ARG_INFO(pass_by_ref, name)
+
+$search[] = "#ZEND_ARG_TYPE_INFO\((\w*), (\w*), (\w*), (\w*)\)#iu";
+$replace[] = "
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO($1, $2, $3, $4)
+#else
+    ZEND_ARG_INFO($1, $2)
+#endif";
 
 
 $search[] = "#ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX\((\w*), 0, 1, IMAGICK_QUANTUM_TYPE, 0\)#iu";

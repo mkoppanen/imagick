@@ -21,7 +21,12 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_addUnityKern
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_addUnityKernel, 0, 0, 1)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, scale, IS_DOUBLE, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, scale, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, scale)
+#endif
 ZEND_END_ARG_INFO()
 #endif
 
@@ -33,8 +38,18 @@ ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickKernel_fromBuiltin, 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_fromBuiltin, 0, 0, 2)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, kernelType, IS_LONG, 0)
-	ZEND_ARG_TYPE_INFO(0, kernelString, IS_STRING, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, kernelType, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, kernelType)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, kernelString, IS_STRING, 0)
+#else
+    ZEND_ARG_INFO(0, kernelString)
+#endif
 ZEND_END_ARG_INFO()
 #endif
 
@@ -46,8 +61,18 @@ ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickKernel_fromMatrix, 0
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_fromMatrix, 0, 0, 2)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, matrix, IS_ARRAY, 0)
-	ZEND_ARG_TYPE_INFO(0, origin, IS_ARRAY, 1)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, matrix, IS_ARRAY, 0)
+#else
+    ZEND_ARG_INFO(0, matrix)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, origin, IS_ARRAY, 1)
+#else
+    ZEND_ARG_INFO(0, origin)
+#endif
 ZEND_END_ARG_INFO()
 #endif
 
@@ -70,8 +95,18 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickKernel_scale, 0, 2,
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickKernel_scale, 0, 0, 2)
 #endif
 
-	ZEND_ARG_TYPE_INFO(0, scale, IS_DOUBLE, 0)
-	ZEND_ARG_TYPE_INFO(0, normalizeFlag, IS_LONG, 1)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, scale, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, scale)
+#endif
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, normalizeFlag, IS_LONG, 1)
+#else
+    ZEND_ARG_INFO(0, normalizeFlag)
+#endif
 ZEND_END_ARG_INFO()
 #endif
 
