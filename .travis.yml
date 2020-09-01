@@ -17,6 +17,9 @@ php:
     - 7.1
     - 7.0
     - 5.6
+# These don't work on travis currently, and although I don't particularly
+# want to drop support for them, I can't justify spending any more time on
+# getting the travis build to work for them.
 #    - 5.5
 #    - 5.4
 
@@ -32,13 +35,6 @@ env:
 
 # Include individual commits like this:
   # - IMAGEMAGICK_VERSION=commit_25553302a6d5f736b55e60109600dfbce5fbea48
-
-jobs:
-  include:
-    - php: 5.4
-      dist: trusty
-    - php: 5.5
-      dist: trusty
 
 
 matrix:
