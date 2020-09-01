@@ -1,7 +1,10 @@
 --TEST--
 Test PECL bug #20636
 --SKIPIF--
-<?php 
+<?php
+
+$imageMagickRequiredVersion=0x680;
+
 require_once(dirname(__FILE__) . '/skipif.inc'); 
 
 checkClassMethods('Imagick', array('roundCorners'));
