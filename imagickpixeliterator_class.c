@@ -56,7 +56,7 @@ void php_imagick_pixel_iterator_new (PixelIterator *pixel_it, zval *return_value
 /* {{{ proto ImagickPixelIterator ImagickPixelIterator::__construct(Imagick source)
    The ImagickPixelIterator constructor
 */
-PHP_METHOD(imagickpixeliterator, __construct)
+PHP_METHOD(ImagickPixelIterator, __construct)
 {
 	zval *magick_object;
 	php_imagickpixeliterator_object *internpix;
@@ -97,7 +97,7 @@ PHP_METHOD(imagickpixeliterator, __construct)
 /* {{{ proto bool ImagickPixelIterator::resetIterator()
 	Resets the pixel iterator.  Use it in conjunction with PixelGetNextIteratorRow() to iterate over all the pixels in a pixel container.
 */
-PHP_METHOD(imagickpixeliterator, resetiterator)
+PHP_METHOD(ImagickPixelIterator, resetIterator)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -123,7 +123,7 @@ PHP_METHOD(imagickpixeliterator, resetiterator)
 /* {{{ proto bool ImagickPixelIterator::syncIterator()
 	Syncs the pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, synciterator)
+PHP_METHOD(ImagickPixelIterator, syncIterator)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -146,7 +146,7 @@ PHP_METHOD(imagickpixeliterator, synciterator)
 /* {{{ proto bool ImagickPixelIterator::setIteratorFirstRow()
 	Sets the pixel iterator to the first pixel row.
 */
-PHP_METHOD(imagickpixeliterator, setiteratorfirstrow)
+PHP_METHOD(ImagickPixelIterator, setIteratorFirstRow)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -172,7 +172,7 @@ PHP_METHOD(imagickpixeliterator, setiteratorfirstrow)
 /* {{{ proto bool ImagickPixelIterator::setIteratorLastRow()
 	Sets the pixel iterator to the last pixel row.
 */
-PHP_METHOD(imagickpixeliterator, setiteratorlastrow)
+PHP_METHOD(ImagickPixelIterator, setIteratorLastRow)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -199,7 +199,7 @@ PHP_METHOD(imagickpixeliterator, setiteratorlastrow)
 	Returns a new pixel iterator, static method. This is equivalent to Imagick::getPixelIterator
 	which probably ought to be used in preference to this method.
 */
-PHP_METHOD(imagickpixeliterator, getpixeliterator)
+PHP_METHOD(ImagickPixelIterator, getPixelIterator)
 {
 	PixelIterator *pixel_it;
 	zval *magick_object;
@@ -234,7 +234,7 @@ PHP_METHOD(imagickpixeliterator, getpixeliterator)
 /* {{{ proto ImagickPixelIterator ImagickPixelIterator::newPixelIterator(Imagick source)
 	Returns a new pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, newpixeliterator)
+PHP_METHOD(ImagickPixelIterator, newPixelIterator)
 {
 	PixelIterator *pixel_it;
 	zval *magick_object;
@@ -283,7 +283,7 @@ PHP_METHOD(imagickpixeliterator, newpixeliterator)
 	Returns a new pixel region iterator, static method. This is equivalent to the non-static
 	Imagick::getPixelRegionIterator which ought to be used in preference to this method.
 */
-PHP_METHOD(imagickpixeliterator, getpixelregioniterator)
+PHP_METHOD(ImagickPixelIterator, getPixelRegionIterator)
 {
 	PixelIterator *pixel_it;
 	zval *magick_object;
@@ -319,7 +319,7 @@ PHP_METHOD(imagickpixeliterator, getpixelregioniterator)
 /* {{{ proto bool ImagickPixelIterator::newPixelRegionIterator(Imagick source, int x, int y, int columns, int rows)
 	Returns a new pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, newpixelregioniterator)
+PHP_METHOD(ImagickPixelIterator, newPixelRegionIterator)
 {
 	PixelIterator *pixel_it;
 	zval *magick_object;
@@ -368,7 +368,7 @@ PHP_METHOD(imagickpixeliterator, newpixelregioniterator)
 /* {{{ proto int ImagickPixelIterator::getIteratorRow()
 	Returns the crurent pixel iterator row.
 */
-PHP_METHOD(imagickpixeliterator, getiteratorrow)
+PHP_METHOD(ImagickPixelIterator, getIteratorRow)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -394,7 +394,7 @@ PHP_METHOD(imagickpixeliterator, getiteratorrow)
 /* {{{ proto bool ImagickPixelIterator::setIteratorRow(int row)
 	Set the pixel iterator row.
 */
-PHP_METHOD(imagickpixeliterator, setiteratorrow)
+PHP_METHOD(ImagickPixelIterator, setIteratorRow)
 {
 	php_imagickpixeliterator_object *internpix;
 	MagickBooleanType status;
@@ -464,7 +464,7 @@ void s_pixelwands_to_zval (PixelWand **wand_array, unsigned long num_wands, zval
 /* {{{ proto array ImagickPixelIterator::getPreviousIteratorRow()
 	Returns the previous row as an array of pixel wands from the pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, getpreviousiteratorrow)
+PHP_METHOD(ImagickPixelIterator, getPreviousIteratorRow)
 {
 	php_imagickpixeliterator_object *internpix;
 	PixelWand **wand_array;
@@ -502,7 +502,7 @@ PHP_METHOD(imagickpixeliterator, getpreviousiteratorrow)
 /* {{{ proto array ImagickPixelIterator::getCurrentIteratorRow()
 	Returns the current row as an array of pixel wands from the pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, getcurrentiteratorrow)
+PHP_METHOD(ImagickPixelIterator, getCurrentIteratorRow)
 {
 	php_imagickpixeliterator_object *internpix;
 	PixelWand **wand_array;
@@ -543,7 +543,7 @@ PHP_METHOD(imagickpixeliterator, getcurrentiteratorrow)
 /* {{{ proto array ImagickPixelIterator::getNextIteratorRow()
 	Returns the next row as an array of pixel wands from the pixel iterator.
 */
-PHP_METHOD(imagickpixeliterator, getnextiteratorrow)
+PHP_METHOD(ImagickPixelIterator, getNextIteratorRow)
 {
 	php_imagickpixeliterator_object *internpix;
 	PixelWand **wand_array;
@@ -578,7 +578,7 @@ PHP_METHOD(imagickpixeliterator, getnextiteratorrow)
 /* {{{ proto bool ImagickPixelIterator::clear()
 	Clear resources associated with a PixelIterator.
 */
-PHP_METHOD(imagickpixeliterator, clear)
+PHP_METHOD(ImagickPixelIterator, clear)
 {
 	php_imagickpixeliterator_object *internpix;
 
@@ -604,7 +604,7 @@ PHP_METHOD(imagickpixeliterator, clear)
 /* {{{ proto bool ImagickPixelIterator::valid()
 	The if the current iterator row is valid
 */
-PHP_METHOD(imagickpixeliterator, valid)
+PHP_METHOD(ImagickPixelIterator, valid)
 {
 	php_imagickpixeliterator_object *internpix;
 
