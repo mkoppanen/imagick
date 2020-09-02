@@ -1838,7 +1838,7 @@ static const zend_function_entry class_ImagickDraw_methods[] = {
 	ZEND_ME(ImagickDraw, alpha, arginfo_class_ImagickDraw_alpha, ZEND_ACC_PUBLIC)
 #endif
 #if !(MagickLibVersion >= 0x700)
-	ZEND_ME(ImagickDraw, matte, arginfo_class_ImagickDraw_matte, ZEND_ACC_PUBLIC)
+	ZEND_ME(ImagickDraw, matte, arginfo_class_ImagickDraw_matte, ZEND_ACC_PUBLIC|ZEND_ACC_DEPRECATED)
 #endif
 	ZEND_ME(ImagickDraw, polygon, arginfo_class_ImagickDraw_polygon, ZEND_ACC_PUBLIC)
 	ZEND_ME(ImagickDraw, point, arginfo_class_ImagickDraw_point, ZEND_ACC_PUBLIC)

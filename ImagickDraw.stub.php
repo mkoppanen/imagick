@@ -120,6 +120,7 @@ class ImagickDraw
     public function alpha(float $x, float $y, int $paintMethod): bool {}
 #else
 //	PHP_ME(imagickdraw, matte, imagickdraw_matte_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+    /** @deprecated */
     public function matte(float $x, float $y, int $paintMethod): bool {}
 #endif
 
