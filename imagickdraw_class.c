@@ -27,7 +27,7 @@
 /* {{{ proto bool ImagickDraw::resetvectorgraphics()
 	Resets the vector graphics
 */
-PHP_METHOD(imagickdraw, resetvectorgraphics)
+PHP_METHOD(ImagickDraw, resetVectorGraphics)
 {
 	php_imagickdraw_object *internd;
 
@@ -46,7 +46,7 @@ PHP_METHOD(imagickdraw, resetvectorgraphics)
 /* {{{ proto bool ImagickDraw::getTextKerning()
 	Gets the text kerning
 */
-PHP_METHOD(imagickdraw, gettextkerning) 
+PHP_METHOD(ImagickDraw, getTextKerning)
 {
 	php_imagickdraw_object *internd;
 
@@ -62,7 +62,7 @@ PHP_METHOD(imagickdraw, gettextkerning)
 /* {{{ proto bool ImagickDraw::setTextKerning(float kerning)
 	Sets the text kerning
 */
-PHP_METHOD(imagickdraw, settextkerning) 
+PHP_METHOD(ImagickDraw, setTextKerning)
 {
 	php_imagickdraw_object *internd;
 	double kerning;
@@ -80,7 +80,7 @@ PHP_METHOD(imagickdraw, settextkerning)
 /* {{{ proto bool ImagickDraw::getTextInterwordSpacing()
 	Gets the text interword spacing
 */
-PHP_METHOD(imagickdraw, gettextinterwordspacing) 
+PHP_METHOD(ImagickDraw, getTextInterwordSpacing)
 {
 	php_imagickdraw_object *internd;
 
@@ -96,7 +96,7 @@ PHP_METHOD(imagickdraw, gettextinterwordspacing)
 /* {{{ proto bool ImagickDraw::setTextInterwordSpacing(float spacing)
 	Sets the text interword spacing
 */
-PHP_METHOD(imagickdraw, settextinterwordspacing) 
+PHP_METHOD(ImagickDraw, setTextInterwordSpacing)
 {
 	php_imagickdraw_object *internd;
 	double spacing;
@@ -116,7 +116,7 @@ PHP_METHOD(imagickdraw, settextinterwordspacing)
 /* {{{ proto bool ImagickDraw::getTextInterlineSpacing()
 	Gets the text interword spacing
 */
-PHP_METHOD(imagickdraw, gettextinterlinespacing)
+PHP_METHOD(ImagickDraw, getTextInterlineSpacing)
 {
 	php_imagickdraw_object *internd;
 
@@ -132,7 +132,7 @@ PHP_METHOD(imagickdraw, gettextinterlinespacing)
 /* {{{ proto bool ImagickDraw::setTextInterlineSpacing(float spacing)
 	Sets the text interword spacing
 */
-PHP_METHOD(imagickdraw, settextinterlinespacing)
+PHP_METHOD(ImagickDraw, setTextInterlineSpacing)
 {
 	php_imagickdraw_object *internd;
 	double spacing;
@@ -151,7 +151,7 @@ PHP_METHOD(imagickdraw, settextinterlinespacing)
 /* {{{ proto ImagickDraw ImagickDraw::__construct()
    The ImagickDraw constructor
 */
-PHP_METHOD(imagickdraw, __construct)
+PHP_METHOD(ImagickDraw, __construct)
 {
 	/* Empty constructor for possible future uses */
 
@@ -166,7 +166,7 @@ PHP_METHOD(imagickdraw, __construct)
 /* {{{ proto bool ImagickDraw::circle(float ox, float oy, float px, float py)
 	Draws a circle on the image.
 */
-PHP_METHOD(imagickdraw, circle)
+PHP_METHOD(ImagickDraw, circle)
 {
 	double ox, oy, px, py;
 	php_imagickdraw_object *internd;
@@ -186,7 +186,7 @@ PHP_METHOD(imagickdraw, circle)
 /* {{{ proto bool ImagickDraw::rectangle(float x1, float y1, float x2, float y2)
 	Draws a rectangle given two coordinates and using the current stroke, stroke width, and fill settings.
 */
-PHP_METHOD(imagickdraw, rectangle)
+PHP_METHOD(ImagickDraw, rectangle)
 {
 	double x1, y1, x2, y2;
 	php_imagickdraw_object *internd;
@@ -206,7 +206,7 @@ PHP_METHOD(imagickdraw, rectangle)
 /* {{{ proto bool ImagickDraw::roundRectangle(float x1, float y1, float x2, float y2, float rx, float ry)
 	Draws a rounted rectangle given two coordinates, x & y corner radiuses and using the current stroke, stroke width, and fill settings.
 */
-PHP_METHOD(imagickdraw, roundrectangle)
+PHP_METHOD(ImagickDraw, roundRectangle)
 {
 	double x1, y1, x2, y2, rx, ry;
 	php_imagickdraw_object *internd;
@@ -226,7 +226,7 @@ PHP_METHOD(imagickdraw, roundrectangle)
 /* {{{ proto bool ImagickDraw::ellipse(float ox, float oy, float rx, float ry, float start, float end)
 	Draws an ellipse on the image.
 */
-PHP_METHOD(imagickdraw, ellipse)
+PHP_METHOD(ImagickDraw, ellipse)
 {
 	double ox, oy, rx, ry, start, end;
 	php_imagickdraw_object *internd;
@@ -246,7 +246,7 @@ PHP_METHOD(imagickdraw, ellipse)
 /* {{{ proto bool ImagickDraw::skewX(float degrees)
 	Skews the current coordinate system in the horizontal direction.
 */
-PHP_METHOD(imagickdraw, skewx)
+PHP_METHOD(ImagickDraw, skewX)
 {
 	double degrees;
 	php_imagickdraw_object *internd;
@@ -266,7 +266,7 @@ PHP_METHOD(imagickdraw, skewx)
 /* {{{ proto bool ImagickDraw::skewY(float degrees)
 	Skews the current coordinate system in the vertical direction.
 */
-PHP_METHOD(imagickdraw, skewy)
+PHP_METHOD(ImagickDraw, skewY)
 {
 	double degrees;
 	php_imagickdraw_object *internd;
@@ -286,7 +286,7 @@ PHP_METHOD(imagickdraw, skewy)
 /* {{{ proto bool ImagickDraw::translate(float x, float y)
 	Applies a translation to the current coordinate system which moves the coordinate system origin to the specified coordinate.
 */
-PHP_METHOD(imagickdraw, translate)
+PHP_METHOD(ImagickDraw, translate)
 {
 	double x, y;
 	php_imagickdraw_object *internd;
@@ -306,7 +306,7 @@ PHP_METHOD(imagickdraw, translate)
 /* {{{ proto bool ImagickDraw::setFillColor(PixelWand fill_wand)
 	Sets the fill color to be used for drawing filled objects.
 */
-PHP_METHOD(imagickdraw, setfillcolor)
+PHP_METHOD(ImagickDraw, setFillColor)
 {
 	zval *param;
 	php_imagickdraw_object *internd;
@@ -334,7 +334,7 @@ PHP_METHOD(imagickdraw, setfillcolor)
 /* {{{ proto bool ImagickDraw::setResolution(float x, float y)
 	Sets the resolution
 */
-PHP_METHOD(imagickdraw, setresolution)
+PHP_METHOD(ImagickDraw, setResolution)
 {
 	char *density, *buf = NULL;
 	double x, y;
@@ -380,7 +380,7 @@ PHP_METHOD(imagickdraw, setresolution)
 /* {{{ proto bool ImagickDraw::setStrokeColor(PixelWand stroke_wand)
 	Sets the color used for stroking object outlines.
 */
-PHP_METHOD(imagickdraw, setstrokecolor)
+PHP_METHOD(ImagickDraw, setStrokeColor)
 {
 	zval *param;
 	php_imagickdraw_object *internd;
@@ -408,7 +408,7 @@ PHP_METHOD(imagickdraw, setstrokecolor)
 /* {{{ proto bool ImagickDraw::setFillAlpha(float opacity)
 	Sets the opacity to use when drawing using the fill color or fill texture. Fully opaque is 1.0.
 */
-PHP_METHOD(imagickdraw, setfillalpha)
+PHP_METHOD(ImagickDraw, setFillAlpha)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -430,10 +430,10 @@ PHP_METHOD(imagickdraw, setfillalpha)
 }
 /* }}} */
 
-/* {{{ proto bool ImagickDraw::getAntialias()
+/* {{{ proto bool ImagickDraw::settextantialias()
 	Returns the antialias property associated with the wand.
 */
-PHP_METHOD(imagickdraw, settextantialias)
+PHP_METHOD(ImagickDraw, setTextAntialias)
 {
 	php_imagickdraw_object *internd;
 	zend_bool antialias;
@@ -455,7 +455,7 @@ PHP_METHOD(imagickdraw, settextantialias)
 	Specify an empty string to set text encoding to the system's default. 
 	Successful text annotation using Unicode may require fonts designed to support Unicode.
 */
-PHP_METHOD(imagickdraw, settextencoding)
+PHP_METHOD(ImagickDraw, setTextEncoding)
 {
 	php_imagickdraw_object *internd;
 	char *encoding;
@@ -475,7 +475,7 @@ PHP_METHOD(imagickdraw, settextencoding)
 /* {{{ proto bool ImagickDraw::setStrokeAlpha(float opacity)
 	Specifies the opacity of stroked object outlines.
 */
-PHP_METHOD(imagickdraw, setstrokealpha)
+PHP_METHOD(ImagickDraw, setStrokeAlpha)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -500,7 +500,7 @@ PHP_METHOD(imagickdraw, setstrokealpha)
 /* {{{ proto bool ImagickDraw::setStrokeWidth(float stroke_width)
 	Sets the width of the stroke used to draw object outlines.
 */
-PHP_METHOD(imagickdraw, setstrokewidth)
+PHP_METHOD(ImagickDraw, setStrokeWidth)
 {
 	php_imagickdraw_object *internd;
 	double width;
@@ -519,7 +519,7 @@ PHP_METHOD(imagickdraw, setstrokewidth)
 /* {{{ proto bool ImagickDraw::setFont(string font_name)
 	Sets the fully-sepecified font to use when annotating with text.
 */
-PHP_METHOD(imagickdraw, setfont)
+PHP_METHOD(ImagickDraw, setFont)
 {
 	php_imagickdraw_object *internd;
 	char *font, *absolute;
@@ -574,7 +574,7 @@ PHP_METHOD(imagickdraw, setfont)
 /* {{{ proto bool ImagickDraw::setFontFamily(string font_family)
 	Sets the font family to use when annotating with text.
 */
-PHP_METHOD(imagickdraw, setfontfamily)
+PHP_METHOD(ImagickDraw, setFontFamily)
 {
 	php_imagickdraw_object *internd;
 	char *font_family;
@@ -612,7 +612,7 @@ PHP_METHOD(imagickdraw, setfontfamily)
 /* {{{ proto bool ImagickDraw::setFontSize(float pointsize)
 	Sets the font pointsize to use when annotating with text.
 */
-PHP_METHOD(imagickdraw, setfontsize)
+PHP_METHOD(ImagickDraw, setFontSize)
 {
 	php_imagickdraw_object *internd;
 	double font_size;
@@ -632,7 +632,7 @@ PHP_METHOD(imagickdraw, setfontsize)
 /* {{{ proto bool ImagickDraw::setFontStyle(int style)
 	Sets the font style to use when annotating with text. The AnyStyle enumeration acts as a wild-card "don't care" option.
 */
-PHP_METHOD(imagickdraw, setfontstyle)
+PHP_METHOD(ImagickDraw, setFontStyle)
 {
 	php_imagickdraw_object *internd;
 	im_long style_id = AnyStyle;
@@ -652,7 +652,7 @@ PHP_METHOD(imagickdraw, setfontstyle)
 /* {{{ proto bool ImagickDraw::setFontWeight(int font_weight)
 	Sets the font weight to use when annotating with text.
 */
-PHP_METHOD(imagickdraw, setfontweight)
+PHP_METHOD(ImagickDraw, setFontWeight)
 {
 	php_imagickdraw_object *internd;
 	im_long weight;
@@ -675,7 +675,7 @@ PHP_METHOD(imagickdraw, setfontweight)
 /* {{{ proto int ImagickDraw::getFontStretch(int fontStretch)
 	Gets the font stretch to use when annotating with text
 */
-PHP_METHOD(imagickdraw, getfontstretch)
+PHP_METHOD(ImagickDraw, getFontStretch)
 {
 	php_imagickdraw_object *internd;
 
@@ -687,7 +687,7 @@ PHP_METHOD(imagickdraw, getfontstretch)
 /* {{{ proto bool ImagickDraw::setFontStretch(int fontStretch)
 	Sets the font stretch to use when annotating with text. The AnyStretch enumeration acts as a wild-card "don't care" option.
 */
-PHP_METHOD(imagickdraw, setfontstretch)
+PHP_METHOD(ImagickDraw, setFontStretch)
 {
 	php_imagickdraw_object *internd;
 	im_long stretch;
@@ -707,7 +707,7 @@ PHP_METHOD(imagickdraw, setfontstretch)
 /* {{{ proto bool ImagickDraw::setStrokeAntialias(bool stroke_antialias)
 	Controls whether stroked outlines are antialiased. Stroked outlines are antialiased by default.  When antialiasing is disabled stroked pixels are thresholded to determine if the stroke color or underlying canvas color should be used.
 */
-PHP_METHOD(imagickdraw, setstrokeantialias)
+PHP_METHOD(ImagickDraw, setStrokeAntialias)
 {
 	php_imagickdraw_object *internd;
 	zend_bool antialias;
@@ -728,7 +728,7 @@ PHP_METHOD(imagickdraw, setstrokeantialias)
 /* {{{ proto bool ImagickDraw::setTextAlignment(int alignment)
 	Specifies a text alignment to be applied when annotating with text.
 */
-PHP_METHOD(imagickdraw, settextalignment)
+PHP_METHOD(ImagickDraw, setTextAlignment)
 {
 	php_imagickdraw_object *internd;
 	im_long align;
@@ -749,7 +749,7 @@ PHP_METHOD(imagickdraw, settextalignment)
 /* {{{ proto bool ImagickDraw::setTextDecoration(int decoration)
 	Specifies a decoration to be applied when annotating with text.
 */
-PHP_METHOD(imagickdraw, settextdecoration)
+PHP_METHOD(ImagickDraw, setTextDecoration)
 {
 	php_imagickdraw_object *internd;
 	im_long decoration;
@@ -769,7 +769,7 @@ PHP_METHOD(imagickdraw, settextdecoration)
 /* {{{ proto bool ImagickDraw::setTextUnderColor(PixelWand under_wand)
 	Specifies the color of a background rectangle to place under text annotations.
 */
-PHP_METHOD(imagickdraw, settextundercolor)
+PHP_METHOD(ImagickDraw, setTextUnderColor)
 {
 	zval *param;
 	php_imagickdraw_object *internd;
@@ -797,7 +797,7 @@ PHP_METHOD(imagickdraw, settextundercolor)
 /* {{{ proto bool ImagickDraw::setViewbox(float x1, float y1, float x2, float y2 )
 	Sets the overall canvas size to be recorded with the drawing vector data. Usually this will be specified using the same size as the canvas image. When the vector data is saved to SVG or MVG formats, the viewbox is use to specify the size of the canvas image that a viewer will render the vector data on.
 */
-PHP_METHOD(imagickdraw, setviewbox)
+PHP_METHOD(ImagickDraw, setViewbox)
 {
 	php_imagickdraw_object *internd;
 	im_long x1, y1, x2, y2;
@@ -816,7 +816,7 @@ PHP_METHOD(imagickdraw, setviewbox)
 /* {{{ proto string ImagickDraw::getFont()
 	Returns a string specifying the font used when annotating with text
 */
-PHP_METHOD(imagickdraw, getfont)
+PHP_METHOD(ImagickDraw, getFont)
 {
 	php_imagickdraw_object *internd;
 	char *font;
@@ -842,7 +842,7 @@ PHP_METHOD(imagickdraw, getfont)
 /* {{{ proto string ImagickDraw::getFontFamily()
 	Returns the font family to use when annotating with text. The value returned must be freed by the user when it is no longer needed.
 */
-PHP_METHOD(imagickdraw, getfontfamily)
+PHP_METHOD(ImagickDraw, getFontFamily)
 {
 	php_imagickdraw_object *internd;
 	char *font_family;
@@ -867,7 +867,7 @@ PHP_METHOD(imagickdraw, getfontfamily)
 /* {{{ proto float ImagickDraw::getFontSize()
 	Returns the font pointsize used when annotating with text.
 */
-PHP_METHOD(imagickdraw, getfontsize)
+PHP_METHOD(ImagickDraw, getFontSize)
 {
 	php_imagickdraw_object *internd;
 	double font_size;
@@ -887,7 +887,7 @@ PHP_METHOD(imagickdraw, getfontsize)
 /* {{{ proto int ImagickDraw::getFontStyle()
 	Returns the font style used when annotating with text.
 */
-PHP_METHOD(imagickdraw, getfontstyle)
+PHP_METHOD(ImagickDraw, getFontStyle)
 {
 	php_imagickdraw_object *internd;
 	long font_style;
@@ -907,7 +907,7 @@ PHP_METHOD(imagickdraw, getfontstyle)
 /* {{{ proto int ImagickDraw::getFontWeight()
 	Returns the font weight used when annotating with text.
 */
-PHP_METHOD(imagickdraw, getfontweight)
+PHP_METHOD(ImagickDraw, getFontWeight)
 {
 	php_imagickdraw_object *internd;
 	long weight;
@@ -927,7 +927,7 @@ PHP_METHOD(imagickdraw, getfontweight)
 /* {{{ proto bool ImagickDraw::clear()
 	Clears a DrawingWand resource of any accumulated commands, and resets the settings it contains to their defaults.
 */
-PHP_METHOD(imagickdraw, clear)
+PHP_METHOD(ImagickDraw, clear)
 {
 	php_imagickdraw_object *internd;
 
@@ -944,7 +944,7 @@ PHP_METHOD(imagickdraw, clear)
 /* {{{ proto int ImagickDraw::getTextDecoration()
 	Returns the decoration applied when annotating with text.
 */
-PHP_METHOD(imagickdraw, gettextdecoration)
+PHP_METHOD(ImagickDraw, getTextDecoration)
 {
 	php_imagickdraw_object *internd;
 	long decoration;
@@ -964,7 +964,7 @@ PHP_METHOD(imagickdraw, gettextdecoration)
 /* {{{ proto string ImagickDraw::getTextEncoding()
 	Returns a null-terminated string which specifies the code set used for text annotations. The string must be freed by the user once it is no longer required.
 */
-PHP_METHOD(imagickdraw, gettextencoding)
+PHP_METHOD(ImagickDraw, getTextEncoding)
 {
 	php_imagickdraw_object *internd;
 	char *encoding;
@@ -989,7 +989,7 @@ PHP_METHOD(imagickdraw, gettextencoding)
 /* {{{ proto bool ImagickDraw::annotation(float x, float y, string *text)
 	Draws text on the image.
 */
-PHP_METHOD(imagickdraw, annotation)
+PHP_METHOD(ImagickDraw, annotation)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -1023,7 +1023,7 @@ PHP_METHOD(imagickdraw, annotation)
 /* {{{ proto bool ImagickDraw::arc(float sx, float sy, float ex, float ey, float sd, float ed)
 	Draws an arc falling within a specified bounding rectangle on the image.
 */
-PHP_METHOD(imagickdraw, arc)
+PHP_METHOD(ImagickDraw, arc)
 {
 	double sx, sy, ex, ey, sd, ed;
 	php_imagickdraw_object *internd;
@@ -1045,7 +1045,7 @@ PHP_METHOD(imagickdraw, arc)
 /* {{{ proto bool ImagickDraw::matte(float x, float y, int paintMethod)
 	Paints on the image's opacity channel in order to set effected pixels to transparent. to influence the opacity of pixels. The available paint methods are:
 */
-PHP_METHOD(imagickdraw, matte)
+PHP_METHOD(ImagickDraw, matte)
 {
 	double x, y;
 	php_imagickdraw_object *internd;
@@ -1065,7 +1065,7 @@ PHP_METHOD(imagickdraw, matte)
 
 #else
 
-/* {{{ proto bool ImagickDraw::matte(float x, float y, int paintMethod)
+/* {{{ proto bool ImagickDraw::alpha(float x, float y, int paintMethod)
 	Paints on the image's alpha channel in order to set effected pixels to transparent. to influence the alpha of pixels. The available paint methods are:
     PointMethod: Select the target pixel
     ReplaceMethod: Select any pixel that matches the target pixel.
@@ -1074,7 +1074,7 @@ PHP_METHOD(imagickdraw, matte)
 border color.
     ResetMethod: Select all pixels.
 */
-PHP_METHOD(imagickdraw, alpha)
+PHP_METHOD(ImagickDraw, alpha)
 {
 	double x, y;
 	php_imagickdraw_object *internd;
@@ -1098,7 +1098,7 @@ PHP_METHOD(imagickdraw, alpha)
 /* {{{ proto bool ImagickDraw::polygon(array coordinates)
 	Draws a polygon using the current stroke, stroke width, and fill color or texture, using the specified array of coordinates.
 */
-PHP_METHOD(imagickdraw, polygon)
+PHP_METHOD(ImagickDraw, polygon)
 {
 	zval *coordinate_array;
 	php_imagickdraw_object *internd;
@@ -1129,7 +1129,7 @@ PHP_METHOD(imagickdraw, polygon)
 /* {{{ proto bool ImagickDraw::bezier(array coordinates)
 	Draws a bezier curve through a set of points on the image.
 */
-PHP_METHOD(imagickdraw, bezier)
+PHP_METHOD(ImagickDraw, bezier)
 {
 	zval *coordinate_array;
 	php_imagickdraw_object *internd;
@@ -1159,7 +1159,7 @@ PHP_METHOD(imagickdraw, bezier)
 /* {{{ proto bool ImagickDraw::point(float x, float y)
 	Draws a point using the current stroke color and stroke thickness at the specified coordinates.
 */
-PHP_METHOD(imagickdraw, point)
+PHP_METHOD(ImagickDraw, point)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -1179,7 +1179,7 @@ PHP_METHOD(imagickdraw, point)
 /* {{{ proto bool ImagickDraw::line(float sx, float sy, float ex, float ey)
 	Draws a line on the image using the current stroke color, stroke opacity, and stroke width.
 */
-PHP_METHOD(imagickdraw, line)
+PHP_METHOD(ImagickDraw, line)
 {
 	php_imagickdraw_object *internd;
 	double sx, sy, ex, ey;
@@ -1199,7 +1199,7 @@ PHP_METHOD(imagickdraw, line)
 /* {{{ proto ImagickDraw ImagickDraw::clone()
 	Makes an exact copy of the specified wand.
 */
-PHP_METHOD(imagickdraw, clone)
+PHP_METHOD(ImagickDraw, clone)
 {
 	php_imagickdraw_object *internd, *intern_return;
 	DrawingWand *tmp_wand;
@@ -1229,7 +1229,7 @@ PHP_METHOD(imagickdraw, clone)
 /* {{{ proto bool ImagickDraw::affine(array affine)
 	Adjusts the current affine transformation matrix with the specified affine transformation matrix. Note that the current affine transform is adjusted rather than replaced.
 */
-PHP_METHOD(imagickdraw, affine)
+PHP_METHOD(ImagickDraw, affine)
 {
 	php_imagickdraw_object *internd;
 	zval *affine_matrix;
@@ -1309,7 +1309,7 @@ PHP_METHOD(imagickdraw, affine)
 /* {{{ proto bool ImagickDraw::composite(int compose, float x, float y, float width, float height, MagickWand magick_wand)
 	Composites an image onto the current image, using the specified composition operator, specified position, and at the specified size.
 */
-PHP_METHOD(imagickdraw, composite)
+PHP_METHOD(ImagickDraw, composite)
 {
 	php_imagickdraw_object *internd;
 	php_imagick_object *intern;
@@ -1343,7 +1343,7 @@ PHP_METHOD(imagickdraw, composite)
 /* {{{ proto bool ImagickDraw::color(float x, float y, int paintMethod)
 	Draws color on image using the current fill color, starting at specified position, and using specified paint method. The available paint methods are:
 */
-PHP_METHOD(imagickdraw, color)
+PHP_METHOD(ImagickDraw, color)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -1364,7 +1364,7 @@ PHP_METHOD(imagickdraw, color)
 /* {{{ proto bool ImagickDraw::comment(string comment)
 	Adds a comment to a vector output stream.
 */
-PHP_METHOD(imagickdraw, comment)
+PHP_METHOD(ImagickDraw, comment)
 {
 	php_imagickdraw_object *internd;
 	char *comment;
@@ -1385,7 +1385,7 @@ PHP_METHOD(imagickdraw, comment)
 /* {{{ proto string ImagickDraw::getClipPath()
 	Obtains the current clipping path ID. The value returned must be deallocated by the user when it is no longer needed.
 */
-PHP_METHOD(imagickdraw, getclippath)
+PHP_METHOD(ImagickDraw, getClipPath)
 {
 	php_imagickdraw_object *internd;
 	char *clip_path;
@@ -1410,7 +1410,7 @@ PHP_METHOD(imagickdraw, getclippath)
 /* {{{ proto int ImagickDraw::getClipRule()
 	Returns the current polygon fill rule to be used by the clipping path.
 */
-PHP_METHOD(imagickdraw, getcliprule)
+PHP_METHOD(ImagickDraw, getClipRule)
 {
 	php_imagickdraw_object *internd;
 	long clip_rule;
@@ -1429,7 +1429,7 @@ PHP_METHOD(imagickdraw, getcliprule)
 /* {{{ proto int ImagickDraw::getClipUnits()
 	Returns the interpretation of clip path units.
 */
-PHP_METHOD(imagickdraw, getclipunits)
+PHP_METHOD(ImagickDraw, getClipUnits)
 {
 	php_imagickdraw_object *internd;
 	long units;
@@ -1448,7 +1448,7 @@ PHP_METHOD(imagickdraw, getclipunits)
 /* {{{ proto ImagickPixel ImagickDraw::getFillColor()
 	Returns the fill color used for drawing filled objects.
 */
-PHP_METHOD(imagickdraw, getfillcolor)
+PHP_METHOD(ImagickDraw, getFillColor)
 {
 	php_imagickpixel_object *internp;
 	php_imagickdraw_object *internd;
@@ -1474,7 +1474,7 @@ PHP_METHOD(imagickdraw, getfillcolor)
 /* {{{ proto float ImagickDraw::getFillOpacity()
 	Returns the opacity used when drawing using the fill color or fill texture.  Fully opaque is 1.0.
 */
-PHP_METHOD(imagickdraw, getfillopacity)
+PHP_METHOD(ImagickDraw, getFillOpacity)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -1493,7 +1493,7 @@ PHP_METHOD(imagickdraw, getfillopacity)
 /* {{{ proto int ImagickDraw::getFillRule(const DrawingWand *wand)
 	Returns the fill rule used while drawing polygons.
 */
-PHP_METHOD(imagickdraw, getfillrule)
+PHP_METHOD(ImagickDraw, getFillRule)
 {
 	php_imagickdraw_object *internd;
 	long fill_rule;
@@ -1512,7 +1512,7 @@ PHP_METHOD(imagickdraw, getfillrule)
 /* {{{ proto int ImagickDraw::getGravity()
 	Returns the text placement gravity used when annotating with text.
 */
-PHP_METHOD(imagickdraw, getgravity)
+PHP_METHOD(ImagickDraw, getGravity)
 {
 	php_imagickdraw_object *internd;
 	long gravity;
@@ -1531,7 +1531,7 @@ PHP_METHOD(imagickdraw, getgravity)
 /* {{{ proto bool ImagickDraw::getStrokeAntialias()
 	Returns the current stroke antialias setting. Stroked outlines are antialiased by default.  When antialiasing is disabled stroked pixels are thresholded to determine if the stroke color or underlying canvas color should be used.
 */
-PHP_METHOD(imagickdraw, getstrokeantialias)
+PHP_METHOD(ImagickDraw, getStrokeAntialias)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -1554,7 +1554,7 @@ PHP_METHOD(imagickdraw, getstrokeantialias)
 /* {{{ proto ImagickPixel ImagickDraw::getStrokeColor(PixelWand stroke_color)
 	Returns the color used for stroking object outlines.
 */
-PHP_METHOD(imagickdraw, getstrokecolor)
+PHP_METHOD(ImagickDraw, getStrokeColor)
 {
 	php_imagickpixel_object *internp;
 	php_imagickdraw_object *internd;
@@ -1580,7 +1580,7 @@ PHP_METHOD(imagickdraw, getstrokecolor)
 /* {{{ proto array ImagickDraw::getStrokeDashArray()
 	Returns an array representing the pattern of dashes and gaps used to stroke paths (see DrawSetStrokeDashArray). The array must be freed once it is no longer required by the user.
 */
-PHP_METHOD(imagickdraw, getstrokedasharray)
+PHP_METHOD(ImagickDraw, getStrokeDashArray)
 {
 	php_imagickdraw_object *internd;
 	double *stroke_array;
@@ -1608,7 +1608,7 @@ PHP_METHOD(imagickdraw, getstrokedasharray)
 /* {{{ proto bool ImagickDraw::setStrokeDashArray(array dashArray)
 	Specifies the pattern of dashes and gaps used to stroke paths. The strokeDashArray represents an array of numbers that specify the lengths of alternating dashes and gaps in pixels. If an odd number of values is provided, then the list of values is repeated to yield an even number of values. To remove an existing dash array, pass a zero number_elements argument and null dash_array. A typical strokeDashArray_ array might contain the members 5 3 2.
 */
-PHP_METHOD(imagickdraw, setstrokedasharray)
+PHP_METHOD(ImagickDraw, setStrokeDashArray)
 {
 	zval *param_array;
 	double *double_array;
@@ -1639,7 +1639,7 @@ PHP_METHOD(imagickdraw, setstrokedasharray)
 /* {{{ proto float ImagickDraw::getStrokeDashOffset()
 	Returns the offset into the dash pattern to start the dash.
 */
-PHP_METHOD(imagickdraw, getstrokedashoffset)
+PHP_METHOD(ImagickDraw, getStrokeDashOffset)
 {
 	php_imagickdraw_object *internd;
 	double offset;
@@ -1658,7 +1658,7 @@ PHP_METHOD(imagickdraw, getstrokedashoffset)
 /* {{{ proto int ImagickDraw::getStrokeLineCap()
 	Returns the shape to be used at the end of open subpaths when they are stroked. Values of LineCap are UndefinedCap, ButtCap, RoundCap, and SquareCap.
 */
-PHP_METHOD(imagickdraw, getstrokelinecap)
+PHP_METHOD(ImagickDraw, getStrokeLineCap)
 {
 	php_imagickdraw_object *internd;
 	long line_cap;
@@ -1677,7 +1677,7 @@ PHP_METHOD(imagickdraw, getstrokelinecap)
 /* {{{ proto int ImagickDraw::getStrokeLineJoin()
 	Returns the shape to be used at the corners of paths (or other vector shapes) when they are stroked. Values of LineJoin are UndefinedJoin, MiterJoin, RoundJoin, and BevelJoin.
 */
-PHP_METHOD(imagickdraw, getstrokelinejoin)
+PHP_METHOD(ImagickDraw, getStrokeLineJoin)
 {
 	php_imagickdraw_object *internd;
 	long line_join;
@@ -1696,7 +1696,7 @@ PHP_METHOD(imagickdraw, getstrokelinejoin)
 /* {{{ proto int ImagickDraw::getStrokeMiterLimit()
 	Returns the miter limit. When two line segments meet at a sharp angle and miter joins have been specified for 'lineJoin', it is possible for the miter to extend far beyond the thickness of the line stroking the path. The miterLimit' imposes a limit on the ratio of the miter length to the 'lineWidth'.
 */
-PHP_METHOD(imagickdraw, getstrokemiterlimit)
+PHP_METHOD(ImagickDraw, getStrokeMiterLimit)
 {
 	php_imagickdraw_object *internd;
 	unsigned long miter_limit;
@@ -1715,7 +1715,7 @@ PHP_METHOD(imagickdraw, getstrokemiterlimit)
 /* {{{ proto float ImagickDraw::getStrokeOpacity()
 	Returns the opacity of stroked object outlines.
 */
-PHP_METHOD(imagickdraw, getstrokeopacity)
+PHP_METHOD(ImagickDraw, getStrokeOpacity)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -1734,7 +1734,7 @@ PHP_METHOD(imagickdraw, getstrokeopacity)
 /* {{{ proto float ImagickDraw::getStrokeWidth()
 	Returns the width of the stroke used to draw object outlines.
 */
-PHP_METHOD(imagickdraw, getstrokewidth)
+PHP_METHOD(ImagickDraw, getStrokeWidth)
 {
 	php_imagickdraw_object *internd;
 	double width;
@@ -1753,7 +1753,7 @@ PHP_METHOD(imagickdraw, getstrokewidth)
 /* {{{ proto int ImagickDraw::getTextAlignment()
 	Returns the alignment applied when annotating with text.
 */
-PHP_METHOD(imagickdraw, gettextalignment)
+PHP_METHOD(ImagickDraw, getTextAlignment)
 {
 	php_imagickdraw_object *internd;
 	long align_type;
@@ -1772,7 +1772,7 @@ PHP_METHOD(imagickdraw, gettextalignment)
 /* {{{ proto bool ImagickDraw::getTextAntialias()
 	Returns the current text antialias setting, which determines whether text is antialiased.  Text is antialiased by default.
 */
-PHP_METHOD(imagickdraw, gettextantialias)
+PHP_METHOD(ImagickDraw, getTextAntialias)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -1795,7 +1795,7 @@ PHP_METHOD(imagickdraw, gettextantialias)
 /* {{{ proto string ImagickDraw::getVectorGraphics()
 	Returns a null-terminated string which specifies the vector graphics generated by any graphics calls made since the wand was instantiated.  The string must be freed by the user once it is no longer required.
 */
-PHP_METHOD(imagickdraw, getvectorgraphics)
+PHP_METHOD(ImagickDraw, getVectorGraphics)
 {
 	php_imagickdraw_object *internd;
 	char *vector;
@@ -1817,7 +1817,7 @@ PHP_METHOD(imagickdraw, getvectorgraphics)
 /* {{{ proto ImagickPixel ImagickDraw::getTextUnderColor(PixelWand under_color)
 	Returns the color of a background rectangle to place under text annotations.
 */
-PHP_METHOD(imagickdraw, gettextundercolor)
+PHP_METHOD(ImagickDraw, getTextUnderColor)
 {
 	php_imagickpixel_object *internp;
 	php_imagickdraw_object *internd;
@@ -1848,7 +1848,7 @@ PHP_METHOD(imagickdraw, gettextundercolor)
 /* {{{ proto bool ImagickDraw::pathClose()
 	Adds a path element to the current path which closes the current subpath by drawing a straight line from the current point to the current subpath's most recent starting point (usually, the most recent moveto point).
 */
-PHP_METHOD(imagickdraw, pathclose)
+PHP_METHOD(ImagickDraw, pathClose)
 {
 	php_imagickdraw_object *internd;
 
@@ -1865,7 +1865,7 @@ PHP_METHOD(imagickdraw, pathclose)
 /* {{{ proto bool ImagickDraw::pathCurveToAbsolute(float x1, float y1, float x2, float y2, float x, float y)
 	Draws a cubic Bezier curve from the current point to (x,y) using (x1,y1) as the control point at the beginning of the curve and (x2,y2) as the control point at the end of the curve using absolute coordinates. At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetoabsolute)
+PHP_METHOD(ImagickDraw, pathCurveToAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x2, y2, x, y;
@@ -1885,7 +1885,7 @@ PHP_METHOD(imagickdraw, pathcurvetoabsolute)
 /* {{{ proto bool ImagickDraw::pathCurveToRelative(float x1, float y1, float x2, float y2, float x, float y)
 	Draws a cubic Bezier curve from the current point to (x,y) using (x1,y1) as the control point at the beginning of the curve and (x2,y2) as the control point at the end of the curve using relative coordinates. At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetorelative)
+PHP_METHOD(ImagickDraw, pathCurveToRelative)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x2, y2, x, y;
@@ -1905,7 +1905,7 @@ PHP_METHOD(imagickdraw, pathcurvetorelative)
 /* {{{ proto bool ImagickDraw::pathCurveToQuadraticBezierAbsolute(float x1, float y1, float x, float y)
 	Draws a quadratic Bezier curve from the current point to (x,y) using (x1,y1) as the control point using absolute coordinates. At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetoquadraticbezierabsolute)
+PHP_METHOD(ImagickDraw, pathCurveToQuadraticBezierAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x, y;
@@ -1925,7 +1925,7 @@ PHP_METHOD(imagickdraw, pathcurvetoquadraticbezierabsolute)
 /* {{{ proto bool ImagickDraw::pathCurveToQuadraticBezierRelative(float x1, float y1, float x, float y)
 	Draws a quadratic Bezier curve from the current point to (x,y) using (x1,y1) as the control point using relative coordinates. At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetoquadraticbezierrelative)
+PHP_METHOD(ImagickDraw, pathCurveToQuadraticBezierRelative)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x, y;
@@ -1945,7 +1945,7 @@ PHP_METHOD(imagickdraw, pathcurvetoquadraticbezierrelative)
 /* {{{ proto bool ImagickDraw::pathCurveToQuadraticBezierSmoothAbsolute(float x, float y)
 	Draws a quadratic Bezier curve (using relative coordinates) from the current point to (x,y). The control point is assumed to be the reflection of the control point on the previous command relative to the current point. (If there is no previous command or if the previous command was not a DrawPathCurveToQuadraticBezierAbsolute, DrawPathCurveToQuadraticBezierRelative, DrawPathCurveToQuadraticBezierSmoothAbsolut or DrawPathCurveToQuadraticBezierSmoothRelative, assume the control point is coincident with the current point.). At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetoquadraticbeziersmoothabsolute)
+PHP_METHOD(ImagickDraw, pathCurveToQuadraticBezierSmoothAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -1965,7 +1965,7 @@ PHP_METHOD(imagickdraw, pathcurvetoquadraticbeziersmoothabsolute)
 /* {{{ proto bool ImagickDraw::pathCurveToQuadraticBezierSmoothRelative(float x, float y)
 	Draws a quadratic Bezier curve (using relative coordinates) from the current point to (x, y). The control point is assumed to be the reflection of the control point on the previous command relative to the current point. (If there is no previous command or if the previous command was not a DrawPathCurveToQuadraticBezierAbsolute, DrawPathCurveToQuadraticBezierRelative, DrawPathCurveToQuadraticBezierSmoothAbsolut or DrawPathCurveToQuadraticBezierSmoothRelative, assume the control point is coincident with the current point). At the end of the command, the new current point becomes the final (x, y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetoquadraticbeziersmoothrelative)
+PHP_METHOD(ImagickDraw, pathCurveToQuadraticBezierSmoothRelative)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -1985,7 +1985,7 @@ PHP_METHOD(imagickdraw, pathcurvetoquadraticbeziersmoothrelative)
 /* {{{ proto bool ImagickDraw::pathCurveToSmoothAbsolute(float x2, float y2, float x, float y)
 	Draws a cubic Bezier curve from the current point to (x,y) using absolute coordinates. The first control point is assumed to be the reflection of the second control point on the previous command relative to the current point. (If there is no previous command or if the previous command was not an DrawPathCurveToAbsolute, DrawPathCurveToRelative, DrawPathCurveToSmoothAbsolute or DrawPathCurveToSmoothRelative, assume the first control point is coincident with the current point.) (x2,y2) is the second control point (i.e., the control point at the end of the curve). At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetosmoothabsolute)
+PHP_METHOD(ImagickDraw, pathCurveToSmoothAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x, y;
@@ -2005,7 +2005,7 @@ PHP_METHOD(imagickdraw, pathcurvetosmoothabsolute)
 /* {{{ proto bool ImagickDraw::pathCurveToSmoothRelative(float x2, float y2, float x, float y)
 	Draws a cubic Bezier curve from the current point to (x,y) using relative coordinates. The first control point is assumed to be the reflection of the second control point on the previous command relative to the current point. (If there is no previous command or if the previous command was not an DrawPathCurveToAbsolute, DrawPathCurveToRelative, DrawPathCurveToSmoothAbsolute or DrawPathCurveToSmoothRelative, assume the first control point is coincident with the current point.) (x2,y2) is the second control point (i.e., the control point at the end of the curve). At the end of the command, the new current point becomes the final (x,y) coordinate pair used in the polybezier.
 */
-PHP_METHOD(imagickdraw, pathcurvetosmoothrelative)
+PHP_METHOD(ImagickDraw, pathCurveToSmoothRelative)
 {
 	php_imagickdraw_object *internd;
 	double x1, y1, x, y;
@@ -2025,7 +2025,7 @@ PHP_METHOD(imagickdraw, pathcurvetosmoothrelative)
 /* {{{ proto bool ImagickDraw::pathEllipticArcAbsolute(float rx, float ry, float x_axis_rotation, bool large_arc_flag, bool sweep_flag, float x, float y)
 	Draws an elliptical arc from the current point to (x, y) using absolute coordinates. The size and orientation of the ellipse are defined by two radii (rx, ry) and an xAxisRotation, which indicates how the ellipse as a whole is rotated relative to the current coordinate system. The center (cx, cy) of the ellipse is calculated automatically to satisfy the constraints imposed by the other parameters. largeArcFlag and sweepFlag contribute to the automatic calculations and help determine how the arc is drawn. If largeArcFlag is true then draw the larger of the available arcs. If sweepFlag is true, then draw the arc matching a clock-wise rotation.
 */
-PHP_METHOD(imagickdraw, pathellipticarcabsolute)
+PHP_METHOD(ImagickDraw, pathEllipticArcAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double rx, ry, x_axis_rotation, x, y;
@@ -2046,7 +2046,7 @@ PHP_METHOD(imagickdraw, pathellipticarcabsolute)
 /* {{{ proto bool ImagickDraw::pathEllipticArcRelative(float rx, float ry, float x_axis_rotation, bool large_arc_flag, bool sweep_flag, float x, float y)
 	Draws an elliptical arc from the current point to (x, y) using relative coordinates. The size and orientation of the ellipse are defined by two radii (rx, ry) and an xAxisRotation, which indicates how the ellipse as a whole is rotated relative to the current coordinate system. The center (cx, cy) of the ellipse is calculated automatically to satisfy the constraints imposed by the other parameters. largeArcFlag and sweepFlag contribute to the automatic calculations and help determine how the arc is drawn. If largeArcFlag is true then draw the larger of the available arcs. If sweepFlag is true, then draw the arc matching a clock-wise rotation.
 */
-PHP_METHOD(imagickdraw, pathellipticarcrelative)
+PHP_METHOD(ImagickDraw, pathEllipticArcRelative)
 {
 	php_imagickdraw_object *internd;
 	double rx, ry, x_axis_rotation, x, y;
@@ -2067,7 +2067,7 @@ PHP_METHOD(imagickdraw, pathellipticarcrelative)
 /* {{{ proto bool ImagickDraw::pathFinish()
 	Terminates the current path.
 */
-PHP_METHOD(imagickdraw, pathfinish)
+PHP_METHOD(ImagickDraw, pathFinish)
 {
 	php_imagickdraw_object *internd;
 
@@ -2084,7 +2084,7 @@ PHP_METHOD(imagickdraw, pathfinish)
 /* {{{ proto bool ImagickDraw::pathLineToAbsolute(float x, float y)
 	Draws a line path from the current point to the given coordinate using absolute coordinates. The coordinate then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetoabsolute)
+PHP_METHOD(ImagickDraw, pathLineToAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2104,7 +2104,7 @@ PHP_METHOD(imagickdraw, pathlinetoabsolute)
 /* {{{ proto bool ImagickDraw::pathLineToRelative(float x, float y)
 	Draws a line path from the current point to the given coordinate using relative coordinates. The coordinate then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetorelative)
+PHP_METHOD(ImagickDraw, pathLineToRelative)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2124,7 +2124,7 @@ PHP_METHOD(imagickdraw, pathlinetorelative)
 /* {{{ proto bool ImagickDraw::pathLineToHorizontalAbsolute(float x)
 	Draws a horizontal line path from the current point to the target point using absolute coordinates.  The target point then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetohorizontalabsolute)
+PHP_METHOD(ImagickDraw, pathLineToHorizontalAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double y;
@@ -2144,7 +2144,7 @@ PHP_METHOD(imagickdraw, pathlinetohorizontalabsolute)
 /* {{{ proto bool ImagickDraw::pathLineToHorizontalRelative(float x)
 	Draws a horizontal line path from the current point to the target point using relative coordinates.  The target point then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetohorizontalrelative)
+PHP_METHOD(ImagickDraw, pathLineToHorizontalRelative)
 {
 	php_imagickdraw_object *internd;
 	double x;
@@ -2164,7 +2164,7 @@ PHP_METHOD(imagickdraw, pathlinetohorizontalrelative)
 /* {{{ proto bool ImagickDraw::pathLineToVerticalAbsolute(float y)
 	Draws a vertical line path from the current point to the target point using absolute coordinates.  The target point then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetoverticalabsolute)
+PHP_METHOD(ImagickDraw, pathLineToVerticalAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double y;
@@ -2184,7 +2184,7 @@ PHP_METHOD(imagickdraw, pathlinetoverticalabsolute)
 /* {{{ proto bool ImagickDraw::pathLineToVerticalRelative(float y)
 	Draws a vertical line path from the current point to the target point using relative coordinates.  The target point then becomes the new current point.
 */
-PHP_METHOD(imagickdraw, pathlinetoverticalrelative)
+PHP_METHOD(ImagickDraw, pathLineToVerticalRelative)
 {
 	php_imagickdraw_object *internd;
 	double y;
@@ -2204,7 +2204,7 @@ PHP_METHOD(imagickdraw, pathlinetoverticalrelative)
 /* {{{ proto bool ImagickDraw::pathMoveToAbsolute(float x, float y)
 	Starts a new sub-path at the given coordinate using absolute coordinates. The current point then becomes the specified coordinate.
 */
-PHP_METHOD(imagickdraw, pathmovetoabsolute)
+PHP_METHOD(ImagickDraw, pathMoveToAbsolute)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2224,7 +2224,7 @@ PHP_METHOD(imagickdraw, pathmovetoabsolute)
 /* {{{ proto bool ImagickDraw::pathMoveToRelative(float x, float y)
 	Starts a new sub-path at the given coordinate using relative coordinates. The current point then becomes the specified coordinate.
 */
-PHP_METHOD(imagickdraw, pathmovetorelative)
+PHP_METHOD(ImagickDraw, pathMoveToRelative)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2244,7 +2244,7 @@ PHP_METHOD(imagickdraw, pathmovetorelative)
 /* {{{ proto bool ImagickDraw::pathStart()
 	Declares the start of a path drawing list which is terminated by a matching DrawPathFinish() command. All other DrawPath commands must be enclosed between a and a DrawPathFinish() command. This is because path drawing commands are subordinate commands and they do not function by themselves.
 */
-PHP_METHOD(imagickdraw, pathstart)
+PHP_METHOD(ImagickDraw, pathStart)
 {
 	php_imagickdraw_object *internd;
 
@@ -2261,7 +2261,7 @@ PHP_METHOD(imagickdraw, pathstart)
 /* {{{ proto bool ImagickDraw::polyline(array coordinates)
 	Draws a polyline using the current stroke, stroke width, and fill color or texture, using the specified array of coordinates.
 */
-PHP_METHOD(imagickdraw, polyline)
+PHP_METHOD(ImagickDraw, polyline)
 {
 	zval *coordinate_array;
 	php_imagickdraw_object *internd;
@@ -2292,7 +2292,7 @@ PHP_METHOD(imagickdraw, polyline)
 /* {{{ proto bool ImagickDraw::popClipPath()
 	Terminates a clip path definition.
 */
-PHP_METHOD(imagickdraw, popclippath)
+PHP_METHOD(ImagickDraw, popClipPath)
 {
 	php_imagickdraw_object *internd;
 
@@ -2309,7 +2309,7 @@ PHP_METHOD(imagickdraw, popclippath)
 /* {{{ proto bool ImagickDraw::popDefs()
 	Terminates a definition list
 */
-PHP_METHOD(imagickdraw, popdefs)
+PHP_METHOD(ImagickDraw, popDefs)
 {
 	php_imagickdraw_object *internd;
 
@@ -2326,7 +2326,7 @@ PHP_METHOD(imagickdraw, popdefs)
 /* {{{ proto bool ImagickDraw::popPattern()
 	Terminates a pattern definition.
 */
-PHP_METHOD(imagickdraw, poppattern)
+PHP_METHOD(ImagickDraw, popPattern)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -2348,7 +2348,7 @@ PHP_METHOD(imagickdraw, poppattern)
 /* {{{ proto bool ImagickDraw::pushClipPath(string clip_mask_id)
 	Starts a clip path definition which is comprized of any number of drawing commands and terminated by a DrawPopClipPath() command.
 */
-PHP_METHOD(imagickdraw, pushclippath)
+PHP_METHOD(ImagickDraw, pushClipPath)
 {
 	php_imagickdraw_object *internd;
 	char *clip_mask;
@@ -2369,7 +2369,7 @@ PHP_METHOD(imagickdraw, pushclippath)
 /* {{{ proto bool ImagickDraw::pushDefs()
 	Indicates that commands up to a terminating DrawPopDefs() command create named elements (e.g. clip-paths, textures, etc.) which may safely be processed earlier for the sake of efficiency.
 */
-PHP_METHOD(imagickdraw, pushdefs)
+PHP_METHOD(ImagickDraw, pushDefs)
 {
 	php_imagickdraw_object *internd;
 
@@ -2386,7 +2386,7 @@ PHP_METHOD(imagickdraw, pushdefs)
 /* {{{ proto bool ImagickDraw::pushPattern(string pattern_id, float x, float y, float width, float height)
 	Indicates that subsequent commands up to a DrawPopPattern() command comprise the definition of a named pattern. The pattern space is assigned top left corner coordinates, a width and height, and becomes its own drawing space.  Anything which can be drawn may be used in a pattern definition. Named patterns may be used as stroke or brush definitions.
 */
-PHP_METHOD(imagickdraw, pushpattern)
+PHP_METHOD(ImagickDraw, pushPattern)
 {	
 	php_imagickdraw_object *internd;
 	char *pattern_id;
@@ -2408,7 +2408,7 @@ PHP_METHOD(imagickdraw, pushpattern)
 /* {{{ proto bool ImagickDraw::render()
 	Renders all preceding drawing commands.
 */
-PHP_METHOD(imagickdraw, render)
+PHP_METHOD(ImagickDraw, render)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -2440,7 +2440,7 @@ PHP_METHOD(imagickdraw, render)
 /* {{{ proto bool ImagickDraw::rotate(float degrees)
 	Applies the specified rotation to the current coordinate space.
 */
-PHP_METHOD(imagickdraw, rotate)
+PHP_METHOD(ImagickDraw, rotate)
 {
 	php_imagickdraw_object *internd;
 	double degrees;
@@ -2460,7 +2460,7 @@ PHP_METHOD(imagickdraw, rotate)
 /* {{{ proto bool ImagickDraw::scale(float x, float y)
 	Adjusts the scaling factor to apply in the horizontal and vertical directions to the current coordinate space.
 */
-PHP_METHOD(imagickdraw, scale)
+PHP_METHOD(ImagickDraw, scale)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2480,7 +2480,7 @@ PHP_METHOD(imagickdraw, scale)
 /* {{{ proto bool ImagickDraw::setClipPath(string clip_mask)
 	Associates a named clipping path with the image.  Only the areas drawn on by the clipping path will be modified as long as it remains in effect.
 */
-PHP_METHOD(imagickdraw, setclippath)
+PHP_METHOD(ImagickDraw, setClipPath)
 {
 	php_imagickdraw_object *internd;
 	char *clip_mask;
@@ -2506,7 +2506,7 @@ PHP_METHOD(imagickdraw, setclippath)
 /* {{{ proto bool ImagickDraw::setClipRule(int fill_rule)
 	Set the polygon fill rule to be used by the clipping path.
 */
-PHP_METHOD(imagickdraw, setcliprule)
+PHP_METHOD(ImagickDraw, setClipRule)
 {
 	php_imagickdraw_object *internd;
 	im_long fill_rule;
@@ -2526,7 +2526,7 @@ PHP_METHOD(imagickdraw, setcliprule)
 /* {{{ proto bool ImagickDraw::setClipUnits(int clip_units)
 	Sets the interpretation of clip path units.
 */
-PHP_METHOD(imagickdraw, setclipunits)
+PHP_METHOD(ImagickDraw, setClipUnits)
 {	
 	php_imagickdraw_object *internd;
 	im_long units;
@@ -2546,7 +2546,7 @@ PHP_METHOD(imagickdraw, setclipunits)
 /* {{{ proto bool ImagickDraw::setFillOpacity(float fillOpacity)
 	Sets the opacity to use when drawing using the fill color or fill texture.  Fully opaque is 1.0.
 */
-PHP_METHOD(imagickdraw, setfillopacity)
+PHP_METHOD(ImagickDraw, setFillOpacity)
 {
 	php_imagickdraw_object *internd;
 	double fillOpacity;
@@ -2563,11 +2563,11 @@ PHP_METHOD(imagickdraw, setfillopacity)
 }
 /* }}} */
 
-/* {{{ proto bool ImagickDraw::setFillPatternURL(string fill_url)
+/* {{{ proto bool ImagickDraw::setFillPatternUrl(string fill_url)
 	Sets the URL to use as a fill pattern for filling objects. Only local URLs ("#identifier") are supported at this time.
 	These local URLs are normally created by defining a named fill pattern with DrawPushPattern/DrawPopPattern.
 */
-PHP_METHOD(imagickdraw, setfillpatternurl)
+PHP_METHOD(ImagickDraw, setFillPatternUrl)
 {
 	php_imagickdraw_object *internd;
 	char *url;
@@ -2593,7 +2593,7 @@ PHP_METHOD(imagickdraw, setfillpatternurl)
 /* {{{ proto bool ImagickDraw::setFillRule(int fill_rule)
 	Sets the fill rule to use while drawing polygons.
 */
-PHP_METHOD(imagickdraw, setfillrule)
+PHP_METHOD(ImagickDraw, setFillRule)
 {
 	php_imagickdraw_object *internd;
 	im_long fill_rule;
@@ -2613,7 +2613,7 @@ PHP_METHOD(imagickdraw, setfillrule)
 /* {{{ proto bool ImagickDraw::setGravity(int gravity)
 	Sets the text placement gravity to use when annotating with text.
 */
-PHP_METHOD(imagickdraw, setgravity)
+PHP_METHOD(ImagickDraw, setGravity)
 {
 	php_imagickdraw_object *internd;
 	im_long gravity;
@@ -2630,10 +2630,10 @@ PHP_METHOD(imagickdraw, setgravity)
 }
 /* }}} */
 
-/* {{{ proto bool ImagickDraw::setStrokePatternURL(string stroke_url)
+/* {{{ proto bool ImagickDraw::setStrokePatternUrl(string stroke_url)
 	Sets the pattern used for stroking object outlines.
 */
-PHP_METHOD(imagickdraw, setstrokepatternurl)
+PHP_METHOD(ImagickDraw, setStrokePatternUrl)
 {
 	php_imagickdraw_object *internd;
 	char *url;
@@ -2659,7 +2659,7 @@ PHP_METHOD(imagickdraw, setstrokepatternurl)
 /* {{{ proto bool ImagickDraw::setStrokeDashOffset(float dash_offset)
 	Specifies the offset into the dash pattern to start the dash.
 */
-PHP_METHOD(imagickdraw, setstrokedashoffset)
+PHP_METHOD(ImagickDraw, setStrokeDashOffset)
 {
 	php_imagickdraw_object *internd;
 	double offset;
@@ -2679,7 +2679,7 @@ PHP_METHOD(imagickdraw, setstrokedashoffset)
 /* {{{ proto bool ImagickDraw::setStrokeLineCap(int linecap)
 	Specifies the shape to be used at the end of open subpaths when they are stroked. Values of LineCap are UndefinedCap, ButtCap, RoundCap, and SquareCap.
 */
-PHP_METHOD(imagickdraw, setstrokelinecap)
+PHP_METHOD(ImagickDraw, setStrokeLineCap)
 {
 	php_imagickdraw_object *internd;
 	im_long line_cap;
@@ -2699,7 +2699,7 @@ PHP_METHOD(imagickdraw, setstrokelinecap)
 /* {{{ proto bool ImagickDraw::setStrokeLineJoin(int linejoin)
 	Specifies the shape to be used at the corners of paths (or other vector shapes) when they are stroked. Values of LineJoin are UndefinedJoin, MiterJoin, RoundJoin, and BevelJoin.
 */
-PHP_METHOD(imagickdraw, setstrokelinejoin)
+PHP_METHOD(ImagickDraw, setStrokeLineJoin)
 {	
 	php_imagickdraw_object *internd;
 	im_long line_join;
@@ -2719,7 +2719,7 @@ PHP_METHOD(imagickdraw, setstrokelinejoin)
 /* {{{ proto bool ImagickDraw::setStrokeMiterLimit(int miterlimit)
 	Specifies the miter limit. When two line segments meet at a sharp angle and miter joins have been specified for 'lineJoin', it is possible for the miter to extend far beyond the thickness of the line stroking the path. The miterLimit' imposes a limit on the ratio of the miter length to the 'lineWidth'.
 */
-PHP_METHOD(imagickdraw, setstrokemiterlimit)
+PHP_METHOD(ImagickDraw, setStrokeMiterLimit)
 {
 	php_imagickdraw_object *internd;
 	im_long miter_limit;
@@ -2739,7 +2739,7 @@ PHP_METHOD(imagickdraw, setstrokemiterlimit)
 /* {{{ proto bool ImagickDraw::setStrokeOpacity(float stroke_opacity)
 	Specifies the opacity of stroked object outlines.
 */
-PHP_METHOD(imagickdraw, setstrokeopacity)
+PHP_METHOD(ImagickDraw, setStrokeOpacity)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -2759,7 +2759,7 @@ PHP_METHOD(imagickdraw, setstrokeopacity)
 /* {{{ proto bool ImagickDraw::setVectorGraphics(string xml)
 	Sets the vector graphics associated with the specified wand.  Use this method with DrawGetVectorGraphics() as a method to persist the vector graphics state.
 */
-PHP_METHOD(imagickdraw, setvectorgraphics)
+PHP_METHOD(ImagickDraw, setVectorGraphics)
 {
 	php_imagickdraw_object *internd;
 	char *vector;
@@ -2785,7 +2785,7 @@ PHP_METHOD(imagickdraw, setvectorgraphics)
 /* {{{ proto bool ImagickDraw::pop()
 	Destroys the current DrawingWand in the stack, and returns to the previously pushed DrawingWand. Multiple DrawingWands may exist. It is an error to attempt to pop more DrawingWands than have been pushed, and it is proper form to pop all DrawingWands which have been pushed.
 */
-PHP_METHOD(imagickdraw, pop)
+PHP_METHOD(ImagickDraw, pop)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -2808,7 +2808,7 @@ PHP_METHOD(imagickdraw, pop)
 /* {{{ proto bool ImagickDraw::push()
 	Clones the current DrawingWand to create a new DrawingWand, which is then added to the DrawingWand stack. The original drawing DrawingWand(s) may be returned to by invoking PopDrawingWand(). The DrawingWands are stored on a DrawingWand stack. For every Pop there must have already been an equivalent Push.
 */
-PHP_METHOD(imagickdraw, push)
+PHP_METHOD(ImagickDraw, push)
 {
 	php_imagickdraw_object *internd;
 	MagickBooleanType status;
@@ -2832,7 +2832,7 @@ PHP_METHOD(imagickdraw, push)
 /* {{{ proto float ImagickDraw::getOpacity()
 	Returns the opacity used when drawing with the fill or stroke color or texture. Fully opaque is 1.0.
 */
-PHP_METHOD(imagickdraw, getopacity)
+PHP_METHOD(ImagickDraw, getOpacity)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -2851,7 +2851,7 @@ PHP_METHOD(imagickdraw, getopacity)
 /* {{{ proto bool ImagickDraw::setOpacity(float opacity)
 	Sets the opacity to use when drawing using the fill or stroke color or texture. Fully opaque is 1.0.
 */
-PHP_METHOD(imagickdraw, setopacity)
+PHP_METHOD(ImagickDraw, setOpacity)
 {
 	php_imagickdraw_object *internd;
 	double opacity;
@@ -2872,7 +2872,7 @@ PHP_METHOD(imagickdraw, setopacity)
 /* {{{ proto array ImagickDraw::getFontResolution() 
 	Gets the image X and Y resolution.
 */
-PHP_METHOD(imagickdraw, getfontresolution)
+PHP_METHOD(ImagickDraw, getFontResolution)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2904,7 +2904,7 @@ PHP_METHOD(imagickdraw, getfontresolution)
 /* {{{ proto bool ImagickDraw::setFontResolution(float x, float y)
 	Sets the image font resolution.
 */
-PHP_METHOD(imagickdraw, setfontresolution)
+PHP_METHOD(ImagickDraw, setFontResolution)
 {
 	php_imagickdraw_object *internd;
 	double x, y;
@@ -2932,7 +2932,7 @@ PHP_METHOD(imagickdraw, setfontresolution)
 /* {{{ proto ImagickPixel ImagickDraw::getBorderColor()
 	Returns the border color used for drawing bordered objects.
 */
-PHP_METHOD(imagickdraw, getbordercolor)
+PHP_METHOD(ImagickDraw, getBorderColor)
 {
 	php_imagickpixel_object *internp;
 	php_imagickdraw_object *internd;
@@ -2961,7 +2961,7 @@ PHP_METHOD(imagickdraw, getbordercolor)
 /* {{{ proto bool ImagickDraw::setBorderColor(ImagickPixel color)
 	Sets the border color to be used for drawing bordered objects.
 */
-PHP_METHOD(imagickdraw, setbordercolor)
+PHP_METHOD(ImagickDraw, setBorderColor)
 {
 	zval *param;
 	php_imagickdraw_object *internd;
@@ -2991,7 +2991,7 @@ PHP_METHOD(imagickdraw, setbordercolor)
 /* {{{ proto integer ImagickDraw::getTextDirection()
 	Returns the direction that will be used when annotating with text.
 */
-PHP_METHOD(imagickdraw, gettextdirection)
+PHP_METHOD(ImagickDraw, getTextDirection)
 {
 	php_imagickdraw_object *internd;
 	im_long direction;
@@ -3012,7 +3012,7 @@ PHP_METHOD(imagickdraw, gettextdirection)
 /* {{{ proto bool ImagickDraw::setTextDirection(int direction)
 	Sets the font style to use when annotating with text. The AnyStyle enumeration acts as a wild-card "don't care" option.
 */
-PHP_METHOD(imagickdraw, settextdirection)
+PHP_METHOD(ImagickDraw, setTextDirection)
 {
 	php_imagickdraw_object *internd;
 	im_long direction;
@@ -3034,7 +3034,7 @@ PHP_METHOD(imagickdraw, settextdirection)
 /* {{{ proto bool ImagickDraw::setDensity(string density_string)
 	Sets the vertical and horizontal resolution.
 */
-PHP_METHOD(imagickdraw, setdensity)
+PHP_METHOD(ImagickDraw, setDensity)
 {
 	php_imagickdraw_object *internd;
 	char *density;
@@ -3061,7 +3061,7 @@ PHP_METHOD(imagickdraw, setdensity)
 /* {{{ proto string|null ImagickDraw::getDensity()
 	Obtains the vertical and horizontal resolution. 
 */
-PHP_METHOD(imagickdraw, getdensity)
+PHP_METHOD(ImagickDraw, getDensity)
 {
 	php_imagickdraw_object *internd;
 	char *density;

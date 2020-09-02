@@ -3,7 +3,7 @@
 /** @generate-function-entries */
 
 #ifdef IMAGICK_WITH_KERNEL
-final class ImagickKernel
+class ImagickKernel
 {
     public function addKernel(ImagickKernel $ImagickKernel): void {}
 
