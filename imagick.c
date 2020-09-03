@@ -2314,572 +2314,576 @@ const zend_function_entry *php_imagickpixeliterator_class_methods = class_Imagic
 const zend_function_entry *php_imagickpixel_class_methods = class_ImagickPixel_methods;
 
 
+//
+//static zend_function_entry php_imagick_class_methods[] =
+//{
+//#if MagickLibVersion > 0x628
+//	PHP_ME(imagick, optimizeimagelayers, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, compareimagelayers, imagick_compareimagelayers_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, pingimageblob, imagick_pingimageblob_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, pingimagefile, imagick_pingimagefile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, transposeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, transverseimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, trimimage, imagick_trimimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, waveimage, imagick_waveimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, vignetteimage, imagick_vignetteimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, uniqueimagecolors, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimagematte, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, setimagematte, imagick_setimagematte_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, adaptiveresizeimage, imagick_adaptiveresizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sketchimage, imagick_sketchimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, shadeimage, imagick_shadeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getsizeoffset, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setsizeoffset, imagick_setsizeoffset_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, adaptiveblurimage, imagick_adaptiveblurimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, contraststretchimage, imagick_contraststretchimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, adaptivesharpenimage, imagick_adaptivesharpenimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, randomthresholdimage, imagick_randomthresholdimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	/* This alias is due to BWC */
+//	PHP_MALIAS(imagick, roundcorners, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//	PHP_ME(imagick, setiteratorindex, imagick_setiteratorindex_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, transformimage, imagick_transformimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//#if MagickLibVersion > 0x630
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimageopacity, imagick_setimageopacity_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#if MagickLibVersion >= 0x700
+//	PHP_ME(imagick, setimagealpha, imagick_setimagealpha_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, orderedposterizeimage, imagick_orderedposterizeimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif //#if MagickLibVersion < 0x700
+//#endif //#if MagickLibVersion > 0x630
+//#if MagickLibVersion > 0x631
+//	PHP_ME(imagick, polaroidimage, imagick_polaroidimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageproperty, imagick_getimageproperty_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageproperty, imagick_setimageproperty_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, deleteimageproperty, imagick_deleteimageproperty_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, identifyformat, imagick_identifyformat_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageinterpolatemethod, imagick_setimageinterpolatemethod_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageinterpolatemethod, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, linearstretchimage, imagick_linearstretchimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagelength, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, extentimage, imagick_extentimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x633
+//	PHP_ME(imagick, getimageorientation, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageorientation, imagick_setimageorientation_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion > 0x634
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, paintfloodfillimage, imagick_paintfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//#endif
+//#if MagickLibVersion > 0x635
+//	PHP_ME(imagick, clutimage, imagick_clutimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageproperties, imagick_getimageproperties_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageprofiles, imagick_getimageprofiles_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, distortimage, imagick_distortimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, writeimagefile, imagick_writeimagefile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, writeimagesfile, imagick_writeimagesfile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, resetimagepage, imagick_resetimagepage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimageclipmask, imagick_setimageclipmask_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	PHP_ME(imagick, getimageclipmask, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//	PHP_ME(imagick, animateimages, imagick_animateimages_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, recolorimage, imagick_recolorimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//#endif
+//#if MagickLibVersion > 0x636
+//	PHP_ME(imagick, setfont, imagick_setfont_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getfont, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setpointsize, imagick_setpointsize_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getpointsize, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, mergeimagelayers, imagick_mergeimagelayers_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x637
+//	PHP_ME(imagick, setimagealphachannel, imagick_setimagealphachannel_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, floodfillpaintimage, imagick_floodfillpaintimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, opaquepaintimage, imagick_opaquepaintimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, transparentpaintimage, imagick_transparentpaintimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x638
+//	PHP_ME(imagick, liquidrescaleimage, imagick_liquidrescaleimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, encipherimage, imagick_encipherimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, decipherimage, imagick_decipherimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x639
+//	PHP_ME(imagick, setgravity, imagick_setgravity_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getgravity, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagechannelrange, imagick_getimagechannelrange_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagealphachannel, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x642
+//	PHP_ME(imagick, getimagechanneldistortions, imagick_getimagechanneldistortions_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x643
+//	PHP_ME(imagick, setimagegravity, imagick_setimagegravity_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagegravity, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x645
+//	PHP_ME(imagick, importimagepixels, imagick_importimagepixels_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, deskewimage, imagick_deskewimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, segmentimage, imagick_segmentimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sparsecolorimage, imagick_sparsecolorimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, remapimage, imagick_remapimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if PHP_IMAGICK_HAVE_HOUGHLINE
+//	PHP_ME(imagick, houghlineimage, imagick_houghlineimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x646
+//	PHP_ME(imagick, exportimagepixels, imagick_exportimagepixels_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x648
+//	PHP_ME(imagick, getimagechannelkurtosis, imagick_getimagechannelkurtosis_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, functionimage, imagick_functionimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x651
+//	PHP_ME(imagick, transformimagecolorspace, imagick_transformimagecolorspace_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x652
+//	PHP_ME(imagick, haldclutimage, imagick_haldclutimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x655
+//	PHP_ME(imagick, autolevelimage, imagick_autolevelimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, blueshiftimage, imagick_blueshiftimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x656
+//	PHP_ME(imagick, getimageartifact, imagick_getimageartifact_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageartifact, imagick_setimageartifact_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, deleteimageartifact, imagick_deleteimageartifact_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getcolorspace, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setcolorspace, imagick_setcolorspace_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, clampimage, imagick_clampimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x667
+//	PHP_ME(imagick, smushimages, imagick_smushimages_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, __construct, imagick_construct_args, ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)
+//	PHP_ME(imagick, __tostring, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if PHP_VERSION_ID >= 50600
+//	PHP_ME(imagick, count, imagick_count_args, ZEND_ACC_PUBLIC)
+//#else
+//	PHP_ME(imagick, count, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, getpixeliterator, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getpixelregioniterator, imagick_getpixelregioniterator_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, readimage, imagick_readimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, readimages, imagick_readimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, readimageblob, imagick_readimageblob_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageformat, imagick_setimageformat_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, scaleimage, imagick_scaleimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, writeimage, imagick_writeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, writeimages, imagick_writeimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, blurimage, imagick_blurimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, thumbnailimage, imagick_thumbnailimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, cropthumbnailimage, imagick_cropthumbnailimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagefilename, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagefilename, imagick_setimagefilename_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageformat, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagemimetype, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, removeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	ZEND_MALIAS(imagick, destroy, clear, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, clear, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, clone, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimagesize, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, getimageblob, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagesblob, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setfirstiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setlastiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, resetiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, previousimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, nextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, haspreviousimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, hasnextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimageindex, imagick_setimageindex_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	PHP_ME(imagick, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, commentimage, imagick_commentimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, cropimage, imagick_cropimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, labelimage, imagick_labelimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagegeometry, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, drawimage, imagick_drawimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagecompressionquality, imagick_setimagecompressionquality_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecompressionquality, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagecompression, imagick_setimagecompression_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecompression, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, annotateimage, imagick_annotateimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, compositeimage, imagick_compositeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, modulateimage, imagick_modulateimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecolors, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, montageimage, imagick_montageimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, identifyimage, imagick_identifyimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, thresholdimage, imagick_thresholdimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, adaptivethresholdimage, imagick_adaptivethresholdimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, blackthresholdimage, imagick_blackthresholdimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, whitethresholdimage, imagick_whitethresholdimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, appendimages, imagick_appendimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, charcoalimage, imagick_charcoalimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, normalizeimage, imagick_normalizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, oilpaintimage, imagick_oilpaintimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, posterizeimage, imagick_posterizeimage_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, radialblurimage, imagick_radialblurimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, raiseimage, imagick_raiseimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, resampleimage, imagick_resampleimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, resizeimage, imagick_resizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, rollimage, imagick_rollimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, rotateimage, imagick_rotateimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sampleimage, imagick_sampleimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, solarizeimage, imagick_solarizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, shadowimage, imagick_shadowimage_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimageattribute, imagick_setimageattribute_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, setimagebackgroundcolor, imagick_setimagebackgroundcolor_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x700
+//	PHP_ME(imagick, setimagechannelmask, imagick_setimagechannelmask_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, setimagecompose, imagick_setimagecompose_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagedelay, imagick_setimagedelay_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagedepth, imagick_setimagedepth_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagegamma, imagick_setimagegamma_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageiterations, imagick_setimageiterations_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimagemattecolor, imagick_setimagemattecolor_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimagepage, imagick_setimagepage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageprogressmonitor, imagick_setimageprogressmonitor_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion > 0x653
+//	PHP_ME(imagick, setprogressmonitor, imagick_setprogressmonitor_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, setimageresolution, imagick_setimageresolution_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagescene, imagick_setimagescene_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagetickspersecond, imagick_setimagetickspersecond_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagetype, imagick_setimagetype_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageunits, imagick_setimageunits_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sharpenimage, imagick_sharpenimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, shaveimage, imagick_shaveimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, shearimage, imagick_shearimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, spliceimage, imagick_spliceimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, pingimage, imagick_pingimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, readimagefile, imagick_readimagefile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, displayimage, imagick_displayimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, displayimages, imagick_displayimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, spreadimage, imagick_spreadimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, swirlimage, imagick_swirlimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, stripimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, queryformats, imagick_queryformats_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, queryfonts, imagick_queryfonts_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, queryfontmetrics, imagick_queryfontmetrics_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, steganoimage, imagick_steganoimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, addnoiseimage, imagick_addnoiseimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, motionblurimage, imagick_motionblurimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//	PHP_ME(imagick, mosaicimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, morphimages, imagick_morphimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, minifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, affinetransformimage, imagick_affinetransformimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//	PHP_ME(imagick, averageimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, borderimage, imagick_borderimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, calculatecrop, imagick_calculatecrop_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, chopimage, imagick_chopimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, clipimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, clippathimage, imagick_clippathimage_args, ZEND_ACC_PUBLIC)
+//	/* clippathimage has been deprecated. Create alias here and use the newer API function if present */
+//	PHP_MALIAS(imagick, clipimagepath, clippathimage, imagick_clippathimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, coalesceimages, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, colorfloodfillimage, imagick_colorfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, colorizeimage, imagick_colorizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, compareimagechannels, imagick_compareimagechannels_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, compareimages, imagick_compareimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, contrastimage, imagick_contrastimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, combineimages, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, convolveimage, imagick_convolveimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, cyclecolormapimage, imagick_cyclecolormapimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, deconstructimages, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, despeckleimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, edgeimage, imagick_edgeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, embossimage, imagick_embossimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, enhanceimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, equalizeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, evaluateimage, imagick_evaluateimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x687
+//	PHP_ME(imagick, evaluateimages, imagick_evaluateimages_args, ZEND_ACC_PUBLIC)
+//#endif // MagickLibVersion >= 0x687
+//#if MagickLibVersion < 0x700
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//	PHP_ME(imagick, flattenimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, flipimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, flopimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x655
+//	PHP_ME(imagick, forwardfouriertransformimage, imagick_forwardfouriertransformimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, frameimage, imagick_frameimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, fximage, imagick_fximage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, gammaimage, imagick_gammaimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, gaussianblurimage, imagick_gaussianblurimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//	PHP_ME(imagick, getimageattribute, imagick_getimageattribute_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, getimagebackgroundcolor, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageblueprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagebordercolor, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagechanneldepth, imagick_getimagechanneldepth_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagechanneldistortion, imagick_getimagechanneldistortion_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimagechannelextrema, imagick_getimagechannelextrema_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, getimagechannelmean, imagick_getimagechannelmean_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagechannelstatistics, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecolormapcolor, imagick_getimagecolormapcolor_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecolorspace, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagecompose, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagedelay, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagedepth, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagedistortion, imagick_getimagedistortion_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimageextrema, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, getimagedispose, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagegamma, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagegreenprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageheight, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagehistogram, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageinterlacescheme, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageiterations, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimagemattecolor, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif //#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, getimagepage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagepixelcolor, imagick_getimagepixelcolor_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageprofile, imagick_getimageprofile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageredprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagerenderingintent, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageresolution, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagescene, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagesignature, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagetickspersecond, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagetype, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageunits, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagevirtualpixelmethod, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagewhitepoint, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagewidth, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getnumberimages, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimagetotalinkdensity, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimageregion, imagick_getimageregion_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, implodeimage, imagick_getimagetotalinkdensity_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x658
+//	PHP_ME(imagick, inversefouriertransformimage, imagick_inversefouriertransformimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, levelimage, imagick_levelimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, magnifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, mapimage, imagick_mapimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	PHP_ME(imagick, mattefloodfillimage, imagick_mattefloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif
+//#if MagickLibVersion < 0x700
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//	PHP_ME(imagick, medianfilterimage, imagick_medianfilterimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, negateimage, imagick_negateimage_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, paintopaqueimage, imagick_paintopaqueimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	PHP_ME(imagick, painttransparentimage, imagick_painttransparentimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif //#if MagickLibVersion < 0x700
+//#endif
+//	PHP_ME(imagick, previewimages, imagick_previewimages_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, profileimage, imagick_profileimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, quantizeimage, imagick_quantizeimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, quantizeimages, imagick_quantizeimages_args, ZEND_ACC_PUBLIC)
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, reducenoiseimage, imagick_reducenoiseimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//#endif
+//	PHP_ME(imagick, removeimageprofile, imagick_removeimageprofile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, separateimagechannel, imagick_separateimagechannel_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sepiatoneimage, imagick_sepiatoneimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, setimagebias, imagick_setimagebias_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//	PHP_ME(imagick, setimagebiasquantum, imagick_setimagebiasquantum_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif
+//	PHP_ME(imagick, setimageblueprimary, imagick_setimageblueprimary_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagebordercolor, imagick_setimagebordercolor_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagechanneldepth, imagick_setimagechanneldepth_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagecolormapcolor, imagick_setimagecolormapcolor_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagecolorspace, imagick_setimagecolorspace_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagedispose, imagick_setimagedispose_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageextent, imagick_setimageextent_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagegreenprimary, imagick_setimagegreenprimary_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageinterlacescheme, imagick_setimageinterlacescheme_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageprofile, imagick_setimageprofile_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimageredprimary, imagick_setimageredprimary_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagerenderingintent, imagick_setimagerenderingintent_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagevirtualpixelmethod, imagick_setimagevirtualpixelmethod_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimagewhitepoint, imagick_setimagewhitepoint_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, sigmoidalcontrastimage, imagick_sigmoidalcontrastimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, stereoimage, imagick_stereoimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, textureimage, imagick_textureimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, tintimage, imagick_tintimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, unsharpmaskimage, imagick_unsharpmaskimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, addimage, imagick_addimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setimage, imagick_setimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, newimage, imagick_newimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, newpseudoimage, imagick_newpseudoimage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getcompression, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getcompressionquality, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getcopyright, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getconfigureoptions, imagick_getconfigureoptions_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//#if MagickLibVersion > 0x660
+//	PHP_ME(imagick, getfeatures, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, getfilename, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getformat, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, gethomeurl, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getinterlacescheme, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getoption, imagick_getoption_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getpackagename, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getpage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getquantum, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, gethdrienabled, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getquantumdepth, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getquantumrange, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getreleasedate, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getresource, imagick_getresource_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getresourcelimit, imagick_getresourcelimit_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getsamplingfactors, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getsize, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getversion, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setbackgroundcolor, imagick_setbackgroundcolor_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setcompression, imagick_setcompression_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setcompressionquality, imagick_setcompressionquality_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setfilename, imagick_setfilename_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setformat, imagick_setformat_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setinterlacescheme, imagick_setinterlacescheme_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setoption, imagick_setoption_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setpage, imagick_setpage_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setresourcelimit, imagick_setresourcelimit_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setresolution, imagick_setresolution_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setsamplingfactors, imagick_setsamplingfactors_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, setsize, imagick_setsize_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, settype, imagick_settype_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion > 0x628
+//	PHP_MALIAS(imagick, key, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#else
+//# if defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#  error "MAGICKCORE_EXCLUDE_DEPRECATED should not be defined with ImageMagick version below 6.2.8"
+//# else
+//	PHP_MALIAS(imagick, key, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC)
+//# endif
+//#endif
+//	PHP_MALIAS(imagick, next, nextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_MALIAS(imagick, rewind, setfirstiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, valid, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, current, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x659
+//	PHP_ME(imagick, brightnesscontrastimage, imagick_brightnesscontrastimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion > 0x661
+//	PHP_ME(imagick, colormatriximage, imagick_colormatriximage_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, selectiveblurimage, imagick_selectiveblurimage_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x689
+//	PHP_ME(imagick, rotationalblurimage, imagick_rotationalblurimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion >= 0x683
+//	PHP_ME(imagick, statisticimage, imagick_statisticimage_args, ZEND_ACC_PUBLIC)
+//#endif
+//#if MagickLibVersion >= 0x652
+//	PHP_ME(imagick, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
+//	ZEND_MALIAS(imagick, similarityimage, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
+//#endif
+//	PHP_ME(imagick, setregistry, imagick_setregistry_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getregistry, imagick_getregistry_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, listregistry, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//#if MagickLibVersion >= 0x680
+//	PHP_ME(imagick, morphology, imagick_morphology_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion < 0x700
+//	PHP_ME(imagick, filter, imagick_filter_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
+//#endif // #if MagickLibVersion < 0x700
+//#endif // #if MagickLibVersion >= 0x680
+//	PHP_ME(imagick, setantialias, imagick_setantialias_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, getantialias, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#if MagickLibVersion > 0x676
+//	PHP_ME(imagick, colordecisionlistimage, imagick_colordecisionlistimage_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion > 0x676
+//#if MagickLibVersion >= 0x687
+//	PHP_ME(imagick, optimizeimagetransparency, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion >= 0x687
+//#if MagickLibVersion >= 0x660
+//	PHP_ME(imagick, autogammaimage, imagick_autogammaimage_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion >= 0x660
+//#if MagickLibVersion >= 0x692
+//	PHP_ME(imagick, autoorient, imagick_zero_args, ZEND_ACC_PUBLIC)
+//	PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion >= 0x692
+//#if MagickLibVersion >= 0x693
+//	PHP_ME(imagick, localcontrastimage, imagick_localContrastImage_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion >= 0x692
+//#if MagickLibVersion >= 0x700
+//	PHP_ME(imagick, identifyimagetype, imagick_zero_args, ZEND_ACC_PUBLIC)
+//#endif // #if MagickLibVersion >= 0x700
+//
+//	{ NULL, NULL, NULL, 0, 0 }
+//};
 
-static zend_function_entry php_imagick_class_methods[] =
-{
-#if MagickLibVersion > 0x628
-	PHP_ME(imagick, optimizeimagelayers, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, compareimagelayers, imagick_compareimagelayers_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, pingimageblob, imagick_pingimageblob_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, pingimagefile, imagick_pingimagefile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, transposeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, transverseimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, trimimage, imagick_trimimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, waveimage, imagick_waveimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, vignetteimage, imagick_vignetteimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, uniqueimagecolors, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimagematte, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, setimagematte, imagick_setimagematte_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, adaptiveresizeimage, imagick_adaptiveresizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sketchimage, imagick_sketchimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, shadeimage, imagick_shadeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getsizeoffset, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setsizeoffset, imagick_setsizeoffset_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, adaptiveblurimage, imagick_adaptiveblurimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, contraststretchimage, imagick_contraststretchimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, adaptivesharpenimage, imagick_adaptivesharpenimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, randomthresholdimage, imagick_randomthresholdimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	/* This alias is due to BWC */
-	PHP_MALIAS(imagick, roundcorners, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-	PHP_ME(imagick, setiteratorindex, imagick_setiteratorindex_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, transformimage, imagick_transformimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-#if MagickLibVersion > 0x630
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimageopacity, imagick_setimageopacity_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#if MagickLibVersion >= 0x700
-	PHP_ME(imagick, setimagealpha, imagick_setimagealpha_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, orderedposterizeimage, imagick_orderedposterizeimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif //#if MagickLibVersion < 0x700
-#endif //#if MagickLibVersion > 0x630
-#if MagickLibVersion > 0x631
-	PHP_ME(imagick, polaroidimage, imagick_polaroidimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageproperty, imagick_getimageproperty_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageproperty, imagick_setimageproperty_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, deleteimageproperty, imagick_deleteimageproperty_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, identifyformat, imagick_identifyformat_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageinterpolatemethod, imagick_setimageinterpolatemethod_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageinterpolatemethod, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, linearstretchimage, imagick_linearstretchimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagelength, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, extentimage, imagick_extentimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x633
-	PHP_ME(imagick, getimageorientation, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageorientation, imagick_setimageorientation_args, ZEND_ACC_PUBLIC)
-#endif
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion > 0x634
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, paintfloodfillimage, imagick_paintfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-#endif
-#if MagickLibVersion > 0x635
-	PHP_ME(imagick, clutimage, imagick_clutimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageproperties, imagick_getimageproperties_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageprofiles, imagick_getimageprofiles_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, distortimage, imagick_distortimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, writeimagefile, imagick_writeimagefile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, writeimagesfile, imagick_writeimagesfile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, resetimagepage, imagick_resetimagepage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimageclipmask, imagick_setimageclipmask_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	PHP_ME(imagick, getimageclipmask, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-	PHP_ME(imagick, animateimages, imagick_animateimages_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, recolorimage, imagick_recolorimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-#endif
-#if MagickLibVersion > 0x636
-	PHP_ME(imagick, setfont, imagick_setfont_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getfont, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setpointsize, imagick_setpointsize_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getpointsize, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, mergeimagelayers, imagick_mergeimagelayers_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x637
-	PHP_ME(imagick, setimagealphachannel, imagick_setimagealphachannel_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, floodfillpaintimage, imagick_floodfillpaintimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, opaquepaintimage, imagick_opaquepaintimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, transparentpaintimage, imagick_transparentpaintimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x638
-	PHP_ME(imagick, liquidrescaleimage, imagick_liquidrescaleimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, encipherimage, imagick_encipherimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, decipherimage, imagick_decipherimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x639
-	PHP_ME(imagick, setgravity, imagick_setgravity_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getgravity, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagechannelrange, imagick_getimagechannelrange_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagealphachannel, imagick_zero_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x642
-	PHP_ME(imagick, getimagechanneldistortions, imagick_getimagechanneldistortions_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x643
-	PHP_ME(imagick, setimagegravity, imagick_setimagegravity_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagegravity, imagick_zero_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x645
-	PHP_ME(imagick, importimagepixels, imagick_importimagepixels_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, deskewimage, imagick_deskewimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, segmentimage, imagick_segmentimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sparsecolorimage, imagick_sparsecolorimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, remapimage, imagick_remapimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if PHP_IMAGICK_HAVE_HOUGHLINE
-	PHP_ME(imagick, houghlineimage, imagick_houghlineimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x646
-	PHP_ME(imagick, exportimagepixels, imagick_exportimagepixels_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x648
-	PHP_ME(imagick, getimagechannelkurtosis, imagick_getimagechannelkurtosis_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, functionimage, imagick_functionimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x651
-	PHP_ME(imagick, transformimagecolorspace, imagick_transformimagecolorspace_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x652
-	PHP_ME(imagick, haldclutimage, imagick_haldclutimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x655
-	PHP_ME(imagick, autolevelimage, imagick_autolevelimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, blueshiftimage, imagick_blueshiftimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x656
-	PHP_ME(imagick, getimageartifact, imagick_getimageartifact_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageartifact, imagick_setimageartifact_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, deleteimageartifact, imagick_deleteimageartifact_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getcolorspace, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setcolorspace, imagick_setcolorspace_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, clampimage, imagick_clampimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x667
-	PHP_ME(imagick, smushimages, imagick_smushimages_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, __construct, imagick_construct_args, ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)
-	PHP_ME(imagick, __tostring, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if PHP_VERSION_ID >= 50600
-	PHP_ME(imagick, count, imagick_count_args, ZEND_ACC_PUBLIC)
-#else
-	PHP_ME(imagick, count, imagick_zero_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, getpixeliterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getpixelregioniterator, imagick_getpixelregioniterator_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, readimage, imagick_readimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, readimages, imagick_readimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, readimageblob, imagick_readimageblob_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageformat, imagick_setimageformat_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, scaleimage, imagick_scaleimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, writeimage, imagick_writeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, writeimages, imagick_writeimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, blurimage, imagick_blurimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, thumbnailimage, imagick_thumbnailimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, cropthumbnailimage, imagick_cropthumbnailimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagefilename, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagefilename, imagick_setimagefilename_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageformat, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagemimetype, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, removeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	ZEND_MALIAS(imagick, destroy, clear, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, clear, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, clone, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimagesize, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, getimageblob, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagesblob, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setfirstiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setlastiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, resetiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, previousimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, nextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, haspreviousimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, hasnextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimageindex, imagick_setimageindex_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	PHP_ME(imagick, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, commentimage, imagick_commentimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, cropimage, imagick_cropimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, labelimage, imagick_labelimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagegeometry, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, drawimage, imagick_drawimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagecompressionquality, imagick_setimagecompressionquality_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecompressionquality, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagecompression, imagick_setimagecompression_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecompression, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, annotateimage, imagick_annotateimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, compositeimage, imagick_compositeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, modulateimage, imagick_modulateimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecolors, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, montageimage, imagick_montageimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, identifyimage, imagick_identifyimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, thresholdimage, imagick_thresholdimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, adaptivethresholdimage, imagick_adaptivethresholdimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, blackthresholdimage, imagick_blackthresholdimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, whitethresholdimage, imagick_whitethresholdimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, appendimages, imagick_appendimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, charcoalimage, imagick_charcoalimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, normalizeimage, imagick_normalizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, oilpaintimage, imagick_oilpaintimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, posterizeimage, imagick_posterizeimage_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, radialblurimage, imagick_radialblurimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, raiseimage, imagick_raiseimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, resampleimage, imagick_resampleimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, resizeimage, imagick_resizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, rollimage, imagick_rollimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, rotateimage, imagick_rotateimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sampleimage, imagick_sampleimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, solarizeimage, imagick_solarizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, shadowimage, imagick_shadowimage_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimageattribute, imagick_setimageattribute_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, setimagebackgroundcolor, imagick_setimagebackgroundcolor_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x700
-	PHP_ME(imagick, setimagechannelmask, imagick_setimagechannelmask_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, setimagecompose, imagick_setimagecompose_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagedelay, imagick_setimagedelay_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagedepth, imagick_setimagedepth_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagegamma, imagick_setimagegamma_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageiterations, imagick_setimageiterations_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimagemattecolor, imagick_setimagemattecolor_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimagepage, imagick_setimagepage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageprogressmonitor, imagick_setimageprogressmonitor_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion > 0x653
-	PHP_ME(imagick, setprogressmonitor, imagick_setprogressmonitor_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, setimageresolution, imagick_setimageresolution_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagescene, imagick_setimagescene_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagetickspersecond, imagick_setimagetickspersecond_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagetype, imagick_setimagetype_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageunits, imagick_setimageunits_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sharpenimage, imagick_sharpenimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, shaveimage, imagick_shaveimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, shearimage, imagick_shearimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, spliceimage, imagick_spliceimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, pingimage, imagick_pingimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, readimagefile, imagick_readimagefile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, displayimage, imagick_displayimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, displayimages, imagick_displayimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, spreadimage, imagick_spreadimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, swirlimage, imagick_swirlimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, stripimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, queryformats, imagick_queryformats_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, queryfonts, imagick_queryfonts_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, queryfontmetrics, imagick_queryfontmetrics_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, steganoimage, imagick_steganoimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, addnoiseimage, imagick_addnoiseimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, motionblurimage, imagick_motionblurimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-	PHP_ME(imagick, mosaicimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, morphimages, imagick_morphimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, minifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, affinetransformimage, imagick_affinetransformimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-	PHP_ME(imagick, averageimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, borderimage, imagick_borderimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, calculatecrop, imagick_calculatecrop_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, chopimage, imagick_chopimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, clipimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, clippathimage, imagick_clippathimage_args, ZEND_ACC_PUBLIC)
-	/* clippathimage has been deprecated. Create alias here and use the newer API function if present */
-	PHP_MALIAS(imagick, clipimagepath, clippathimage, imagick_clippathimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, coalesceimages, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, colorfloodfillimage, imagick_colorfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, colorizeimage, imagick_colorizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, compareimagechannels, imagick_compareimagechannels_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, compareimages, imagick_compareimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, contrastimage, imagick_contrastimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, combineimages, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, convolveimage, imagick_convolveimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, cyclecolormapimage, imagick_cyclecolormapimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, deconstructimages, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, despeckleimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, edgeimage, imagick_edgeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, embossimage, imagick_embossimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, enhanceimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, equalizeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, evaluateimage, imagick_evaluateimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x687
-	PHP_ME(imagick, evaluateimages, imagick_evaluateimages_args, ZEND_ACC_PUBLIC)
-#endif // MagickLibVersion >= 0x687
-#if MagickLibVersion < 0x700
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-	PHP_ME(imagick, flattenimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, flipimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, flopimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x655
-	PHP_ME(imagick, forwardfouriertransformimage, imagick_forwardfouriertransformimage_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, frameimage, imagick_frameimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, fximage, imagick_fximage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, gammaimage, imagick_gammaimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, gaussianblurimage, imagick_gaussianblurimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-	PHP_ME(imagick, getimageattribute, imagick_getimageattribute_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, getimagebackgroundcolor, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageblueprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagebordercolor, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagechanneldepth, imagick_getimagechanneldepth_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagechanneldistortion, imagick_getimagechanneldistortion_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimagechannelextrema, imagick_getimagechannelextrema_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, getimagechannelmean, imagick_getimagechannelmean_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagechannelstatistics, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecolormapcolor, imagick_getimagecolormapcolor_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecolorspace, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagecompose, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagedelay, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagedepth, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagedistortion, imagick_getimagedistortion_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimageextrema, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, getimagedispose, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagegamma, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagegreenprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageheight, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagehistogram, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageinterlacescheme, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageiterations, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimagemattecolor, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif //#if MagickLibVersion < 0x700
-	PHP_ME(imagick, getimagepage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagepixelcolor, imagick_getimagepixelcolor_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageprofile, imagick_getimageprofile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageredprimary, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagerenderingintent, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageresolution, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagescene, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagesignature, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagetickspersecond, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagetype, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageunits, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagevirtualpixelmethod, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagewhitepoint, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagewidth, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getnumberimages, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimagetotalinkdensity, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimageregion, imagick_getimageregion_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, implodeimage, imagick_getimagetotalinkdensity_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x658
-	PHP_ME(imagick, inversefouriertransformimage, imagick_inversefouriertransformimage_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, levelimage, imagick_levelimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, magnifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, mapimage, imagick_mapimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	PHP_ME(imagick, mattefloodfillimage, imagick_mattefloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif
-#if MagickLibVersion < 0x700
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-	PHP_ME(imagick, medianfilterimage, imagick_medianfilterimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, negateimage, imagick_negateimage_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, paintopaqueimage, imagick_paintopaqueimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	PHP_ME(imagick, painttransparentimage, imagick_painttransparentimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif //#if MagickLibVersion < 0x700
-#endif
-	PHP_ME(imagick, previewimages, imagick_previewimages_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, profileimage, imagick_profileimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, quantizeimage, imagick_quantizeimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, quantizeimages, imagick_quantizeimages_args, ZEND_ACC_PUBLIC)
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, reducenoiseimage, imagick_reducenoiseimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-#endif
-	PHP_ME(imagick, removeimageprofile, imagick_removeimageprofile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, separateimagechannel, imagick_separateimagechannel_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sepiatoneimage, imagick_sepiatoneimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, setimagebias, imagick_setimagebias_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-	PHP_ME(imagick, setimagebiasquantum, imagick_setimagebiasquantum_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif
-	PHP_ME(imagick, setimageblueprimary, imagick_setimageblueprimary_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagebordercolor, imagick_setimagebordercolor_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagechanneldepth, imagick_setimagechanneldepth_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagecolormapcolor, imagick_setimagecolormapcolor_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagecolorspace, imagick_setimagecolorspace_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagedispose, imagick_setimagedispose_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageextent, imagick_setimageextent_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagegreenprimary, imagick_setimagegreenprimary_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageinterlacescheme, imagick_setimageinterlacescheme_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageprofile, imagick_setimageprofile_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimageredprimary, imagick_setimageredprimary_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagerenderingintent, imagick_setimagerenderingintent_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagevirtualpixelmethod, imagick_setimagevirtualpixelmethod_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimagewhitepoint, imagick_setimagewhitepoint_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, sigmoidalcontrastimage, imagick_sigmoidalcontrastimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, stereoimage, imagick_stereoimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, textureimage, imagick_textureimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, tintimage, imagick_tintimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, unsharpmaskimage, imagick_unsharpmaskimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, addimage, imagick_addimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setimage, imagick_setimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, newimage, imagick_newimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, newpseudoimage, imagick_newpseudoimage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getcompression, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getcompressionquality, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getcopyright, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getconfigureoptions, imagick_getconfigureoptions_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-#if MagickLibVersion > 0x660
-	PHP_ME(imagick, getfeatures, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, getfilename, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getformat, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, gethomeurl, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getinterlacescheme, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getoption, imagick_getoption_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getpackagename, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getpage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getquantum, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, gethdrienabled, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getquantumdepth, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getquantumrange, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getreleasedate, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getresource, imagick_getresource_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getresourcelimit, imagick_getresourcelimit_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getsamplingfactors, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getsize, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getversion, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setbackgroundcolor, imagick_setbackgroundcolor_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setcompression, imagick_setcompression_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setcompressionquality, imagick_setcompressionquality_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setfilename, imagick_setfilename_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setformat, imagick_setformat_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setinterlacescheme, imagick_setinterlacescheme_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setoption, imagick_setoption_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setpage, imagick_setpage_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setresourcelimit, imagick_setresourcelimit_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setresolution, imagick_setresolution_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setsamplingfactors, imagick_setsamplingfactors_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, setsize, imagick_setsize_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, settype, imagick_settype_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion > 0x628
-	PHP_MALIAS(imagick, key, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
-#else
-# if defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#  error "MAGICKCORE_EXCLUDE_DEPRECATED should not be defined with ImageMagick version below 6.2.8"
-# else
-	PHP_MALIAS(imagick, key, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC)
-# endif
-#endif
-	PHP_MALIAS(imagick, next, nextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_MALIAS(imagick, rewind, setfirstiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, valid, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, current, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x659
-	PHP_ME(imagick, brightnesscontrastimage, imagick_brightnesscontrastimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion > 0x661
-	PHP_ME(imagick, colormatriximage, imagick_colormatriximage_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, selectiveblurimage, imagick_selectiveblurimage_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x689
-	PHP_ME(imagick, rotationalblurimage, imagick_rotationalblurimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion >= 0x683
-	PHP_ME(imagick, statisticimage, imagick_statisticimage_args, ZEND_ACC_PUBLIC)
-#endif
-#if MagickLibVersion >= 0x652
-	PHP_ME(imagick, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
-	ZEND_MALIAS(imagick, similarityimage, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
-#endif
-	PHP_ME(imagick, setregistry, imagick_setregistry_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getregistry, imagick_getregistry_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, listregistry, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x680
-	PHP_ME(imagick, morphology, imagick_morphology_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion < 0x700
-	PHP_ME(imagick, filter, imagick_filter_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-#endif // #if MagickLibVersion < 0x700
-#endif // #if MagickLibVersion >= 0x680
-	PHP_ME(imagick, setantialias, imagick_setantialias_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, getantialias, imagick_zero_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion > 0x676
-	PHP_ME(imagick, colordecisionlistimage, imagick_colordecisionlistimage_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion > 0x676
-#if MagickLibVersion >= 0x687
-	PHP_ME(imagick, optimizeimagetransparency, imagick_zero_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion >= 0x687
-#if MagickLibVersion >= 0x660
-	PHP_ME(imagick, autogammaimage, imagick_autogammaimage_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion >= 0x660
-#if MagickLibVersion >= 0x692
-	PHP_ME(imagick, autoorient, imagick_zero_args, ZEND_ACC_PUBLIC)
-	PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion >= 0x692
-#if MagickLibVersion >= 0x693
-	PHP_ME(imagick, localcontrastimage, imagick_localContrastImage_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion >= 0x692
-#if MagickLibVersion >= 0x700
-	PHP_ME(imagick, identifyimagetype, imagick_zero_args, ZEND_ACC_PUBLIC)
-#endif // #if MagickLibVersion >= 0x700
+#include "Imagick_arginfo.h"
 
-	{ NULL, NULL, NULL, 0, 0 }
-};
+const zend_function_entry *php_imagick_class_methods = class_Imagick_methods;
 
 #ifdef IMAGICK_WITH_KERNEL
 //static zend_function_entry php_imagickkernel_class_methods[] =
