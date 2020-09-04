@@ -3,7 +3,7 @@ Test ImagickPixel, setColor
 --SKIPIF--
 <?php
 require_once(dirname(__FILE__) . '/skipif.inc');
-checkClassMethods('Imagick', array('setColorFromPixel'));
+checkClassMethods('ImagickPixel', array('setColorFromPixel'));
 ?>
 --FILE--
 <?php

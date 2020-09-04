@@ -4,8 +4,6 @@
 
 class Imagick
 {
-
-
 #if MagickLibVersion > 0x628
     //PHP_ME(imagick, optimizeimagelayers, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function optimizeImageLayers(): bool  {}
@@ -17,7 +15,7 @@ class Imagick
     public function pingImageBlob(string $image): bool  {}
 
 //    PHP_ME(imagick, pingimagefile, imagick_pingimagefile_args, ZEND_ACC_PUBLIC)
-    public function pingImageFile( resource $filehandle [, string $fileName ]): bool  {}
+    public function pingImageFile( resource $filehandle, ?string $fileName): bool  {}
 
 //PHP_ME(imagick, transposeimage, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function transposeImage(): bool  {}
@@ -42,14 +40,18 @@ class Imagick
 //    PHP_ME(imagick, getimagematte, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function getImageMatte(): bool  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, setimagematte, imagick_setimagematte_args, ZEND_ACC_PUBLIC)
     public function setImageMatte(bool $matte): bool  {}
 
 //    PHP_ME(imagick, adaptiveresizeimage, imagick_adaptiveresizeimage_args, ZEND_ACC_PUBLIC)
-    public function adaptiveResizeImage(int $columns, int $rows [, bool $bestfit = false [, bool $legacy = false ]]): bool  {}
+    public function adaptiveResizeImage(
+        int $columns,
+        int $rows,
+        bool $bestfit = false,
+        bool $legacy = false): bool  {}
 
 //    PHP_ME(imagick, sketchimage, imagick_sketchimage_args, ZEND_ACC_PUBLIC)
     public function sketchImage(float $radius, float $sigma, float $angle): bool  {}
@@ -64,27 +66,40 @@ class Imagick
     public function setSizeOffset(int $columns, int $rows, int $offset): bool  {}
 
 //  PHP_ME(imagick, adaptiveblurimage, imagick_adaptiveblurimage_args, ZEND_ACC_PUBLIC)
-    public function adaptiveBlurImage(float $radius, float $sigma [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function adaptiveBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, contraststretchimage, imagick_contraststretchimage_args, ZEND_ACC_PUBLIC)
-    contrastStretchImage(float $black_point, float $white_point [, int $channel = Imagick::CHANNEL_DEFAULT ]) public function  {} : bool
+    public function contrastStretchImage(
+        float $black_point,
+        float $white_point,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //  PHP_ME(imagick, adaptivesharpenimage, imagick_adaptivesharpenimage_args, ZEND_ACC_PUBLIC)
-    public function adaptiveSharpenImage(float $radius, float $sigma [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function adaptiveSharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, randomthresholdimage, imagick_randomthresholdimage_args, ZEND_ACC_PUBLIC)
-    public function randomThresholdImage(float $low, float $high [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function randomThresholdImage(float $low, float $high, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function roundCorners(float $x_rounding, float $y_rounding [, float $stroke_width = 10 [, float $displace = 5 [, float $size_correction = -6 ]]]): bool {}
+    public function roundCornersImage(
+        float $x_rounding,
+        float $y_rounding,
+        float $stroke_width = 10,
+        float $displace = 5,
+        float $size_correction = -6): bool {}
 
     /* This alias is due to BWC */
 //PHP_MALIAS(imagick, roundcorners, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-    /** @alias Imagick::roundcornersimage */
+    /** @alias Imagick::roundCornersImage */
     /** @deprecated */
-    public function roundcorners(float $x_rounding, float $y_rounding [, float $stroke_width = 10 [, float $displace = 5 [, float $size_correction = -6 ]]]): bool {}
+    public function roundCorners(
+        float $x_rounding,
+        float $y_rounding,
+        float $stroke_width = 10,
+        float $displace = 5,
+        float $size_correction = -6): bool {}
 
 #endif
 
@@ -98,9 +113,9 @@ class Imagick
 //    PHP_ME(imagick, transformimage, imagick_transformimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function transformImage(string $crop, string $geometry): Imagick  {}
-
-#endif // #if MagickLibVersion < 0x700
 #endif
+#endif
+
 #if MagickLibVersion > 0x630
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, setimageopacity, imagick_setimageopacity_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
@@ -110,15 +125,15 @@ class Imagick
 
 #if MagickLibVersion >= 0x700
 //    PHP_ME(imagick, setimagealpha, imagick_setimagealpha_args, ZEND_ACC_PUBLIC)
-    public function setImageAlpha(float alpha) {}
+    public function setImageAlpha(float $alpha): null {}
 #endif
 
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, orderedposterizeimage, imagick_orderedposterizeimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function orderedPosterizeImage(string $threshold_map [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
-#endif //#if MagickLibVersion < 0x700
-#endif //#if MagickLibVersion > 0x630
+    public function orderedPosterizeImage(string $threshold_map, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
+#endif
+#endif
 
 #if MagickLibVersion > 0x631
 //    PHP_ME(imagick, polaroidimage, imagick_polaroidimage_args, ZEND_ACC_PUBLIC)
@@ -164,29 +179,35 @@ class Imagick
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, paintfloodfillimage, imagick_paintfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function paintFloodfillImage(ImagickPixel|string $fill, float $fuzz, ImagickPixel|string $bordercolor, int $x, int $y [, int $channel =  {} Imagick::CHANNEL_DEFAULT ]): bool
-#endif // #if MagickLibVersion < 0x700
+    public function paintFloodfillImage(
+        ImagickPixel|string $fill,
+        float $fuzz,
+        ImagickPixel|string $bordercolor,
+        int $x,
+        int $y,
+        int $channel =  Imagick::CHANNEL_DEFAULT): bool {}
+#endif
 #endif
 #endif
 
 #if MagickLibVersion > 0x635
 //    PHP_ME(imagick, clutimage, imagick_clutimage_args, ZEND_ACC_PUBLIC)
-    public function clutImage(imagick $lookup_table [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function clutImage(imagick $lookup_table, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, getimageproperties, imagick_getimageproperties_args, ZEND_ACC_PUBLIC)
-    public function getImageProperties([ string $pattern = "*" [, bool $include_values = true ]]): array  {}
+    public function getImageProperties(string $pattern = "*", bool $include_values = true): array  {}
 
 //    PHP_ME(imagick, getimageprofiles, imagick_getimageprofiles_args, ZEND_ACC_PUBLIC)
-    public function getImageProfiles([ string $pattern = "*" [, bool $include_values = true ]]): array  {}
+    public function getImageProfiles(string $pattern = "*", bool $include_values = true): array  {}
 
 //    PHP_ME(imagick, distortimage, imagick_distortimage_args, ZEND_ACC_PUBLIC)
     public function distortImage(int $method, array $arguments, bool $bestfit): bool  {}
 
 //    PHP_ME(imagick, writeimagefile, imagick_writeimagefile_args, ZEND_ACC_PUBLIC)
-    public function writeImageFile( resource $filehandle [, string $format ]): bool  {}
+    public function writeImageFile( resource $filehandle, ?string $format): bool  {}
 
 //   PHP_ME(imagick, writeimagesfile, imagick_writeimagesfile_args, ZEND_ACC_PUBLIC)
-    public function writeImagesFile( resource $filehandle [, string $format ]): bool  {}
+    public function writeImagesFile( resource $filehandle, ?string $format): bool  {}
 
 //    PHP_ME(imagick, resetimagepage, imagick_resetimagepage_args, ZEND_ACC_PUBLIC)
     public function resetImagePage(string $page): bool  {}
@@ -201,7 +222,8 @@ class Imagick
     public function getImageClipMask(): Imagick  {}
 #endif
 
-    PHP_ME(imagick, animateimages, imagick_animateimages_args, ZEND_ACC_PUBLIC)
+//    PHP_ME(imagick, animateimages, imagick_animateimages_args, ZEND_ACC_PUBLIC)
+    // TODO - x server?
     public function animateImages(string $x_server): bool  {}
 
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
@@ -235,7 +257,7 @@ class Imagick
     public function setImageAlphaChannel(int $mode): bool  {}
 
 //    PHP_ME(imagick, floodfillpaintimage, imagick_floodfillpaintimage_args, ZEND_ACC_PUBLIC)
-    public function floodFillPaintImage(
+    public function floodfillPaintImage(
         ImagickPixel|string $fill,
         float $fuzz,
         ImagickPixel|string $target,
@@ -247,7 +269,12 @@ class Imagick
 
 
 //    PHP_ME(imagick, opaquepaintimage, imagick_opaquepaintimage_args, ZEND_ACC_PUBLIC)
-    public function opaquePaintImage(ImagickPixel|string $target, ImagickPixel|string $fill, float $fuzz, bool $invert [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool {}
+    public function opaquePaintImage(
+        ImagickPixel|string $target,
+        ImagickPixel|string $fill,
+        float $fuzz,
+        bool $invert,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 
 //    PHP_ME(imagick, transparentpaintimage, imagick_transparentpaintimage_args, ZEND_ACC_PUBLIC)
     public function transparentPaintImage(ImagickPixel|string $target, float $alpha, float $fuzz, bool $invert): bool  {}
@@ -262,6 +289,7 @@ class Imagick
 //    PHP_ME(imagick, decipherimage, imagick_decipherimage_args, ZEND_ACC_PUBLIC)
     public function decipherImage(string $passphrase): bool  {}
 #endif
+
 #if MagickLibVersion > 0x639
 //    PHP_ME(imagick, setgravity, imagick_setgravity_args, ZEND_ACC_PUBLIC)
     public function setGravity(int $gravity): bool  {}
@@ -275,9 +303,13 @@ class Imagick
 //    PHP_ME(imagick, getimagealphachannel, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function getImageAlphaChannel(): int  {}
 #endif
+
 #if MagickLibVersion > 0x642
 //    PHP_ME(imagick, getimagechanneldistortions, imagick_getimagechanneldistortions_args, ZEND_ACC_PUBLIC)
-    public function getImageChannelDistortions(imagick $reference, int $metric [, int $channel = Imagick::CHANNEL_DEFAULT ]):{} float
+    public function getImageChannelDistortions(
+        Imagick $reference,
+        int $metric,
+        int $channel = Imagick::CHANNEL_DEFAULT): float {}
 #endif
 
 #if MagickLibVersion > 0x643
@@ -287,18 +319,33 @@ class Imagick
 //    PHP_ME(imagick, getimagegravity, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function getImageGravity(): int  {}
 #endif
+
 #if MagickLibVersion > 0x645
 //    PHP_ME(imagick, importimagepixels, imagick_importimagepixels_args, ZEND_ACC_PUBLIC)
-    public importImagePixels(int $x, int $y, int $width, int $height, string $map, int $storage, array  public function  $pixels): bool {}
+    public function importImagePixels(
+        int $x,
+        int $y,
+        int $width,
+        int $height,
+        string $map,
+        int $storage,
+        array $pixels): bool {}
 
 //    PHP_ME(imagick, deskewimage, imagick_deskewimage_args, ZEND_ACC_PUBLIC)
     public function deskewImage(float $threshold): bool  {}
 
 //    PHP_ME(imagick, segmentimage, imagick_segmentimage_args, ZEND_ACC_PUBLIC)
-    public segmentImage(int $COLORSPACE, float $cluster_threshold, float $smooth_threshold [, bool $verbose = public function  {} false ]): bool
+    public function segmentImage(
+        int $COLORSPACE,
+        float $cluster_threshold,
+        float $smooth_threshold,
+        bool $verbose = false): bool  {}
 
 //    PHP_ME(imagick, sparsecolorimage, imagick_sparsecolorimage_args, ZEND_ACC_PUBLIC)
-    public sparseColorImage(int $SPARSE_METHOD, array $arguments [, int $channel = Imagick::CHANNEL_DEFAULT ])public function   {} : bool
+    public function sparseColorImage(
+        int $SPARSE_METHOD,
+        array $arguments,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 
 
 //    PHP_ME(imagick, remapimage, imagick_remapimage_args, ZEND_ACC_PUBLIC)
@@ -308,20 +355,20 @@ class Imagick
 
 #if PHP_IMAGICK_HAVE_HOUGHLINE
 //    PHP_ME(imagick, houghlineimage, imagick_houghlineimage_args, ZEND_ACC_PUBLIC)
-    public function houghLineImage(int width, int height, float threshold): bool {}
+    public function houghLineImage(int $width, int $height, float $threshold): bool {}
 #endif
 
 #if MagickLibVersion > 0x646
 //    PHP_ME(imagick, exportimagepixels, imagick_exportimagepixels_args, ZEND_ACC_PUBLIC)
-    public exportImagePixels(int $x, int $y, int $width, int $height, string $map, int $STORAGE): array {}
+    public function exportImagePixels(int $x, int $y, int $width, int $height, string $map, int $STORAGE): array {}
 #endif
 
 #if MagickLibVersion > 0x648
 //    PHP_ME(imagick, getimagechannelkurtosis, imagick_getimagechannelkurtosis_args, ZEND_ACC_PUBLIC)
-    public function getImageChannelKurtosis([ int $channel = Imagick::CHANNEL_DEFAULT ]): array  {}
+    public function getImageChannelKurtosis(int $channel = Imagick::CHANNEL_DEFAULT): array  {}
 
 //    PHP_ME(imagick, functionimage, imagick_functionimage_args, ZEND_ACC_PUBLIC)
-    public functionImage(int $function, array $arguments [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool {}
+    public function functionImage(int $function, array $arguments, int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 #endif
 
 #if MagickLibVersion > 0x651
@@ -331,15 +378,15 @@ class Imagick
 
 #if MagickLibVersion > 0x652
 //    PHP_ME(imagick, haldclutimage, imagick_haldclutimage_args, ZEND_ACC_PUBLIC)
-    public function haldClutImage(imagick $clut [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function haldClutImage(Imagick $clut, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 #endif
 
 #if MagickLibVersion > 0x655
 //    PHP_ME(imagick, autolevelimage, imagick_autolevelimage_args, ZEND_ACC_PUBLIC)
-    public function autoLevelImage([ int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function autoLevelImage(int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, blueshiftimage, imagick_blueshiftimage_args, ZEND_ACC_PUBLIC)
-    public function blueShiftImage([ float $factor = 1.5 ]): bool  {}
+    public function blueShiftImage(float $factor = 1.5): bool  {}
 #endif
 
 #if MagickLibVersion > 0x656
@@ -359,7 +406,7 @@ class Imagick
     public function setColorspace(int $COLORSPACE): bool  {}
 
 //    PHP_ME(imagick, clampimage, imagick_clampimage_args, ZEND_ACC_PUBLIC)
-    public function clampImage([ int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function clampImage(int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 #endif
 
 #if MagickLibVersion > 0x667
@@ -369,7 +416,7 @@ class Imagick
 
 //    PHP_ME(imagick, __construct, imagick_construct_args, ZEND_ACC_PUBLIC|ZEND_ACC_CTOR)
     // TODO int|float? :spocks_eyebrow.gif:
-    public function __construct(?string|array|int|float $files ])  {}
+    public function __construct(string|array|int|float|null $files) {}
 
 //    PHP_ME(imagick, __tostring, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function __toString(): string  {}
@@ -454,7 +501,7 @@ class Imagick
 //    PHP_ME(imagick, getimagesize, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function getImageSize(): int  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 
@@ -471,7 +518,7 @@ class Imagick
     public function setLastIterator(): bool  {}
         
 //    PHP_ME(imagick, resetiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-      public function resetIterator() {}
+      public function resetIterator(): null {}
         
 //    PHP_ME(imagick, previousimage, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function previousImage(): bool  {}
@@ -494,7 +541,7 @@ class Imagick
 //    PHP_ME(imagick, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function getImageIndex(): int  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 
@@ -529,7 +576,12 @@ class Imagick
     public function annotateImage(ImagickDraw $draw_settings, float $x, float $y, float $angle, string $text): bool  {}
 
 //    PHP_ME(imagick, compositeimage, imagick_compositeimage_args, ZEND_ACC_PUBLIC)
-    public function compositeImage(imagick $composite_object, int $composite, int $x, int $y [, int $channel =  {} Imagick::CHANNEL_DEFAULT ]): bool
+    public function compositeImage(
+        Imagick $composite_object,
+        int $composite,
+        int $x,
+        int $y,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool{}
 
 //    PHP_ME(imagick, modulateimage, imagick_modulateimage_args, ZEND_ACC_PUBLIC)
     public function modulateImage(float $brightness, float $saturation, float $hue): bool  {}
@@ -538,13 +590,17 @@ class Imagick
     public function getImageColors(): int  {}
 
 //    PHP_ME(imagick, montageimage, imagick_montageimage_args, ZEND_ACC_PUBLIC)
-    public function montageImage(ImagickDraw $draw, string $tile_geometry, string $thumbnail_geometry, int $mode, string  {} $frame): Imagick
+    public function montageImage(
+        ImagickDraw $draw,
+        string $tile_geometry,
+        string $thumbnail_geometry,
+        int $mode, string $frame): Imagick {}
 
 //    PHP_ME(imagick, identifyimage, imagick_identifyimage_args, ZEND_ACC_PUBLIC)
-    public function identifyImage([ bool $appendRawOutput = false ]): array  {}
+    public function identifyImage(bool $appendRawOutput = false): array  {}
 
 //    PHP_ME(imagick, thresholdimage, imagick_thresholdimage_args, ZEND_ACC_PUBLIC)
-    public function thresholdImage(float $threshold [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function thresholdImage(float $threshold, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, adaptivethresholdimage, imagick_adaptivethresholdimage_args, ZEND_ACC_PUBLIC)
     public function adaptiveThresholdImage(int $width, int $height, int $offset): bool  {}
@@ -563,7 +619,7 @@ class Imagick
 
 
 //    PHP_ME(imagick, normalizeimage, imagick_normalizeimage_args, ZEND_ACC_PUBLIC)
-    public function normalizeImage([ int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function normalizeImage(int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, oilpaintimage, imagick_oilpaintimage_args, ZEND_ACC_PUBLIC)
     public function oilPaintImage(float $radius): bool  {}
@@ -575,7 +631,7 @@ class Imagick
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, radialblurimage, imagick_radialblurimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function radialBlurImage(float $angle [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function radialBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 #endif
 #endif
 
@@ -586,7 +642,13 @@ class Imagick
     public function resampleImage(float $x_resolution, float $y_resolution, int $filter, float $blur): bool  {}
 
 //    PHP_ME(imagick, resizeimage, imagick_resizeimage_args, ZEND_ACC_PUBLIC)
-    public function resizeImage(int $columns, int $rows, int $filter, float $blur [, bool $bestfit = false [, bool $legacy = false ]]): bool {}
+    public function resizeImage(
+        int $columns,
+        int $rows,
+        int $filter,
+        float $blur,
+        bool $bestfit = false,
+        bool $legacy = false): bool {}
 
 //    PHP_ME(imagick, rollimage, imagick_rollimage_args, ZEND_ACC_PUBLIC)
     public function rollImage(int $x, int $y): bool  {}
@@ -608,7 +670,7 @@ class Imagick
 //    PHP_ME(imagick, setimageattribute, imagick_setimageattribute_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function setImageAttribute(string $key, string $value): bool  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, setimagebackgroundcolor, imagick_setimagebackgroundcolor_args, ZEND_ACC_PUBLIC)
@@ -616,7 +678,7 @@ class Imagick
 
 #if MagickLibVersion >= 0x700
 //    PHP_ME(imagick, setimagechannelmask, imagick_setimagechannelmask_args, ZEND_ACC_PUBLIC)
-    public function setImageChannelMask(int channel): int {}
+    public function setImageChannelMask(int $channel): int {}
 
 #endif
 //    PHP_ME(imagick, setimagecompose, imagick_setimagecompose_args, ZEND_ACC_PUBLIC)
@@ -638,21 +700,21 @@ class Imagick
 //    PHP_ME(imagick, setimagemattecolor, imagick_setimagemattecolor_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function setImageMatteColor(ImagickPixel|string $matte): bool  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 
 
 //    PHP_ME(imagick, setimagepage, imagick_setimagepage_args, ZEND_ACC_PUBLIC)
     public function setImagePage(int $width, int $height, int $x, int $y): bool  {}
 
 
-    PHP_ME(imagick, setimageprogressmonitor, imagick_setimageprogressmonitor_args, ZEND_ACC_PUBLIC)
+//    PHP_ME(imagick, setimageprogressmonitor, imagick_setimageprogressmonitor_args, ZEND_ACC_PUBLIC)
     // TODO test this.
     public function setImageProgressMonitor(string $filename): bool {}
 
 
 #if MagickLibVersion > 0x653
 //    PHP_ME(imagick, setprogressmonitor, imagick_setprogressmonitor_args, ZEND_ACC_PUBLIC)
-    public function setProgressMonitor( callable $callback): bool  {}
+    public function setProgressMonitor(callable $callback): bool  {}
 #endif
 
 
@@ -662,9 +724,8 @@ class Imagick
 //    PHP_ME(imagick, setimagescene, imagick_setimagescene_args, ZEND_ACC_PUBLIC)
     public function setImageScene(int $scene): bool  {}
 
-    PHP_ME(imagick, setimagetickspersecond, imagick_setimagetickspersecond_args, ZEND_ACC_PUBLIC)
+//    PHP_ME(imagick, setimagetickspersecond, imagick_setimagetickspersecond_args, ZEND_ACC_PUBLIC)
     public function setImageTicksPerSecond(int $ticks_per_second): bool  {}
-
 
 //    PHP_ME(imagick, setimagetype, imagick_setimagetype_args, ZEND_ACC_PUBLIC)
     public function setImageType(int $image_type): bool  {}
@@ -673,14 +734,13 @@ class Imagick
     public function setImageUnits(int $units): bool  {}
 
 //    PHP_ME(imagick, sharpenimage, imagick_sharpenimage_args, ZEND_ACC_PUBLIC)
-    public function sharpenImage(float $radius, float $sigma [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function sharpenImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, shaveimage, imagick_shaveimage_args, ZEND_ACC_PUBLIC)
     public function shaveImage(int $columns, int $rows): bool  {}
 
 //    PHP_ME(imagick, shearimage, imagick_shearimage_args, ZEND_ACC_PUBLIC)
     public function shearImage(ImagickPixel|string $background, float $x_shear, float $y_shear): bool  {}
-
 
 //    PHP_ME(imagick, spliceimage, imagick_spliceimage_args, ZEND_ACC_PUBLIC)
     public function spliceImage(int $width, int $height, int $x, int $y): bool  {}
@@ -689,7 +749,7 @@ class Imagick
     public function pingImage(string $filename): bool  {}
 
 //    PHP_ME(imagick, readimagefile, imagick_readimagefile_args, ZEND_ACC_PUBLIC)
-    public function readImageFile( resource $filehandle [, string $fileName = NULL ]): bool  {}
+    public function readImageFile(resource $filehandle, ?string $fileName = null): bool  {}
 
 //    PHP_ME(imagick, displayimage, imagick_displayimage_args, ZEND_ACC_PUBLIC)
     public function displayImage(string $servername): bool  {}
@@ -707,22 +767,27 @@ class Imagick
     public function stripImage(): bool  {}
 
 //    PHP_ME(imagick, queryformats, imagick_queryformats_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-    public function queryFormats([ string $pattern = "*" ]): array  {}
+    public static function queryFormats(string $pattern = "*"): array  {}
 
 //    PHP_ME(imagick, queryfonts, imagick_queryfonts_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-    public function queryFonts([ string $pattern = "*" ]): array  {}
+    public static function queryFonts(string $pattern = "*"): array  {}
 
 //    PHP_ME(imagick, queryfontmetrics, imagick_queryfontmetrics_args, ZEND_ACC_PUBLIC)
-    public function queryFontMetrics(ImagickDraw $properties, string $text [, bool $multiline ]): array  {}
+    /* TODO  $multiline == null,  means we should autodetect */
+    public function queryFontMetrics(ImagickDraw $properties, string $text, ?bool $multiline): array  {}
 
 //    PHP_ME(imagick, steganoimage, imagick_steganoimage_args, ZEND_ACC_PUBLIC)
     public function steganoImage(imagick $watermark_wand, int $offset): Imagick  {}
 
 //    PHP_ME(imagick, addnoiseimage, imagick_addnoiseimage_args, ZEND_ACC_PUBLIC)
-    public function addNoiseImage(int $noise_type [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function addNoiseImage(int $noise_type, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, motionblurimage, imagick_motionblurimage_args, ZEND_ACC_PUBLIC)
-    public function motionBlurImage(float $radius, float $sigma, float $angle [, int $channel = Imagick::CHANNEL_DEFAULT ]):bool {}
+    public function motionBlurImage(
+        float $radius,
+        float $sigma,
+        float $angle,
+        int $channel = Imagick::CHANNEL_DEFAULT):bool {}
 
 #if MagickLibVersion < 0x700
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
@@ -753,7 +818,12 @@ class Imagick
     public function borderImage(ImagickPixel|string $bordercolor, int $width, int $height): bool  {}
 
 //    PHP_ME(imagick, calculatecrop, imagick_calculatecrop_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-    public function Imagick::calculateCrop(long orig_width, long orig_height, long desired_width, long desired_height[, bool legacy = false]): array {}
+    public static function calculateCrop(
+        int $orig_width,
+        int $orig_height,
+        int $desired_width,
+        int $desired_height,
+        bool $legacy = false): array {}
 
 
 //    PHP_ME(imagick, chopimage, imagick_chopimage_args, ZEND_ACC_PUBLIC)
@@ -768,7 +838,7 @@ class Imagick
 
     /* clippathimage has been deprecated. Create alias here and use the newer API function if present */
 //    PHP_MALIAS(imagick, clipimagepath, clippathimage, imagick_clippathimage_args, ZEND_ACC_PUBLIC)
-    /** @alias Imagick::clippathimage */
+    /** @alias Imagick::clipPathImage */
     public function clipImagePath(string $pathname, string $inside): void  {}
 
 //    PHP_ME(imagick, coalesceimages, imagick_zero_args, ZEND_ACC_PUBLIC)
@@ -779,7 +849,7 @@ class Imagick
 //    PHP_ME(imagick, colorfloodfillimage, imagick_colorfloodfillimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function colorFloodfillImage(ImagickPixel|string $fill, float $fuzz, ImagickPixel|string $bordercolor, int $x, int $y): bool  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, colorizeimage, imagick_colorizeimage_args, ZEND_ACC_PUBLIC)
@@ -788,7 +858,7 @@ class Imagick
     public function colorizeImage(
         ImagickPixel|string $colorize,
         ImagickPixel|string $opacity,
-        ?bool $legacy = false ]): bool  {}
+        ?bool $legacy = false ): bool  {}
 
 //    PHP_ME(imagick, compareimagechannels, imagick_compareimagechannels_args, ZEND_ACC_PUBLIC)
     public function compareImageChannels(imagick $image, int $channelType, int $metricType): array  {}
@@ -803,7 +873,7 @@ class Imagick
     public function combineImages(int $channelType): Imagick  {}
 
 //    PHP_ME(imagick, convolveimage, imagick_convolveimage_args, ZEND_ACC_PUBLIC)
-    public function convolveImage(array $kernel [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function convolveImage(array $kernel, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, cyclecolormapimage, imagick_cyclecolormapimage_args, ZEND_ACC_PUBLIC)
     public function cycleColormapImage(int $displace): bool  {}
@@ -828,16 +898,17 @@ class Imagick
     public function equalizeImage(): bool  {}
 
 //    PHP_ME(imagick, evaluateimage, imagick_evaluateimage_args, ZEND_ACC_PUBLIC)
-    public function evaluateImage(int $op, float $constant [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function evaluateImage(int $op, float $constant, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 #if MagickLibVersion >= 0x687
 //	Merge multiple images of the same size together with the selected operator.
 //http://www.imagemagick.org/Usage/layers/#evaluate-sequence
 
 //    PHP_ME(imagick, evaluateimages, imagick_evaluateimages_args, ZEND_ACC_PUBLIC)
-    public function evaluateImages(int EVALUATE_CONSTANT): bool {}
+    public function evaluateImages(int $EVALUATE_CONSTANT): bool {}
 
-#endif // MagickLibVersion >= 0x687
+#endif
+
 #if MagickLibVersion < 0x700
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
 //    PHP_ME(imagick, flattenimages, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
@@ -854,21 +925,26 @@ class Imagick
 
 #if MagickLibVersion >= 0x655
 //    PHP_ME(imagick, forwardfouriertransformimage, imagick_forwardfouriertransformimage_args, ZEND_ACC_PUBLIC)
-    public function forwardFourierTransformimage(bool $magnitude): bool  {}
+    public function forwardFourierTransformImage(bool $magnitude): bool  {}
 #endif
 
 //    PHP_ME(imagick, frameimage, imagick_frameimage_args, ZEND_ACC_PUBLIC)
-    public function frameImage(ImagickPixel|string $matte_color, int $width, int $height, int $inner_bevel, int $outer_bevel): bool  {}
+    public function frameImage(
+        ImagickPixel|string $matte_color,
+        int $width,
+        int $height,
+        int $inner_bevel,
+        int $outer_bevel): bool  {}
 
 
 //    PHP_ME(imagick, fximage, imagick_fximage_args, ZEND_ACC_PUBLIC)
-    public function fxImage(string $expression [, int $channel = Imagick::CHANNEL_DEFAULT ]): Imagick  {}
+    public function fxImage(string $expression, int $channel = Imagick::CHANNEL_DEFAULT): Imagick  {}
 
 //    PHP_ME(imagick, gammaimage, imagick_gammaimage_args, ZEND_ACC_PUBLIC)
-    public function gammaImage(float $gamma [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function gammaImage(float $gamma, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, gaussianblurimage, imagick_gaussianblurimage_args, ZEND_ACC_PUBLIC)
-    public function gaussianBlurImage(float $radius, float $sigma [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function gaussianBlurImage(float $radius, float $sigma, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 #if MagickLibVersion < 0x700
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
@@ -900,7 +976,7 @@ class Imagick
     /** @deprecated */
     public function getImageChannelExtrema(int $channel): array  {}
 
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, getimagechannelmean, imagick_getimagechannelmean_args, ZEND_ACC_PUBLIC)
@@ -925,14 +1001,14 @@ class Imagick
     public function getImageDepth(): int  {}
 
 //    PHP_ME(imagick, getimagedistortion, imagick_getimagedistortion_args, ZEND_ACC_PUBLIC)
-    public function getImageDistortion(magickWand $reference, int $metric): float  {}
+    public function getImageDistortion(Imagick $reference, int $metric): float  {}
 
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, getimageextrema, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function getImageExtrema(): array  {}
-#endif // #if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, getimagedispose, imagick_zero_args, ZEND_ACC_PUBLIC)
@@ -960,7 +1036,7 @@ class Imagick
 //    PHP_ME(imagick, getimagemattecolor, imagick_zero_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function getImageMatteColor(): ImagickPixel  {}
-#endif //#if MagickLibVersion < 0x700
+#endif
 
 //    PHP_ME(imagick, getimagepage, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function getImagePage(): array  {}
@@ -1022,7 +1098,11 @@ class Imagick
 #endif
 
 //    PHP_ME(imagick, levelimage, imagick_levelimage_args, ZEND_ACC_PUBLIC)
-    public function levelImage(float $blackPoint, float $gamma, float $whitePoint [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool    {}
+    public function levelImage(
+        float $blackPoint,
+        float $gamma,
+        float $whitePoint,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool    {}
 
 //    PHP_ME(imagick, magnifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function magnifyImage(): bool  {}
@@ -1037,8 +1117,9 @@ class Imagick
     /** @deprecated */
     public function matteFloodfillImage(float $alpha, float $fuzz, ImagickPixel|string $bordercolor, int $x, int $y): bool  {}
 
-#endif // #if MagickLibVersion < 0x700
 #endif
+#endif
+
 #if MagickLibVersion < 0x700
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
 //    PHP_ME(imagick, medianfilterimage, imagick_medianfilterimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
@@ -1048,18 +1129,22 @@ class Imagick
 #endif
 
 //    PHP_ME(imagick, negateimage, imagick_negateimage_args, ZEND_ACC_PUBLIC)
-    public function negateImage(bool $gray [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function negateImage(bool $gray, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, paintopaqueimage, imagick_paintopaqueimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function paintOpaqueImage(ImagickPixel|string $target, ImagickPixel|string $fill, float $fuzz [, int $channel = Imagick::CHANNEL_DEFAULT ]):   {} bool
+    public function paintOpaqueImage(
+        ImagickPixel|string $target,
+        ImagickPixel|string $fill,
+        float $fuzz,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 
 //    PHP_ME(imagick, painttransparentimage, imagick_painttransparentimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function paintTransparentImage(ImagickPixel|string $target, float $alpha, float $fuzz): bool  {}
-#endif //#if MagickLibVersion < 0x700
+#endif
 #endif
 
 //    PHP_ME(imagick, previewimages, imagick_previewimages_args, ZEND_ACC_PUBLIC)
@@ -1072,7 +1157,12 @@ class Imagick
     public function  quantizeImage(int $numberColors, int $colorspace, int $treedepth, bool $dither, bool $measureError):  bool {}
 
 //    PHP_ME(imagick, quantizeimages, imagick_quantizeimages_args, ZEND_ACC_PUBLIC)
-    public function quantizeImages(int $numberColors, int $colorspace, int $treedepth, bool $dither, bool $measureError): bool {}
+    public function quantizeImages(
+        int $numberColors,
+        int $colorspace,
+        int $treedepth,
+        bool $dither,
+        bool $measureError): bool {}
 
 #if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
 #if MagickLibVersion < 0x700
@@ -1103,6 +1193,10 @@ class Imagick
 
 //    PHP_ME(imagick, setimageblueprimary, imagick_setimageblueprimary_args, ZEND_ACC_PUBLIC)
     public function setImageBluePrimary(float $x, float $y): bool  {}
+    /* {{{ proto bool Imagick::setImageBluePrimary(float x,float y)
+For IM7 the prototype is
+proto bool Imagick::setImageBluePrimary(float x, float y, float z) */
+
 
 //    PHP_ME(imagick, setimagebordercolor, imagick_setimagebordercolor_args, ZEND_ACC_PUBLIC)
     public function setImageBorderColor(ImagickPixel|string $border): bool  {}
@@ -1116,9 +1210,8 @@ class Imagick
 //    PHP_ME(imagick, setimagecolorspace, imagick_setimagecolorspace_args, ZEND_ACC_PUBLIC)
     public function setImageColorspace(int $colorspace): bool  {}
 
-    PHP_ME(imagick, setimagedispose, imagick_setimagedispose_args, ZEND_ACC_PUBLIC)
+//    PHP_ME(imagick, setimagedispose, imagick_setimagedispose_args, ZEND_ACC_PUBLIC)
     public function setImageDispose(int $dispose): bool  {}
-
 
 //    PHP_ME(imagick, setimageextent, imagick_setimageextent_args, ZEND_ACC_PUBLIC)
     public function setImageExtent(int $columns, int $rows): bool  {}
@@ -1146,7 +1239,11 @@ class Imagick
     public function setImageWhitePoint(float $x, float $y): bool  {}
 
 //    PHP_ME(imagick, sigmoidalcontrastimage, imagick_sigmoidalcontrastimage_args, ZEND_ACC_PUBLIC)
-    public function  sigmoidalContrastImage(bool $sharpen, float $alpha, float $beta [, int $channel = Imagick::CHANNEL_DEFAULT   ]): bool{}
+    public function  sigmoidalContrastImage(
+        bool $sharpen,
+        float $alpha,
+        float $beta,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool{}
 
 //    PHP_ME(imagick, stereoimage, imagick_stereoimage_args, ZEND_ACC_PUBLIC)
     public function stereoImage(imagick $offset_wand): bool  {}
@@ -1155,10 +1252,15 @@ class Imagick
     public function textureImage(imagick $texture_wand): Imagick  {}
 
 //    PHP_ME(imagick, tintimage, imagick_tintimage_args, ZEND_ACC_PUBLIC)
-    public function tintImage(ImagickPixel|string $tint, ImagickPixel|string $opacity [, bool $legacy = false ]): bool  {}
+    public function tintImage(ImagickPixel|string $tint, ImagickPixel|string $opacity, bool $legacy = false): bool  {}
 
 //    PHP_ME(imagick, unsharpmaskimage, imagick_unsharpmaskimage_args, ZEND_ACC_PUBLIC)
-    public function unsharpMaskImage(float $radius, float $sigma, float $amount, float $threshold [, int $channel =  {} Imagick::CHANNEL_DEFAULT ]): bool
+    public function unsharpMaskImage(
+        float $radius,
+        float $sigma,
+        float $amount,
+        float $threshold,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 
 //    PHP_ME(imagick, getimage, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function getImage(): Imagick  {}
@@ -1170,7 +1272,7 @@ class Imagick
     public function setImage(imagick $replace): bool  {}
 
 //    PHP_ME(imagick, newimage, imagick_newimage_args, ZEND_ACC_PUBLIC)
-    public function newImage(int $cols, int $rows, ImagickPixel|string $background [, string $format ]): bool  {}
+    public function newImage(int $cols, int $rows, ImagickPixel|string $background, ?string $format): bool  {}
 
 //    PHP_ME(imagick, newpseudoimage, imagick_newpseudoimage_args, ZEND_ACC_PUBLIC)
     public function newPseudoImage(int $columns, int $rows, string $pseudoString): bool  {}
@@ -1190,7 +1292,7 @@ class Imagick
 
 #if MagickLibVersion > 0x660
 //    PHP_ME(imagick, getfeatures, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-    public function getFeatures(): string {}
+    public static function getFeatures(): string {}
 #endif
 
 //    PHP_ME(imagick, getfilename, imagick_zero_args, ZEND_ACC_PUBLIC)
@@ -1217,7 +1319,8 @@ class Imagick
 //    PHP_ME(imagick, getquantum, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
     public static function getQuantum(): int  {}
 
-    PHP_ME(imagick, gethdrienabled, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+//    PHP_ME(imagick, gethdrienabled, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
+    public static function getHdriEnabled(): bool {}
 
 //    PHP_ME(imagick, getquantumdepth, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
     public static function getQuantumDepth(): array  {}
@@ -1226,7 +1329,7 @@ class Imagick
     public static function getQuantumRange(): array  {}
 
 //    PHP_ME(imagick, getreleasedate, imagick_zero_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
-    public function getReleaseDate(): string  {}
+    public static function getReleaseDate(): string  {}
 
 //    PHP_ME(imagick, getresource, imagick_getresource_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
     public static function getResource(int $type): int  {}
@@ -1283,21 +1386,27 @@ class Imagick
     public function setType(int $image_type): bool  {}
 
 #if MagickLibVersion > 0x628
-    PHP_MALIAS(imagick, key, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
-#else
-# if defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#  error "MAGICKCORE_EXCLUDE_DEPRECATED should not be defined with ImageMagick version below 6.2.8"
-# else
-    PHP_MALIAS(imagick, key, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC)
-# endif
-#endif
+//    PHP_MALIAS(imagick, key, getiteratorindex, imagick_zero_args, ZEND_ACC_PUBLIC)
+    /** @alias Imagick::getIteratorIndex */
+    public function key(): int  {}
+
+//#else
+//# if defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#  error "MAGICKCORE_EXCLUDE_DEPRECATED should not be defined with ImageMagick version below 6.2.8"
+//# else
+////    PHP_MALIAS(imagick, key, getimageindex, imagick_zero_args, ZEND_ACC_PUBLIC)
+//        /** @alias Imagick::getImageIndex */
+//    public function key(): int  {}
+//
+//# endif
+//#endif
 
 //    PHP_MALIAS(imagick, next, nextimage, imagick_zero_args, ZEND_ACC_PUBLIC)
-    /** @alias Imagick::nextimage */
+    /** @alias Imagick::nextImage */
     public function next(): bool  {}
 
 //    PHP_MALIAS(imagick, rewind, setfirstiterator, imagick_zero_args, ZEND_ACC_PUBLIC)
-    /** @alias Imagick::setfirstiterator */
+    /** @alias Imagick::setFirstIterator */
     public function rewind(): bool  {}
 
 //    PHP_ME(imagick, valid, imagick_zero_args, ZEND_ACC_PUBLIC)
@@ -1308,7 +1417,10 @@ class Imagick
 
 #if MagickLibVersion >= 0x659
 //    PHP_ME(imagick, brightnesscontrastimage, imagick_brightnesscontrastimage_args, ZEND_ACC_PUBLIC)
-    public function brightnessContrastImage(float $brightness, float $contrast [, int $channel =  {} Imagick::CHANNEL_DEFAULT ]): bool {}
+    public function brightnessContrastImage(
+        float $brightness,
+        float $contrast,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 #endif
 
 #if MagickLibVersion > 0x661
@@ -1317,25 +1429,33 @@ class Imagick
 #endif
 
 //    PHP_ME(imagick, selectiveblurimage, imagick_selectiveblurimage_args, ZEND_ACC_PUBLIC)
-    public function selectiveBlurImage(float $radius, float $sigma, float $threshold [, int $channel =   Imagick::CHANNEL_DEFAULT ]): bool {}
+    public function selectiveBlurImage(
+        float $radius,
+        float $sigma,
+        float $threshold,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 
 #if MagickLibVersion >= 0x689
 //    PHP_ME(imagick, rotationalblurimage, imagick_rotationalblurimage_args, ZEND_ACC_PUBLIC)
-    public function rotationalBlurImage(float $angle [, int $channel = Imagick::CHANNEL_DEFAULT ]): bool  {}
+    public function rotationalBlurImage(float $angle, int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
 #endif
 
 #if MagickLibVersion >= 0x683
 //    PHP_ME(imagick, statisticimage, imagick_statisticimage_args, ZEND_ACC_PUBLIC)
-    public function statisticImage(int $type, int $width, int $height [, int $channel = Imagick::CHANNEL_DEFAULT ]):   bool {}
+    public function statisticImage(
+        int $type,
+        int $width,
+        int $height,
+        int $channel = Imagick::CHANNEL_DEFAULT): bool {}
 #endif
 
 #if MagickLibVersion >= 0x652
 //    PHP_ME(imagick, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
-    public function subImageMatch(imagick $Imagick [, array &$offset [, float &$similarity ]]): Imagick  {}
+    public function subimageMatch(imagick $Imagick, ?array &$offset, ?float &$similarity): Imagick  {}
 
 //    ZEND_MALIAS(imagick, similarityimage, subimagematch, imagick_subimagematch_args, ZEND_ACC_PUBLIC)
-    /** @alias Imagick::subImageMatch */
-    public function similarityimage(imagick $Imagick [, array &$offset [, float &$similarity ]]): Imagick  {}
+    /** @alias Imagick::subimageMatch */
+    public function similarityimage(imagick $Imagick, ?array &$offset, ?float &$similarity): Imagick  {}
 #endif
 
 //    PHP_ME(imagick, setregistry, imagick_setregistry_args, ZEND_ACC_STATIC|ZEND_ACC_PUBLIC)
@@ -1349,41 +1469,49 @@ class Imagick
 
 #if MagickLibVersion >= 0x680
 //    PHP_ME(imagick, morphology, imagick_morphology_args, ZEND_ACC_PUBLIC)
-    public function morphology(int $morphologyMethod, int $iterations, ImagickKernel $ImagickKernel [, int $channel =  Imagick::CHANNEL_DEFAULT ]): bool {}
+    public function morphology(
+        int $morphologyMethod,
+        int $iterations,
+        ImagickKernel $ImagickKernel,
+        int $channel =  Imagick::CHANNEL_DEFAULT): bool {}
+#endif
 
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, filter, imagick_filter_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function filter(imagickKernel $ImagickKernel [, int $channel = Imagick::CHANNEL_UNDEFINED ]): bool  {}
-#endif // #if MagickLibVersion < 0x700
+    public function filter(ImagickKernel $ImagickKernel, int $channel = Imagick::CHANNEL_UNDEFINED): bool  {}
+#endif
 
-#endif // #if MagickLibVersion >= 0x680
+
 
 //    PHP_ME(imagick, setantialias, imagick_setantialias_args, ZEND_ACC_PUBLIC)
-    public function setAntiAlias(bool $antialias) {}
+    public function setAntialias(bool $antialias): null {}
 
 //    PHP_ME(imagick, getantialias, imagick_zero_args, ZEND_ACC_PUBLIC)
-    public function getAntiAlias(): bool {}
+    public function getAntialias(): bool {}
 
 #if MagickLibVersion > 0x676
 //    PHP_ME(imagick, colordecisionlistimage, imagick_colordecisionlistimage_args, ZEND_ACC_PUBLIC)
     public function colorDecisionListImage(string $color_correction_collection): bool {}
-
-#endif // #if MagickLibVersion > 0x676
+#endif
 
 #if MagickLibVersion >= 0x687
 //    PHP_ME(imagick, optimizeimagetransparency, imagick_zero_args, ZEND_ACC_PUBLIC)
-    public function optimizeimagetransparency() {}
-#endif // #if MagickLibVersion >= 0x687
+    public function optimizeImageTransparency(): null {}
+#endif
 
 #if MagickLibVersion >= 0x660
 //    PHP_ME(imagick, autogammaimage, imagick_autogammaimage_args, ZEND_ACC_PUBLIC)
-    public function autoGammaImage(?int $channel = Imagick::CHANNEL_ALL) {}
-#endif // #if MagickLibVersion >= 0x660
+    public function autoGammaImage(?int $channel = Imagick::CHANNEL_ALL): null {}
+#endif
 
 #if MagickLibVersion >= 0x692
 //    PHP_ME(imagick, autoorient, imagick_zero_args, ZEND_ACC_PUBLIC)
-    public function autoOrient() {}
+    public function autoOrient(): null {}
+
+    /** @alias Imagick::autoOrient */
+    public function autoOrientate(): null {}
+
 
 //    PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
     public function compositeImageGravity(Imagick $image, int $COMPOSITE_CONSTANT, int $GRAVITY_CONSTANT): bool {}
@@ -1392,14 +1520,14 @@ class Imagick
 
 #if MagickLibVersion >= 0x693
 //    PHP_ME(imagick, localcontrastimage, imagick_localContrastImage_args, ZEND_ACC_PUBLIC)
-    public function localContrastImage(float $radius, float $strength) {}
-#endif // #if MagickLibVersion >= 0x692
+    public function localContrastImage(float $radius, float $strength): null {}
+#endif
 
 #if MagickLibVersion >= 0x700
     // PHP_ME(imagick, identifyimagetype, imagick_zero_args, ZEND_ACC_PUBLIC)
     // Identifies the potential image type, returns one of the Imagick::IMGTYPE_* constants
     public function identifyImageType(): int {}
-#endif // #if MagickLibVersion >= 0x700
+#endif
 
 
     // TODO - needs deleting from docs.
@@ -1407,4 +1535,13 @@ class Imagick
 
     // TODO - needs deleting from docs.
 //    public function render(): bool  {}
+
+//    public function floodfillPaintImage(
+//        ImagickPixel|string $fill,
+//        float $fuzz,
+//        ImagickPixel|string $bordercolor,
+//        int $x,
+//        int $y,
+//        bool $invert,
+//        int $channel = Imagick::CHANNEL_DEFAULT): null {}
 }
