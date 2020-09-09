@@ -4864,7 +4864,7 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_morphology, 0, 0, 3)
 ZEND_END_ARG_INFO()
 #endif
 
-#if MagickLibVersion > 0x628 && MagickLibVersion < 0x700
+#if MagickLibVersion > 0x628 && defined(IMAGICK_WITH_KERNEL) && MagickLibVersion < 0x700
 
 #if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Imagick_filter, 0, 1, _IS_BOOL, 0)
@@ -5614,7 +5614,7 @@ ZEND_METHOD(Imagick, listRegistry);
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x680
 ZEND_METHOD(Imagick, morphology);
 #endif
-#if MagickLibVersion > 0x628 && MagickLibVersion < 0x700
+#if MagickLibVersion > 0x628 && defined(IMAGICK_WITH_KERNEL) && MagickLibVersion < 0x700
 ZEND_METHOD(Imagick, filter);
 #endif
 #if MagickLibVersion > 0x628
@@ -6290,7 +6290,7 @@ static const zend_function_entry class_Imagick_methods[] = {
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x680
 	ZEND_ME(Imagick, morphology, arginfo_class_Imagick_morphology, ZEND_ACC_PUBLIC)
 #endif
-#if MagickLibVersion > 0x628 && MagickLibVersion < 0x700
+#if MagickLibVersion > 0x628 && defined(IMAGICK_WITH_KERNEL) && MagickLibVersion < 0x700
 	ZEND_ME(Imagick, filter, arginfo_class_Imagick_filter, ZEND_ACC_PUBLIC|ZEND_ACC_DEPRECATED)
 #endif
 #if MagickLibVersion > 0x628

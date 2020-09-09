@@ -1478,10 +1478,12 @@ proto bool Imagick::setImageBluePrimary(float x, float y, float z) */
         int $channel =  Imagick::CHANNEL_DEFAULT): bool {}
 #endif
 
+#ifdef IMAGICK_WITH_KERNEL
 #if MagickLibVersion < 0x700
 //    PHP_ME(imagick, filter, imagick_filter_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
     public function filter(ImagickKernel $ImagickKernel, int $channel = Imagick::CHANNEL_UNDEFINED): bool  {}
+#endif
 #endif
 
 

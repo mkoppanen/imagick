@@ -54,7 +54,6 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX($1, 0, 0, IS_LONG, 0)
 ";
 
 
-
 //ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(name, return_reference, required_num_args, type, allow_null)
 #define ZEND_BEGIN_ARG_INFO_EX(name, _unused, return_reference, required_num_args)
 $search[] = "#ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX\((\w*), (\w*), (\w*), (\w*), (\w*)\)#iu";

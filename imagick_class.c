@@ -12650,7 +12650,9 @@ PHP_METHOD(Imagick, morphology)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x680
 
+#ifdef IMAGICK_WITH_KERNEL
 #if MagickLibVersion < 0x700
 /* {{{ proto bool Imagick::filter(ImagickKernel kernel, [int CHANNEL] )
 	Applies a custom convolution kernel to the image.
@@ -12697,8 +12699,7 @@ PHP_METHOD(Imagick, filter)
 }
 /* }}} */
 #endif //#if MagickLibVersion < 0x700
-#endif //#if MagickLibVersion >= 0x680
-
+#endif // #ifdef IMAGICK_WITH_KERNEL
 
 /* {{{ proto int Imagick::setAntiAlias(bool antialias)
 	Set whether antialiasing should be used for operations. On by default.
