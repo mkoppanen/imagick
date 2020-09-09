@@ -13,7 +13,7 @@ checkClassMethods('Imagick', array('transformimage'));
 function transformimage() {
     $imagick = new \Imagick();
     $imagick->newPseudoImage(640, 480, "magick:logo");
-    $newImage = $imagick->transformimage("400x600", "200x300");
+    $newImage = $imagick->transformImage("400x600", "200x300");
     $bytes = $newImage->getImageBlob();
     if (strlen($bytes) <= 0) { echo "Failed to generate image.";} 
 }
@@ -22,5 +22,5 @@ transformimage() ;
 echo "Ok";
 ?>
 --EXPECTF--
-Deprecated: %s Imagick::transformimage() is deprecated in %s
+Deprecated: %s Imagick::transformImage() is deprecated in %s
 Ok

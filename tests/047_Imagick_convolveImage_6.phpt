@@ -38,5 +38,5 @@ convolveImage($bias, $kernelMatrix) ;
 echo "Ok";
 ?>
 --EXPECTF--
-Deprecated: %s Imagick::setimagebias() is deprecated in %s
+Deprecated: %s Imagick::setImageBias() is deprecated in %s
 Ok

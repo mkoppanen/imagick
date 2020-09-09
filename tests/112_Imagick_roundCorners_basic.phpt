@@ -40,5 +40,5 @@ roundCorners() ;
 echo "Ok";
 ?>
 --EXPECTF--
-Deprecated: %s Imagick::roundcornersimage() is deprecated in %s
+Deprecated: %s Imagick::roundCornersImage() is deprecated in %s
 Ok
