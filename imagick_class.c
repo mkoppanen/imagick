@@ -5335,7 +5335,7 @@ void s_set_image_bias(INTERNAL_FUNCTION_PARAMETERS, zend_bool use_quantum)
 	Sets the image bias. Bias should be scaled with 0 = no adjustment, 1 = quantum value
 */
 #if MagickLibVersion < 0x700
-PHP_METHOD(Imagick, setImageBiasWuantum)
+PHP_METHOD(Imagick, setImageBiasQuantum)
 {
 	s_set_image_bias (INTERNAL_FUNCTION_PARAM_PASSTHRU, 1);
 }

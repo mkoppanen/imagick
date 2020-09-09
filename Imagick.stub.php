@@ -92,8 +92,10 @@ class Imagick
 
     /* This alias is due to BWC */
 //PHP_MALIAS(imagick, roundcorners, roundcornersimage, imagick_roundcornersimage_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
-    /** @alias Imagick::roundCornersImage */
-    /** @deprecated */
+    /**
+     * @deprecated
+     * @alias Imagick::roundCornersImage
+     */
     public function roundCorners(
         float $x_rounding,
         float $y_rounding,

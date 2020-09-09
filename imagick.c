@@ -98,1442 +98,1442 @@ PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 	return php_imagickdraw_sc_entry;
 }
 
-/* Imagick */
-#if MagickLibVersion > 0x628
-	ZEND_BEGIN_ARG_INFO_EX(imagick_shadeimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, gray)
-		ZEND_ARG_INFO(0, azimuth)
-		ZEND_ARG_INFO(0, elevation)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagematte_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, enable)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sketchimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, angle)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimageblob_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, imageContents)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimagefile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, fp)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_trimimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, fuzz)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_waveimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, amplitude)
-		ZEND_ARG_INFO(0, waveLenght)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_vignetteimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, blackPoint)
-		ZEND_ARG_INFO(0, whitePoint)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptiveresizeimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, bestfit)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_contraststretchimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, blackPoint)
-		ZEND_ARG_INFO(0, whitePoint)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptiveblurimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptivesharpenimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setsizeoffset_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, offset)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_randomthresholdimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, low)
-		ZEND_ARG_INFO(0, high)
-		ZEND_ARG_INFO(0, CHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimagelayers_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, LAYER)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_roundcornersimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, xRounding)
-		ZEND_ARG_INFO(0, yRounding)
-		ZEND_ARG_INFO(0, strokeWidth)
-		ZEND_ARG_INFO(0, displace)
-		ZEND_ARG_INFO(0, sizeCorrection)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setiteratorindex_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, index)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_transformimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, crop)
-		ZEND_ARG_INFO(0, geometry)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-#if MagickLibVersion > 0x631
-	ZEND_BEGIN_ARG_INFO_EX(imagick_polaroidimage_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-		ZEND_ARG_INFO(0, angle)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageproperty_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, name)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageproperty_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, name)
-		ZEND_ARG_INFO(0, value)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_deleteimageproperty_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, name)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_identifyformat_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, embedText)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageinterpolatemethod_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, INTERPOLATE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_linearstretchimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, blackPoint)
-		ZEND_ARG_INFO(0, whitePoint)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_extentimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x633
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageorientation_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, ORIENTATION)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x634 && MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_paintfloodfillimage_args, 0, 0, 6)
-		ZEND_ARG_INFO(0, CHANNEL)
-		ZEND_ARG_INFO(0, fill)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, bordercolor)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x630
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageopacity_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, opacity)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_orderedposterizeimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, threshold_map)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-#if MagickLibVersion > 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagealpha_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, alpha)
-	ZEND_END_ARG_INFO()
-#endif
-
-
-#if MagickLibVersion > 0x635
-	ZEND_BEGIN_ARG_INFO_EX(imagick_clutimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, CHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageproperties_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, pattern)
-		ZEND_ARG_INFO(0, values)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageprofiles_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, pattern)
-		ZEND_ARG_INFO(0, values)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x635
-	ZEND_BEGIN_ARG_INFO_EX(imagick_distortimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, method)
-		ZEND_ARG_INFO(0, arguments)
-		ZEND_ARG_INFO(0, bestfit)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimagefile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, handle)
-		ZEND_ARG_INFO(0, format)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimagesfile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, handle)
-		ZEND_ARG_INFO(0, format)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_resetimagepage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, page)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageclipmask_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_animateimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, server_name)
-	ZEND_END_ARG_INFO()
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_recolorimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, matrix)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-#endif
-
-#if MagickLibVersion > 0x636
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setfont_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, font)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setpointsize_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, pointsize)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_mergeimagelayers_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, LAYERMETHOD)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x637
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagealphachannel_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, ALPHACHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_floodfillpaintimage_args, 0, 0, 6)
-		ZEND_ARG_INFO(0, fill)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, bordercolor)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, invert)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_opaquepaintimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, target)
-		ZEND_ARG_INFO(0, fill)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, invert)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_transparentpaintimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, target)
-		ZEND_ARG_INFO(0, alpha)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, invert)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x638
-	ZEND_BEGIN_ARG_INFO_EX(imagick_liquidrescaleimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, delta_x)
-		ZEND_ARG_INFO(0, rigidity)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_encipherimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, passphrase)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_decipherimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, passphrase)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x639
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setgravity_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, GRAVITY)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelrange_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x642
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldistortions_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, METRICTYPE)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x643
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegravity_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, GRAVITY)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion >= 0x645
-	ZEND_BEGIN_ARG_INFO_EX(imagick_importimagepixels_args, 0, 0, 7)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, map)
-		ZEND_ARG_INFO(0, storage)
-		ZEND_ARG_INFO(0, PIXEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_deskewimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, threshold)
-	ZEND_END_ARG_INFO()
-
-#if PHP_IMAGICK_HAVE_HOUGHLINE
-	ZEND_BEGIN_ARG_INFO_EX(imagick_houghlineimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-	    ZEND_ARG_INFO(0, threshold)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_segmentimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, COLORSPACE)
-		ZEND_ARG_INFO(0, cluster_threshold)
-		ZEND_ARG_INFO(0, smooth_threshold)
-		ZEND_ARG_INFO(0, verbose)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sparsecolorimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, SPARSE_METHOD)
-		ZEND_ARG_INFO(0, arguments)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_remapimage_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, DITHER)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x646
-	ZEND_BEGIN_ARG_INFO_EX(imagick_exportimagepixels_args, 0, 0, 6)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, map)
-		ZEND_ARG_INFO(0, STORAGE)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x648
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelkurtosis_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_functionimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, FUNCTION)
-		ZEND_ARG_INFO(0, arguments)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x652
-	ZEND_BEGIN_ARG_INFO_EX(imagick_haldclutimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-	
-	ZEND_BEGIN_ARG_INFO_EX(imagick_transformimagecolorspace_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, COLORSPACE)
-	ZEND_END_ARG_INFO()	
-#endif
-
-#if MagickLibVersion > 0x655
-	ZEND_BEGIN_ARG_INFO_EX(imagick_autolevelimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_blueshiftimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, factor)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x656
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageartifact_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, artifact)
-		ZEND_ARG_INFO(0, value)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageartifact_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, artifact)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_deleteimageartifact_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, artifact)
-	ZEND_END_ARG_INFO()
-	
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setcolorspace_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, COLORSPACE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_clampimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-#if MagickLibVersion > 0x667
-	ZEND_BEGIN_ARG_INFO_EX(imagick_smushimages_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, stack)
-		ZEND_ARG_INFO(0, offset)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_zero_args, 0, 0, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_construct_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, files)
-	ZEND_END_ARG_INFO()
-	
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getpixelregioniterator_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, modify)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_readimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_readimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filenames)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_readimageblob_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, imageContents)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageformat_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, imageFormat)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_scaleimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, bestfit)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimages_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, filename)
-		ZEND_ARG_INFO(0, adjoin)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_blurimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, CHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_thumbnailimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, bestfit)
-		ZEND_ARG_INFO(0, fill)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_cropthumbnailimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagefilename_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageindex_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, index)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_commentimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, comment)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_cropimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_labelimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, label)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_drawimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompressionquality_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, quality)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_annotateimage_args, 0, 0, 5)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, angle)
-		ZEND_ARG_INFO(0, text)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_compositeimage_args, 0, 0, 4)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, COMPOSITE)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, CHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_modulateimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, brightness)
-		ZEND_ARG_INFO(0, saturation)
-		ZEND_ARG_INFO(0, hue)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_montageimage_args, 0, 0, 5)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-		ZEND_ARG_INFO(0, tileGeometry)
-		ZEND_ARG_INFO(0, thumbnailGeometry)
-		ZEND_ARG_INFO(0, MONTAGEMODE)
-		ZEND_ARG_INFO(0, frame)
-	ZEND_END_ARG_INFO()
-
-#ifdef IMAGICK_WITH_KERNEL
-	ZEND_BEGIN_ARG_INFO_EX(imagick_morphology_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, morphologyMethod)
-		ZEND_ARG_INFO(0, iterations)
-		ZEND_ARG_OBJ_INFO(0, ImagickKernel, ImagickKernel, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_filter_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, ImagickKernel, ImagickKernel, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_identifyimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, appendRawOutput)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_thresholdimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, threshold)
-		ZEND_ARG_INFO(0, CHANNELTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptivethresholdimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, offset)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_blackthresholdimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_whitethresholdimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_appendimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, stack)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_charcoalimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_normalizeimage_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_oilpaintimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_posterizeimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, levels)
-		ZEND_ARG_INFO(0, dither)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_radialblurimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, angle)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_raiseimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, raise)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_resampleimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, xResolution)
-		ZEND_ARG_INFO(0, yResolution)
-		ZEND_ARG_INFO(0, FILTER)
-		ZEND_ARG_INFO(0, blur)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_resizeimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, filter)
-		ZEND_ARG_INFO(0, blur)
-		ZEND_ARG_INFO(0, bestfit)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_rollimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_rotateimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, color)
-		ZEND_ARG_INFO(0, degrees)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sampleimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_solarizeimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, threshold)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_shadowimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, opacity)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageattribute_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, key)
-		ZEND_ARG_INFO(0, value)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageattribute_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, key)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebackgroundcolor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagechannelmask_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, channel)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompose_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, COMPOSITE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompression_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, COMPRESSION)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedelay_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, delay)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedepth_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, depth)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegamma_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, gamma)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageiterations_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, iterations)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagemattecolor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagepage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageprogressmonitor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-	
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setprogressmonitor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, callback)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageresolution_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, xResolution)
-		ZEND_ARG_INFO(0, yResolution)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagescene_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, scene)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagetickspersecond_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, ticksPerSecond)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagetype_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, IMGTYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageunits_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, RESOLUTION)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sharpenimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_shaveimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_shearimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, color)
-		ZEND_ARG_INFO(0, xShear)
-		ZEND_ARG_INFO(0, yShear)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_spliceimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_readimagefile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, fp)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_displayimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, serverName)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_displayimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, serverName)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_spreadimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_swirlimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, degrees)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_queryformats_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, pattern)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_queryfonts_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, pattern)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_queryfontmetrics_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-		ZEND_ARG_INFO(0, text)
-		ZEND_ARG_INFO(0, multiline)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_steganoimage_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, offset)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_addnoiseimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, NOISE)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_motionblurimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, angle)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_morphimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, frames)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_affinetransformimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_calculatecrop_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, orig_width)
-		ZEND_ARG_INFO(0, orig_height)
-		ZEND_ARG_INFO(0, desired_width)
-		ZEND_ARG_INFO(0, desired_height)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_borderimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, color)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_chopimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_clippathimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, pathname)
-		ZEND_ARG_INFO(0, inside)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_colorfloodfillimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, fill_color)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, border_color)
-		ZEND_ARG_INFO(0, y)
-		ZEND_ARG_INFO(0, x)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_colorizeimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, colorize_color)
-		ZEND_ARG_INFO(0, opacity)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimagechannels_args, 0, 0, 3)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-		ZEND_ARG_INFO(0, METRIC)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimages_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, METRIC)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_contrastimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, sharpen)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_convolveimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, kernel)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_cyclecolormapimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, displace)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_edgeimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_embossimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_evaluateimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, EVALUATE)
-		ZEND_ARG_INFO(0, constant)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x687
-	ZEND_BEGIN_ARG_INFO_EX(imagick_evaluateimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, EVALUATE)
-	ZEND_END_ARG_INFO()
-#endif //MagickLibVersion >= 0x687
-
-#if MagickLibVersion >= 0x655
-	ZEND_BEGIN_ARG_INFO_EX(imagick_forwardfouriertransformimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, magnitude)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_frameimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, color)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, innerBevel)
-		ZEND_ARG_INFO(0, outerBevel)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_fximage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, expression)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_gammaimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, gamma)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_gaussianblurimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldepth_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldistortion_args, 0, 0, 3)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, CHANNEL)
-		ZEND_ARG_INFO(0, METRIC)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelextrema_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelmean_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagecolormapcolor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, index)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagedistortion_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, METRIC)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagepixelcolor_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageprofile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, name)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagetotalinkdensity_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageregion_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x658
-	ZEND_BEGIN_ARG_INFO_EX(imagick_inversefouriertransformimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, complement)
-		ZEND_ARG_INFO(0, magnitude)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_levelimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, blackPoint)
-		ZEND_ARG_INFO(0, gamma)
-		ZEND_ARG_INFO(0, whitePoint)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_mapimage_args, 0, 0, 2)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, dither)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_mattefloodfillimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, alpha)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, color)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_medianfilterimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_negateimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, gray)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_paintopaqueimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, target_color)
-		ZEND_ARG_INFO(0, fill_color)
-		ZEND_ARG_INFO(0, fuzz)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_painttransparentimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, target_color)
-		ZEND_ARG_INFO(0, alpha)
-		ZEND_ARG_INFO(0, fuzz)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_previewimages_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, PREVIEW)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_profileimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, name)
-		ZEND_ARG_INFO(0, profile)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_quantizeimage_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, numColors)
-		ZEND_ARG_INFO(0, COLORSPACE)
-		ZEND_ARG_INFO(0, treeDepth)
-		ZEND_ARG_INFO(0, dither)
-		ZEND_ARG_INFO(0, measureError)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_quantizeimages_args, 0, 0, 5)
-		ZEND_ARG_INFO(0, numColors)
-		ZEND_ARG_INFO(0, COLORSPACE)
-		ZEND_ARG_INFO(0, treeDepth)
-		ZEND_ARG_INFO(0, dither)
-		ZEND_ARG_INFO(0, measureError)
-	ZEND_END_ARG_INFO()
-
-#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_reducenoiseimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, radius)
-	ZEND_END_ARG_INFO()
-#endif
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_removeimageprofile_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, name)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_separateimagechannel_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sepiatoneimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, threshold)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebias_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, bias)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion < 0x700
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebiasquantum_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, bias)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageblueprimary_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebordercolor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagechanneldepth_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, CHANNEL)
-		ZEND_ARG_INFO(0, depth)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecolormapcolor_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, index)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecolorspace_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, COLORSPACE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedispose_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, DISPOSETYPE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageextent_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegreenprimary_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageinterlacescheme_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, INTERLACE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageprofile_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, name)
-		ZEND_ARG_INFO(0, profile)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageredprimary_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagerenderingintent_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, RENDERINGINTENT)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagevirtualpixelmethod_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, VIRTUALPIXELMETHOD)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagewhitepoint_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_sigmoidalcontrastimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, sharpen)
-		ZEND_ARG_INFO(0, contrast)
-		ZEND_ARG_INFO(0, midpoint)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_stereoimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_textureimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_tintimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, tint_color)
-		ZEND_ARG_INFO(0, opacity)
-		ZEND_ARG_INFO(0, legacy)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_unsharpmaskimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, amount)
-		ZEND_ARG_INFO(0, threshold)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_addimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setimage_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_newimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, background_color)
-		ZEND_ARG_INFO(0, format)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_newpseudoimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-		ZEND_ARG_INFO(0, pseudoString)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getoption_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, key)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getconfigureoptions_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, pattern)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getresource_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, resource_type)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getresourcelimit_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, resource_type)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setbackgroundcolor_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setcompression_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, compression)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setcompressionquality_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, compressionquality)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setfilename_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, filename)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setformat_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, format)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setinterlacescheme_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, INTERLACE)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setoption_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, key)
-		ZEND_ARG_INFO(0, value)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setpage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, x)
-		ZEND_ARG_INFO(0, y)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setresourcelimit_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, RESOURCETYPE)
-		ZEND_ARG_INFO(0, limit)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setresolution_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, xResolution)
-		ZEND_ARG_INFO(0, yResolution)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setsamplingfactors_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, factors)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setsize_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, columns)
-		ZEND_ARG_INFO(0, rows)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_settype_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, IMGTYPE)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x659
-	ZEND_BEGIN_ARG_INFO_EX(imagick_brightnesscontrastimage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, brightness)
-		ZEND_ARG_INFO(0, contrast)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion > 0x661
-	ZEND_BEGIN_ARG_INFO_EX(imagick_colormatriximage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, color_matrix)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_selectiveblurimage_args, 0, 0, 4)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, sigma)
-		ZEND_ARG_INFO(0, threshold)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x689
-	ZEND_BEGIN_ARG_INFO_EX(imagick_rotationalblurimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, angle)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion >= 0x683
-	ZEND_BEGIN_ARG_INFO_EX(imagick_statisticimage_args, 0, 0, 3)
-		ZEND_ARG_INFO(0, type)
-		ZEND_ARG_INFO(0, width)
-		ZEND_ARG_INFO(0, height)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-#endif
-
-#if MagickLibVersion >= 0x652
-	ZEND_BEGIN_ARG_INFO_EX(imagick_subimagematch_args, 0, 0, 1)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(1, offset)
-		ZEND_ARG_INFO(1, similarity)
-		ZEND_ARG_INFO(1, similarity_threshold) // the minimum similarity to match?
-		ZEND_ARG_INFO(1, metric) //Which comparison to use METRIC_*
-	ZEND_END_ARG_INFO()
-#endif
-
-#if PHP_VERSION_ID >= 50600
-	ZEND_BEGIN_ARG_INFO_EX(imagick_count_args, 0, 0, 0)
-		ZEND_ARG_INFO(0, mode)
-	ZEND_END_ARG_INFO()
-#endif
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setregistry_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, key)
-		ZEND_ARG_INFO(0, value)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_getregistry_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, key)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_setantialias_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, antialias)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_colordecisionlistimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, antialias)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_autogammaimage_args, 0, 0, 1)
-		ZEND_ARG_INFO(0, CHANNEL)
-	ZEND_END_ARG_INFO()
-
-	ZEND_BEGIN_ARG_INFO_EX(imagick_compositeimagegravity_args, 0, 0, 3)
-		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
-		ZEND_ARG_INFO(0, COMPOSITE)
-		ZEND_ARG_INFO(0, GRAVITY)
-	ZEND_END_ARG_INFO()
-
-#if MagickLibVersion >= 0x693
-	ZEND_BEGIN_ARG_INFO_EX(imagick_localContrastImage_args, 0, 0, 2)
-		ZEND_ARG_INFO(0, radius)
-		ZEND_ARG_INFO(0, strength)
-	ZEND_END_ARG_INFO()
-#endif // MagickLibVersion >= 0x693
+///* Imagick */
+//#if MagickLibVersion > 0x628
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_shadeimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, gray)
+//		ZEND_ARG_INFO(0, azimuth)
+//		ZEND_ARG_INFO(0, elevation)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagematte_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, enable)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sketchimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, angle)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimageblob_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, imageContents)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimagefile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, fp)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_trimimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, fuzz)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_waveimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, amplitude)
+//		ZEND_ARG_INFO(0, waveLenght)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_vignetteimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, blackPoint)
+//		ZEND_ARG_INFO(0, whitePoint)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptiveresizeimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, bestfit)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_contraststretchimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, blackPoint)
+//		ZEND_ARG_INFO(0, whitePoint)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptiveblurimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptivesharpenimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setsizeoffset_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, offset)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_randomthresholdimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, low)
+//		ZEND_ARG_INFO(0, high)
+//		ZEND_ARG_INFO(0, CHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimagelayers_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, LAYER)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_roundcornersimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, xRounding)
+//		ZEND_ARG_INFO(0, yRounding)
+//		ZEND_ARG_INFO(0, strokeWidth)
+//		ZEND_ARG_INFO(0, displace)
+//		ZEND_ARG_INFO(0, sizeCorrection)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setiteratorindex_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, index)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_transformimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, crop)
+//		ZEND_ARG_INFO(0, geometry)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//#if MagickLibVersion > 0x631
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_polaroidimage_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//		ZEND_ARG_INFO(0, angle)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageproperty_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, name)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageproperty_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, name)
+//		ZEND_ARG_INFO(0, value)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_deleteimageproperty_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, name)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_identifyformat_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, embedText)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageinterpolatemethod_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, INTERPOLATE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_linearstretchimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, blackPoint)
+//		ZEND_ARG_INFO(0, whitePoint)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_extentimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x633
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageorientation_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, ORIENTATION)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x634 && MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_paintfloodfillimage_args, 0, 0, 6)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//		ZEND_ARG_INFO(0, fill)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, bordercolor)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x630
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageopacity_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, opacity)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_orderedposterizeimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, threshold_map)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//#if MagickLibVersion > 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagealpha_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, alpha)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//
+//#if MagickLibVersion > 0x635
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_clutimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, CHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageproperties_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, pattern)
+//		ZEND_ARG_INFO(0, values)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageprofiles_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, pattern)
+//		ZEND_ARG_INFO(0, values)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x635
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_distortimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, method)
+//		ZEND_ARG_INFO(0, arguments)
+//		ZEND_ARG_INFO(0, bestfit)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimagefile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, handle)
+//		ZEND_ARG_INFO(0, format)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimagesfile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, handle)
+//		ZEND_ARG_INFO(0, format)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_resetimagepage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, page)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageclipmask_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_animateimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, server_name)
+//	ZEND_END_ARG_INFO()
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_recolorimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, matrix)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//#endif
+//
+//#if MagickLibVersion > 0x636
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setfont_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, font)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setpointsize_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, pointsize)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_mergeimagelayers_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, LAYERMETHOD)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x637
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagealphachannel_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, ALPHACHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_floodfillpaintimage_args, 0, 0, 6)
+//		ZEND_ARG_INFO(0, fill)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, bordercolor)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, invert)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_opaquepaintimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, target)
+//		ZEND_ARG_INFO(0, fill)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, invert)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_transparentpaintimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, target)
+//		ZEND_ARG_INFO(0, alpha)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, invert)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x638
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_liquidrescaleimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, delta_x)
+//		ZEND_ARG_INFO(0, rigidity)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_encipherimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, passphrase)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_decipherimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, passphrase)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x639
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setgravity_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, GRAVITY)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelrange_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x642
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldistortions_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, METRICTYPE)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x643
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegravity_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, GRAVITY)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion >= 0x645
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_importimagepixels_args, 0, 0, 7)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, map)
+//		ZEND_ARG_INFO(0, storage)
+//		ZEND_ARG_INFO(0, PIXEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_deskewimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, threshold)
+//	ZEND_END_ARG_INFO()
+//
+//#if PHP_IMAGICK_HAVE_HOUGHLINE
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_houghlineimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//	    ZEND_ARG_INFO(0, threshold)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_segmentimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//		ZEND_ARG_INFO(0, cluster_threshold)
+//		ZEND_ARG_INFO(0, smooth_threshold)
+//		ZEND_ARG_INFO(0, verbose)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sparsecolorimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, SPARSE_METHOD)
+//		ZEND_ARG_INFO(0, arguments)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_remapimage_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, DITHER)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x646
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_exportimagepixels_args, 0, 0, 6)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, map)
+//		ZEND_ARG_INFO(0, STORAGE)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x648
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelkurtosis_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_functionimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, FUNCTION)
+//		ZEND_ARG_INFO(0, arguments)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x652
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_haldclutimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_transformimagecolorspace_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x655
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_autolevelimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_blueshiftimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, factor)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x656
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageartifact_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, artifact)
+//		ZEND_ARG_INFO(0, value)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageartifact_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, artifact)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_deleteimageartifact_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, artifact)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setcolorspace_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_clampimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#if MagickLibVersion > 0x667
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_smushimages_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, stack)
+//		ZEND_ARG_INFO(0, offset)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_zero_args, 0, 0, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_construct_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, files)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getpixelregioniterator_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, modify)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_readimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_readimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filenames)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_readimageblob_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, imageContents)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageformat_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, imageFormat)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_scaleimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, bestfit)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_writeimages_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, filename)
+//		ZEND_ARG_INFO(0, adjoin)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_blurimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, CHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_thumbnailimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, bestfit)
+//		ZEND_ARG_INFO(0, fill)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_cropthumbnailimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagefilename_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageindex_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, index)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_commentimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, comment)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_cropimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_labelimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, label)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_drawimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompressionquality_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, quality)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_annotateimage_args, 0, 0, 5)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, angle)
+//		ZEND_ARG_INFO(0, text)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_compositeimage_args, 0, 0, 4)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, COMPOSITE)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, CHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_modulateimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, brightness)
+//		ZEND_ARG_INFO(0, saturation)
+//		ZEND_ARG_INFO(0, hue)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_montageimage_args, 0, 0, 5)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//		ZEND_ARG_INFO(0, tileGeometry)
+//		ZEND_ARG_INFO(0, thumbnailGeometry)
+//		ZEND_ARG_INFO(0, MONTAGEMODE)
+//		ZEND_ARG_INFO(0, frame)
+//	ZEND_END_ARG_INFO()
+//
+//#ifdef IMAGICK_WITH_KERNEL
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_morphology_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, morphologyMethod)
+//		ZEND_ARG_INFO(0, iterations)
+//		ZEND_ARG_OBJ_INFO(0, ImagickKernel, ImagickKernel, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_filter_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, ImagickKernel, ImagickKernel, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_identifyimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, appendRawOutput)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_thresholdimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, threshold)
+//		ZEND_ARG_INFO(0, CHANNELTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_adaptivethresholdimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, offset)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_blackthresholdimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_whitethresholdimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_appendimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, stack)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_charcoalimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_normalizeimage_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_oilpaintimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_posterizeimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, levels)
+//		ZEND_ARG_INFO(0, dither)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_radialblurimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, angle)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_raiseimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, raise)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_resampleimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, xResolution)
+//		ZEND_ARG_INFO(0, yResolution)
+//		ZEND_ARG_INFO(0, FILTER)
+//		ZEND_ARG_INFO(0, blur)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_resizeimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, filter)
+//		ZEND_ARG_INFO(0, blur)
+//		ZEND_ARG_INFO(0, bestfit)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_rollimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_rotateimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, color)
+//		ZEND_ARG_INFO(0, degrees)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sampleimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_solarizeimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, threshold)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_shadowimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, opacity)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageattribute_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, key)
+//		ZEND_ARG_INFO(0, value)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageattribute_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, key)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebackgroundcolor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagechannelmask_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, channel)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompose_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, COMPOSITE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecompression_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, COMPRESSION)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedelay_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, delay)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedepth_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, depth)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegamma_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, gamma)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageiterations_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, iterations)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagemattecolor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagepage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageprogressmonitor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setprogressmonitor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, callback)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageresolution_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, xResolution)
+//		ZEND_ARG_INFO(0, yResolution)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagescene_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, scene)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagetickspersecond_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, ticksPerSecond)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagetype_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, IMGTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageunits_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, RESOLUTION)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sharpenimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_shaveimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_shearimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, color)
+//		ZEND_ARG_INFO(0, xShear)
+//		ZEND_ARG_INFO(0, yShear)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_spliceimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_pingimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_readimagefile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, fp)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_displayimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, serverName)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_displayimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, serverName)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_spreadimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_swirlimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, degrees)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_queryformats_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, pattern)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_queryfonts_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, pattern)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_queryfontmetrics_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//		ZEND_ARG_INFO(0, text)
+//		ZEND_ARG_INFO(0, multiline)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_steganoimage_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, offset)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_addnoiseimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, NOISE)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_motionblurimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, angle)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_morphimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, frames)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_affinetransformimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, ImagickDraw, ImagickDraw, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_calculatecrop_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, orig_width)
+//		ZEND_ARG_INFO(0, orig_height)
+//		ZEND_ARG_INFO(0, desired_width)
+//		ZEND_ARG_INFO(0, desired_height)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_borderimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, color)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_chopimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_clippathimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, pathname)
+//		ZEND_ARG_INFO(0, inside)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_colorfloodfillimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, fill_color)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, border_color)
+//		ZEND_ARG_INFO(0, y)
+//		ZEND_ARG_INFO(0, x)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_colorizeimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, colorize_color)
+//		ZEND_ARG_INFO(0, opacity)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimagechannels_args, 0, 0, 3)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//		ZEND_ARG_INFO(0, METRIC)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_compareimages_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, METRIC)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_contrastimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, sharpen)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_convolveimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, kernel)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_cyclecolormapimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, displace)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_edgeimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_embossimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_evaluateimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, EVALUATE)
+//		ZEND_ARG_INFO(0, constant)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x687
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_evaluateimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, EVALUATE)
+//	ZEND_END_ARG_INFO()
+//#endif //MagickLibVersion >= 0x687
+//
+//#if MagickLibVersion >= 0x655
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_forwardfouriertransformimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, magnitude)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_frameimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, color)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, innerBevel)
+//		ZEND_ARG_INFO(0, outerBevel)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_fximage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, expression)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_gammaimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, gamma)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_gaussianblurimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldepth_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechanneldistortion_args, 0, 0, 3)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//		ZEND_ARG_INFO(0, METRIC)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelextrema_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagechannelmean_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagecolormapcolor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, index)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagedistortion_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, METRIC)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagepixelcolor_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageprofile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, name)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimagetotalinkdensity_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getimageregion_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x658
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_inversefouriertransformimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, complement)
+//		ZEND_ARG_INFO(0, magnitude)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_levelimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, blackPoint)
+//		ZEND_ARG_INFO(0, gamma)
+//		ZEND_ARG_INFO(0, whitePoint)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_mapimage_args, 0, 0, 2)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, dither)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_mattefloodfillimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, alpha)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, color)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_medianfilterimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_negateimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, gray)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_paintopaqueimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, target_color)
+//		ZEND_ARG_INFO(0, fill_color)
+//		ZEND_ARG_INFO(0, fuzz)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_painttransparentimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, target_color)
+//		ZEND_ARG_INFO(0, alpha)
+//		ZEND_ARG_INFO(0, fuzz)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_previewimages_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, PREVIEW)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_profileimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, name)
+//		ZEND_ARG_INFO(0, profile)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_quantizeimage_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, numColors)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//		ZEND_ARG_INFO(0, treeDepth)
+//		ZEND_ARG_INFO(0, dither)
+//		ZEND_ARG_INFO(0, measureError)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_quantizeimages_args, 0, 0, 5)
+//		ZEND_ARG_INFO(0, numColors)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//		ZEND_ARG_INFO(0, treeDepth)
+//		ZEND_ARG_INFO(0, dither)
+//		ZEND_ARG_INFO(0, measureError)
+//	ZEND_END_ARG_INFO()
+//
+//#if !defined(MAGICKCORE_EXCLUDE_DEPRECATED)
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_reducenoiseimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, radius)
+//	ZEND_END_ARG_INFO()
+//#endif
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_removeimageprofile_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, name)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_separateimagechannel_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sepiatoneimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, threshold)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebias_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, bias)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion < 0x700
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebiasquantum_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, bias)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageblueprimary_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagebordercolor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagechanneldepth_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//		ZEND_ARG_INFO(0, depth)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecolormapcolor_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, index)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagecolorspace_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, COLORSPACE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagedispose_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, DISPOSETYPE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageextent_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagegreenprimary_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageinterlacescheme_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, INTERLACE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageprofile_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, name)
+//		ZEND_ARG_INFO(0, profile)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimageredprimary_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagerenderingintent_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, RENDERINGINTENT)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagevirtualpixelmethod_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, VIRTUALPIXELMETHOD)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimagewhitepoint_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_sigmoidalcontrastimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, sharpen)
+//		ZEND_ARG_INFO(0, contrast)
+//		ZEND_ARG_INFO(0, midpoint)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_stereoimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_textureimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_tintimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, tint_color)
+//		ZEND_ARG_INFO(0, opacity)
+//		ZEND_ARG_INFO(0, legacy)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_unsharpmaskimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, amount)
+//		ZEND_ARG_INFO(0, threshold)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_addimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setimage_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_newimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, background_color)
+//		ZEND_ARG_INFO(0, format)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_newpseudoimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//		ZEND_ARG_INFO(0, pseudoString)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getoption_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, key)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getconfigureoptions_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, pattern)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getresource_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, resource_type)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getresourcelimit_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, resource_type)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setbackgroundcolor_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setcompression_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, compression)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setcompressionquality_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, compressionquality)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setfilename_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, filename)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setformat_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, format)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setinterlacescheme_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, INTERLACE)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setoption_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, key)
+//		ZEND_ARG_INFO(0, value)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setpage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, x)
+//		ZEND_ARG_INFO(0, y)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setresourcelimit_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, RESOURCETYPE)
+//		ZEND_ARG_INFO(0, limit)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setresolution_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, xResolution)
+//		ZEND_ARG_INFO(0, yResolution)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setsamplingfactors_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, factors)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setsize_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, columns)
+//		ZEND_ARG_INFO(0, rows)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_settype_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, IMGTYPE)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x659
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_brightnesscontrastimage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, brightness)
+//		ZEND_ARG_INFO(0, contrast)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion > 0x661
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_colormatriximage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, color_matrix)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_selectiveblurimage_args, 0, 0, 4)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, sigma)
+//		ZEND_ARG_INFO(0, threshold)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x689
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_rotationalblurimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, angle)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion >= 0x683
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_statisticimage_args, 0, 0, 3)
+//		ZEND_ARG_INFO(0, type)
+//		ZEND_ARG_INFO(0, width)
+//		ZEND_ARG_INFO(0, height)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if MagickLibVersion >= 0x652
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_subimagematch_args, 0, 0, 1)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(1, offset)
+//		ZEND_ARG_INFO(1, similarity)
+//		ZEND_ARG_INFO(1, similarity_threshold) // the minimum similarity to match?
+//		ZEND_ARG_INFO(1, metric) //Which comparison to use METRIC_*
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//#if PHP_VERSION_ID >= 50600
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_count_args, 0, 0, 0)
+//		ZEND_ARG_INFO(0, mode)
+//	ZEND_END_ARG_INFO()
+//#endif
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setregistry_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, key)
+//		ZEND_ARG_INFO(0, value)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_getregistry_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, key)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_setantialias_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, antialias)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_colordecisionlistimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, antialias)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_autogammaimage_args, 0, 0, 1)
+//		ZEND_ARG_INFO(0, CHANNEL)
+//	ZEND_END_ARG_INFO()
+//
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_compositeimagegravity_args, 0, 0, 3)
+//		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+//		ZEND_ARG_INFO(0, COMPOSITE)
+//		ZEND_ARG_INFO(0, GRAVITY)
+//	ZEND_END_ARG_INFO()
+//
+//#if MagickLibVersion >= 0x693
+//	ZEND_BEGIN_ARG_INFO_EX(imagick_localContrastImage_args, 0, 0, 2)
+//		ZEND_ARG_INFO(0, radius)
+//		ZEND_ARG_INFO(0, strength)
+//	ZEND_END_ARG_INFO()
+//#endif // MagickLibVersion >= 0x693
 
 //
 ///* ImagickDraw */
