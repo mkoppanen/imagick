@@ -54,7 +54,13 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Imagick_pingImageFile, 0, 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_pingImageFile, 0, 0, 2)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, filehandle, resource, 0)
+
+#if PHP_VERSION_ID >= 80000
+	ZEND_ARG_OBJ_INFO(0, filehandle, resource, )
+#else
+	ZEND_ARG_INFO(0, filehandle)
+#endif
+
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, fileName, IS_STRING, 1)
@@ -470,7 +476,13 @@ ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x630 && MagickLibVersion >= 0x700
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_setImageAlpha, 0, 1, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_setImageAlpha, 0, 1, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_setImageAlpha, 0, 0, 1)
+#endif
+
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, alpha, IS_DOUBLE, 0)
@@ -807,7 +819,13 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Imagick_writeImageFile, 0,
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_writeImageFile, 0, 0, 2)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, filehandle, resource, 0)
+
+#if PHP_VERSION_ID >= 80000
+	ZEND_ARG_OBJ_INFO(0, filehandle, resource, )
+#else
+	ZEND_ARG_INFO(0, filehandle)
+#endif
+
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, format, IS_STRING, 1)
@@ -1660,7 +1678,13 @@ ZEND_END_ARG_INFO()
 #endif
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick___construct, 0, 0, 1)
-	ZEND_ARG_TYPE_MASK(0, files, MAY_BE_STRING|MAY_BE_ARRAY|MAY_BE_LONG|MAY_BE_DOUBLE|MAY_BE_NULL, NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_MASK(0, files, MAY_BE_STRING|MAY_BE_ARRAY|MAY_BE_LONG|MAY_BE_DOUBLE|MAY_BE_NULL, NULL)
+#else
+    ZEND_ARG_INFO(0, files)
+#endif
+
 ZEND_END_ARG_INFO()
 
 
@@ -1984,7 +2008,13 @@ ZEND_END_ARG_INFO()
 
 #define arginfo_class_Imagick_setLastIterator arginfo_class_Imagick_removeImage
 
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_resetIterator, 0, 0, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_resetIterator, 0, 0, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_resetIterator, 0, 0, 0)
+#endif
+
 ZEND_END_ARG_INFO()
 
 #define arginfo_class_Imagick_previousImage arginfo_class_Imagick_removeImage
@@ -2939,7 +2969,13 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Imagick_readImageFile, 0, 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_readImageFile, 0, 0, 1)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, filehandle, resource, 0)
+
+#if PHP_VERSION_ID >= 80000
+	ZEND_ARG_OBJ_INFO(0, filehandle, resource, )
+#else
+	ZEND_ARG_INFO(0, filehandle)
+#endif
+
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, fileName, IS_STRING, 1, "null")
 ZEND_END_ARG_INFO()
 
@@ -4878,7 +4914,13 @@ ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x628
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_setAntialias, 0, 1, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_setAntialias, 0, 1, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_setAntialias, 0, 0, 1)
+#endif
+
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, antialias, _IS_BOOL, 0)
@@ -4910,18 +4952,36 @@ ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x687
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_optimizeImageTransparency, 0, 0, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_optimizeImageTransparency, 0, 0, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_optimizeImageTransparency, 0, 0, 0)
+#endif
+
 ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x660
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_autoGammaImage, 0, 0, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_autoGammaImage, 0, 0, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_autoGammaImage, 0, 0, 0)
+#endif
+
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, channel, IS_LONG, 1, "Imagick::CHANNEL_ALL")
 ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x692
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_autoOrient, 0, 0, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_autoOrient, 0, 0, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_autoOrient, 0, 0, 0)
+#endif
+
 ZEND_END_ARG_INFO()
 #endif
 
@@ -4954,7 +5014,13 @@ ZEND_END_ARG_INFO()
 #endif
 
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x693
-ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_localContrastImage, 0, 2, MAY_BE_NULL)
+
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_class_Imagick_localContrastImage, 0, 2, MAY_BE_NULL)
+#else
+    ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_localContrastImage, 0, 0, 2)
+#endif
+
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, radius, IS_DOUBLE, 0)

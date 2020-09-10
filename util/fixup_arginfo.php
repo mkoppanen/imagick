@@ -65,14 +65,45 @@ ZEND_BEGIN_ARG_INFO_EX($1, 0, $2, $3)
 #endif
 ";
 
-//ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(name, return_reference, required_num_args, class_name, allow_null)
+//#define ZEND_ARG_TYPE_MASK(pass_by_ref, name, type_mask, default_value) \
+$search[] = "#.*ZEND_ARG_TYPE_MASK\(([\w|\|]*), ([\w|\|]*), ([\w|\|]*), ([\w|\|]*)\)#iu";
+$replace[] = "
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_MASK($1, $2, $3, $4)
+#else
+    ZEND_ARG_INFO($1, $2)
+#endif
+";
 
+//ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(name, return_reference, required_num_args, type)
+//ZEND_BEGIN_ARG_INFO_EX(name, _unused, return_reference, required_num_args)
+
+$search[] = "#.*ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX\(([\w|\|]*), ([\w|\|]*), ([\w|\|]*), ([\w|\|]*)\)#iu";
+$replace[] = "
+#if PHP_VERSION_ID >= 80000
+    ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX($1, $2, $3, $4)
+#else
+    ZEND_BEGIN_ARG_INFO_EX($1, 0, $2, $3)
+#endif
+";
+
+//ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(name, return_reference, required_num_args, class_name, allow_null)
 $search[] = "#ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX\((\w*), (\w*), (\w*), (\w*), (\w*)\)#iu";
 $replace[] = "
 #if PHP_VERSION_ID >= 80000
 ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX($1, $2, $3, $4, $5)
 #else
 ZEND_BEGIN_ARG_INFO_EX($1, 0, $2, $3)
+#endif
+";
+
+//ZEND_ARG_OBJ_INFO(pass_by_ref, name, classname, allow_null) \
+$search[] = "#.*ZEND_ARG_OBJ_INFO\((\w*), (\w*), resource, (\w*)\)#iu";
+$replace[] = "
+#if PHP_VERSION_ID >= 80000
+\tZEND_ARG_OBJ_INFO($1, $2, resource, $4)
+#else
+\tZEND_ARG_INFO(0, $2)
 #endif
 ";
 
