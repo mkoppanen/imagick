@@ -101,7 +101,7 @@ ZEND_BEGIN_ARG_INFO_EX($1, 0, $2, $3)
 $search[] = "#.*ZEND_ARG_OBJ_INFO\((\w*), (\w*), resource, (\w*)\)#iu";
 $replace[] = "
 #if PHP_VERSION_ID >= 80000
-\tZEND_ARG_OBJ_INFO($1, $2, resource, $4)
+\tZEND_ARG_OBJ_INFO($1, $2, resource, $3)
 #else
 \tZEND_ARG_INFO(0, $2)
 #endif
