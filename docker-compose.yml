@@ -1,5 +1,13 @@
 version: "3"
 services:
+  centos6:
+    build: docker/centos6
+    volumes:
+      - .:/var/app
+  centos7:
+    build: docker/centos7
+    volumes:
+      - .:/var/app
   developing:
     build: docker/developing
     volumes:

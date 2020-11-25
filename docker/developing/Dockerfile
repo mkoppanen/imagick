@@ -9,6 +9,8 @@ RUN apt-get update -qq \
     gcc git gnupg lsb-release make pkg-config re2c wget \
     libpng-dev libjpeg-dev ghostscript libxml2-dev libfreetype6-dev
 
+# libssl1.0-dev libonig-dev
+
 
 # Make the default directory you
 WORKDIR /var/app
