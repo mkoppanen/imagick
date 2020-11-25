@@ -30,7 +30,7 @@ class Imagick
     public function waveImage(float $amplitude, float $length): bool  {}
 
 //  PHP_ME(imagick, vignetteimage, imagick_vignetteimage_args, ZEND_ACC_PUBLIC)
-    public function vignetteImage(float $blackPoint, float $whitePoint, int $x, int $y): bool  {}
+    public function vignetteImage(float $black_point, float $white_point, int $x, int $y): bool  {}
 
 //    PHP_ME(imagick, uniqueimagecolors, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function uniqueImageColors(): bool  {}
@@ -160,7 +160,7 @@ class Imagick
     public function getImageInterpolateMethod(): int  {}
 
 //    PHP_ME(imagick, linearstretchimage, imagick_linearstretchimage_args, ZEND_ACC_PUBLIC)
-    public function linearStretchImage(float $blackPoint, float $whitePoint): bool  {}
+    public function linearStretchImage(float $black_point, float $white_point): bool  {}
 
 //    PHP_ME(imagick, getimagelength, imagick_zero_args, ZEND_ACC_PUBLIC)
     public function getImageLength(): int  {}
@@ -338,7 +338,7 @@ class Imagick
 
 //    PHP_ME(imagick, segmentimage, imagick_segmentimage_args, ZEND_ACC_PUBLIC)
     public function segmentImage(
-        int $COLORSPACE,
+        int $colorspace,
         float $cluster_threshold,
         float $smooth_threshold,
         bool $verbose = false): bool  {}
@@ -405,7 +405,7 @@ class Imagick
     public function getColorspace(): int  {}
 
 //    PHP_ME(imagick, setcolorspace, imagick_setcolorspace_args, ZEND_ACC_PUBLIC)
-    public function setColorspace(int $COLORSPACE): bool  {}
+    public function setColorspace(int $colorspace): bool  {}
 
 //    PHP_ME(imagick, clampimage, imagick_clampimage_args, ZEND_ACC_PUBLIC)
     public function clampImage(int $channel = Imagick::CHANNEL_DEFAULT): bool  {}
@@ -1101,9 +1101,9 @@ class Imagick
 
 //    PHP_ME(imagick, levelimage, imagick_levelimage_args, ZEND_ACC_PUBLIC)
     public function levelImage(
-        float $blackPoint,
+        float $black_point,
         float $gamma,
-        float $whitePoint,
+        float $white_point,
         int $channel = Imagick::CHANNEL_DEFAULT): bool    {}
 
 //    PHP_ME(imagick, magnifyimage, imagick_zero_args, ZEND_ACC_PUBLIC)
@@ -1518,7 +1518,7 @@ proto bool Imagick::setImageBluePrimary(float x, float y, float z) */
 
 
 //    PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
-    public function compositeImageGravity(Imagick $image, int $COMPOSITE_CONSTANT, int $GRAVITY_CONSTANT): bool {}
+    public function compositeImageGravity(Imagick $image, int $COMPOSITE_CONSTANT, int $gravity): bool {}
 
 #endif
 

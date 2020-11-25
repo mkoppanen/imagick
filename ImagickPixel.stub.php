@@ -42,7 +42,7 @@ class ImagickPixel
 
     public function setColor(string $color): bool {}
 
-    public function setColorCount(int $colorCount): bool {}
+    public function setColorCount(int $color_count): bool {}
 
     public function setColorValue(int $color, float $value): bool {}
 
