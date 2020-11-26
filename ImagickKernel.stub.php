@@ -9,7 +9,7 @@ class ImagickKernel
 
     public function addUnityKernel(float $scale): void {}
 
-    public static function fromBuiltin(int $kernel_type, string $kernelString): ImagickKernel {}
+    public static function fromBuiltin(int $kernel_type, string $shape): ImagickKernel {}
 
     public static function fromMatrix(array $matrix, ?array $origin): ImagickKernel {}
 
@@ -24,15 +24,5 @@ class ImagickKernel
 
     public function separate(): array {}
 }
-
-
-*
-
-
-
-
-
-
-
 #endif
 
