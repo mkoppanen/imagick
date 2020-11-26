@@ -107,9 +107,23 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_isPixelSimilar, 0, 0, 2)
 #endif
 ZEND_END_ARG_INFO()
 
-#define arginfo_class_ImagickPixel_isPixelSimilarQuantum arginfo_class_ImagickPixel_isPixelSimilar
 
-#define arginfo_class_ImagickPixel_isSimilar arginfo_class_ImagickPixel_isPixelSimilar
+#if PHP_VERSION_ID >= 80000
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixel_isPixelSimilarQuantum, 0, 2, _IS_BOOL, 0)
+#else
+ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_isPixelSimilarQuantum, 0, 0, 2)
+#endif
+
+	ZEND_ARG_OBJ_TYPE_MASK(0, color, ImagickPixel, MAY_BE_STRING, NULL)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, fuzz_quantum_range_scaled_by_square_root_of_three, IS_DOUBLE, 0)
+#else
+    ZEND_ARG_INFO(0, fuzz_quantum_range_scaled_by_square_root_of_three)
+#endif
+ZEND_END_ARG_INFO()
+
+#define arginfo_class_ImagickPixel_isSimilar arginfo_class_ImagickPixel_isPixelSimilarQuantum
 
 
 #if PHP_VERSION_ID >= 80000
@@ -135,9 +149,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel_setColorCount, 0, 0, 1)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, colorCount, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, color_count, IS_LONG, 0)
 #else
-    ZEND_ARG_INFO(0, colorCount)
+    ZEND_ARG_INFO(0, color_count)
 #endif
 ZEND_END_ARG_INFO()
 

@@ -15,12 +15,7 @@ class ImagickKernel
 
     public function getMatrix(): array {}
 
-
-    /**
-     * @param float $scale
-     * @param Imagick::NORMALIZE_KERNEL_NONE|Imagick::NORMALIZE_KERNEL_VALUE|Imagick::NORMALIZE_KERNEL_CORRELATE|Imagick::NORMALIZE_KERNEL_PERCENT $normalize_type
-     */
-    public function scale(float $scale, ?int $normalize_type): void {}
+    public function scale(float $scale, ?int $normalize_kernel_type): void {}
 
     public function separate(): array {}
 }

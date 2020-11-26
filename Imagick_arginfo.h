@@ -128,15 +128,15 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_vignetteImage, 0, 0, 4)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, blackPoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, black_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, blackPoint)
+    ZEND_ARG_INFO(0, black_point)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, whitePoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, white_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, whitePoint)
+    ZEND_ARG_INFO(0, white_point)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
@@ -640,15 +640,15 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_linearStretchImage, 0, 0, 2)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, blackPoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, black_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, blackPoint)
+    ZEND_ARG_INFO(0, black_point)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, whitePoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, white_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, whitePoint)
+    ZEND_ARG_INFO(0, white_point)
 #endif
 ZEND_END_ARG_INFO()
 #endif
@@ -1329,9 +1329,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_segmentImage, 0, 0, 3)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, COLORSPACE, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, colorspace, IS_LONG, 0)
 #else
-    ZEND_ARG_INFO(0, COLORSPACE)
+    ZEND_ARG_INFO(0, colorspace)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
@@ -1635,9 +1635,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_setColorspace, 0, 0, 1)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, COLORSPACE, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, colorspace, IS_LONG, 0)
 #else
-    ZEND_ARG_INFO(0, COLORSPACE)
+    ZEND_ARG_INFO(0, colorspace)
 #endif
 ZEND_END_ARG_INFO()
 #endif
@@ -3850,9 +3850,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_levelImage, 0, 0, 3)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, blackPoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, black_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, blackPoint)
+    ZEND_ARG_INFO(0, black_point)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
@@ -3862,9 +3862,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_levelImage, 0, 0, 3)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, whitePoint, IS_DOUBLE, 0)
+    ZEND_ARG_TYPE_INFO(0, white_point, IS_DOUBLE, 0)
 #else
-    ZEND_ARG_INFO(0, whitePoint)
+    ZEND_ARG_INFO(0, white_point)
 #endif
 	ZEND_ARG_TYPE_INFO_WITH_DEFAULT_VALUE(0, channel, IS_LONG, 0, "Imagick::CHANNEL_DEFAULT")
 ZEND_END_ARG_INFO()
@@ -5006,9 +5006,9 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_compositeImageGravity, 0, 0, 3)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, GRAVITY_CONSTANT, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, gravity, IS_LONG, 0)
 #else
-    ZEND_ARG_INFO(0, GRAVITY_CONSTANT)
+    ZEND_ARG_INFO(0, gravity)
 #endif
 ZEND_END_ARG_INFO()
 #endif
