@@ -29,23 +29,23 @@ class ImagickDraw
 //	PHP_ME(imagickdraw, setfillcolor, imagickdraw_setfillcolor_args, ZEND_ACC_PUBLIC)
     public function setFillColor(ImagickPixel|string $fill_pixel): bool {}
 //	PHP_ME(imagickdraw, setfillalpha, imagickdraw_setfillalpha_args, ZEND_ACC_PUBLIC)
-    public function setFillAlpha(float $opacity): bool {}
+    public function setFillAlpha(float $alpha): bool {}
 //	PHP_ME(imagickdraw, setresolution, imagickdraw_setresolution_args, ZEND_ACC_PUBLIC)
-    public function setResolution(float $x_resolution, float $y_resolution): bool {}
+    public function setResolution(float $resolution_x, float $resolution_): bool {}
 
 //	PHP_ME(imagickdraw, setstrokecolor, imagickdraw_setstrokecolor_args, ZEND_ACC_PUBLIC)
-    public function setStrokeColor(ImagickPixel|string $stroke_pixel): bool {}
+    public function setStrokeColor(ImagickPixel|string $color): bool {}
 
 //	PHP_ME(imagickdraw, setstrokealpha, imagickdraw_setstrokealpha_args, ZEND_ACC_PUBLIC)
-    public function setStrokeAlpha(float $opacity): bool {}
+    public function setStrokeAlpha(float $alpha): bool {}
 
 //	PHP_ME(imagickdraw, setstrokewidth, imagickdraw_setstrokewidth_args, ZEND_ACC_PUBLIC)
-    public function setStrokeWidth(float $stroke_width): bool {}
+    public function setStrokeWidth(float $width): bool {}
 
 //	PHP_ME(imagickdraw, clear, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
     public function clear(): bool {}
 //	PHP_ME(imagickdraw, circle, imagickdraw_circle_args, ZEND_ACC_PUBLIC)
-    public function circle(float $ox, float $oy, float $px, float $py): bool {}
+    public function circle(float $origin_x, float $origin_y, float $perimeter_x, float $perimeter_y): bool {}
 
 //	PHP_ME(imagickdraw, annotation, imagickdraw_annotation_args, ZEND_ACC_PUBLIC)
     public function annotation(float $x, float $y, string $text): bool {}
@@ -63,7 +63,7 @@ class ImagickDraw
     public function setFontFamily(string $font_family): bool {}
 
 //	PHP_ME(imagickdraw, setfontsize, imagickdraw_setfontsize_args, ZEND_ACC_PUBLIC)
-    public function setFontSize(float $pointsize): bool {}
+    public function setFontSize(float $point_size): bool {}
 
 //	PHP_ME(imagickdraw, setfontstyle, imagickdraw_setfontstyle_args, ZEND_ACC_PUBLIC)
     public function setFontStyle(int $style): bool {}
@@ -92,13 +92,26 @@ class ImagickDraw
     public function destroy(): bool {}
 
 //	PHP_ME(imagickdraw, rectangle, imagickdraw_rectangle_args, ZEND_ACC_PUBLIC)
-    public function rectangle(float $x1, float $y1, float $x2, float $y2): bool {}
+    public function rectangle(float $top_left_x, float $top_left_y, float $bottom_right_x, float $bottom_right_y): bool {}
 
 //	PHP_ME(imagickdraw, roundrectangle, imagickdraw_roundrectangle_args, ZEND_ACC_PUBLIC)
-    public function roundRectangle(float $x1, float $y1, float $x2, float $y2, float $rx, float $ry): bool {}
+    public function roundRectangle(float $top_left_x, float $top_left_y, float $bottom_right_x, float $bottom_right_y, float $rounding_x, float $rounding_y): bool {}
 
-//	PHP_ME(imagickdraw, ellipse, imagickdraw_ellipse_args, ZEND_ACC_PUBLIC)
-    public function ellipse(float $ox, float $oy, float $rx, float $ry, float $start, float $end): bool {}
+
+    //ox
+    //origin x ordinate
+    //oy
+    //origin y ordinate
+    //rx
+    //radius in x
+    //ry
+    //radius in y
+    //start
+    //starting rotation in degrees
+    //end
+    //ending rotation in degrees
+
+    public function ellipse(float $origin_x, float $origin_y, float $radius_x, float $radius_y, float $angle_start, float $angle_end): bool {}
 
 //	PHP_ME(imagickdraw, skewx, imagickdraw_skewx_args, ZEND_ACC_PUBLIC)
     public function skewX(float $degrees): bool {}
@@ -110,18 +123,32 @@ class ImagickDraw
     public function translate(float $x, float $y): bool {}
 
 //	PHP_ME(imagickdraw, line, imagickdraw_line_args, ZEND_ACC_PUBLIC)
-    public function line(float $sx, float $sy, float $ex, float $ey): bool {}
+    public function line(float $start_x, float $start_y, float $end_x, float $end_y): bool {}
+
+
+//sx
+//starting x ordinate of bounding rectangle
+//sy
+//starting y ordinate of bounding rectangle
+//ex
+//ending x ordinate of bounding rectangle
+//ey
+//ending y ordinate of bounding rectangle
+//sd
+//starting degrees of rotation
+//ed
+//ending degrees of rotation
 
 //	PHP_ME(imagickdraw, arc, imagickdraw_arc_args, ZEND_ACC_PUBLIC)
-    public function arc(float $sx, float $sy, float $ex, float $ey, float $sd, float $ed): bool {}
+    public function arc(float $start_x, float $start_y, float $end_x, float $end_y, float $start_angle, float $end_angle): bool {}
 
 #if MagickLibVersion >= 0x700
 //	PHP_ME(imagickdraw, alpha, imagickdraw_matte_args, ZEND_ACC_PUBLIC)
-    public function alpha(float $x, float $y, int $paintMethod): bool {}
+    public function alpha(float $x, float $y, int $paint_method): bool {}
 #else
 //	PHP_ME(imagickdraw, matte, imagickdraw_matte_args, ZEND_ACC_PUBLIC | ZEND_ACC_DEPRECATED)
     /** @deprecated */
-    public function matte(float $x, float $y, int $paintMethod): bool {}
+    public function matte(float $x, float $y, int $paint_type): bool {}
 #endif
 
 //	PHP_ME(imagickdraw, polygon, imagickdraw_polygon_args, ZEND_ACC_PUBLIC)
@@ -140,7 +167,7 @@ class ImagickDraw
     public function getFontStretch(): int {}
 
 //	PHP_ME(imagickdraw, setfontstretch, imagickdraw_setfontstretch_args, ZEND_ACC_PUBLIC)
-    public function setFontStretch(int $fontStretch): bool {}
+    public function setFontStretch(int $font_stretch): bool {}
 
 //	PHP_ME(imagickdraw, setstrokeantialias, imagickdraw_setstrokeantialias_args, ZEND_ACC_PUBLIC)
     public function setStrokeAntialias( bool $stroke_antialias): bool {}
@@ -155,7 +182,7 @@ class ImagickDraw
     public function setTextUnderColor(ImagickPixel|string $under_color): bool {}
 
 //	PHP_ME(imagickdraw, setviewbox, imagickdraw_setviewbox_args, ZEND_ACC_PUBLIC)
-    public function setViewbox(int $x1, int $y1, int $x2, int $y2): bool {}
+    public function setViewbox(int $left_x, int $top_y, int $right_x, int $bottom_y): bool {}
 
   	//PHP_ME(imagickdraw, clone, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
     public function clone(): ImagickDraw {}
@@ -167,10 +194,10 @@ class ImagickDraw
     public function bezier(array $coordinates): bool {}
 
 //	PHP_ME(imagickdraw, composite, imagickdraw_composite_args, ZEND_ACC_PUBLIC)
-    public function composite(int $compose, float $x, float $y, float $width, float $height, Imagick $compositeWand): bool {}
+    public function composite(int $compose, float $x, float $y, float $width, float $height, Imagick $imagick): bool {}
 
 //	PHP_ME(imagickdraw, color, imagickdraw_color_args, ZEND_ACC_PUBLIC)
-    public function color(float $x, float $y, int $paintMethod): bool {}
+    public function color(float $x, float $y, int $paint_type): bool {}
 
 //	PHP_ME(imagickdraw, comment, imagickdraw_comment_args, ZEND_ACC_PUBLIC)
     public function comment(string $comment): bool {}
@@ -239,7 +266,20 @@ class ImagickDraw
     public function pathClose(): bool {}
 
 //	PHP_ME(imagickdraw, pathcurvetoabsolute, imagickdraw_pathcurvetoabsolute_args, ZEND_ACC_PUBLIC)
-    public function pathCurveToAbsolute(float $x1, float $y1, float $x2, float $y2, float $x, float $y): bool {}
+//x1
+//x ordinate of control point for curve beginning
+//y1
+//y ordinate of control point for curve beginning
+//x2
+//x ordinate of control point for curve ending
+//y2
+//y ordinate of control point for curve ending
+//x
+//x ordinate of the end of the curve
+//y
+//y ordinate of the end of the curve
+  night night.
+    public function pathCurveToAbsolute(float $x1, float $y1, float $x2, float $y2, float $x_end, float $y_end): bool {}
 
 //	PHP_ME(imagickdraw, pathcurvetorelative, imagickdraw_pathcurvetorelative_args, ZEND_ACC_PUBLIC)
     public function pathCurveToRelative(float $x1, float $y1, float $x2, float $y2, float $x, float $y): bool {}
@@ -339,7 +379,7 @@ class ImagickDraw
     public function setClipUnits(int $clip_units): bool {}
 
 //	PHP_ME(imagickdraw, setfillopacity, imagickdraw_setfillopacity_args, ZEND_ACC_PUBLIC)
-    public function setFillOpacity(float $fillOpacity): bool {}
+    public function setFillOpacity(float $fill_opacity): bool {}
 
 //	PHP_ME(imagickdraw, setfillpatternurl, imagickdraw_setfillpatternurl_args, ZEND_ACC_PUBLIC)
     public function setFillPatternUrl(string $fill_url): bool {}

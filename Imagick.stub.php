@@ -1046,6 +1046,8 @@ class Imagick
 //    PHP_ME(imagick, getimagepixelcolor, imagick_getimagepixelcolor_args, ZEND_ACC_PUBLIC)
     public function getImagePixelColor(int $x, int $y): ImagickPixel  {}
 
+    public function setImagePixelColor(int $x, int $y, ImagickPixel|string $color): ImagickPixel  {}
+
 //    PHP_ME(imagick, getimageprofile, imagick_getimageprofile_args, ZEND_ACC_PUBLIC)
     public function getImageProfile(string $name): string  {}
 

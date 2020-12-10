@@ -789,6 +789,7 @@ PHP_METHOD(imagick, getimagemattecolor);
 #endif //#if MagickLibVersion < 0x700 
 PHP_METHOD(imagick, getimagepage);
 PHP_METHOD(imagick, getimagepixelcolor);
+PHP_METHOD(imagick, setImagePixelColor);
 PHP_METHOD(imagick, getimageprofile);
 PHP_METHOD(imagick, getimageredprimary);
 PHP_METHOD(imagick, getimagerenderingintent);

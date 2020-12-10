@@ -34,14 +34,14 @@
 //};
 
 class ImagickPixelIterator {
-    public function __construct( Imagick $wand ) {}
+    public function __construct(Imagick $imagick) {}
 
     public function clear(): bool {}
 
-    public static function getPixelIterator(Imagick $source) : ImagickPixelIterator {}
+    public static function getPixelIterator(Imagick $imagick) : ImagickPixelIterator {}
 
     public static function getPixelRegionIterator(
-        Imagick $source,
+        Imagick $imagick,
         int $x,
         int $y,
         int $columns,
@@ -71,14 +71,14 @@ class ImagickPixelIterator {
     /** @alias ImagickPixelIterator::getCurrentIteratorRow */
     public function current(): array {}
 
-    public function newPixelIterator(Imagick $wand ): bool {}
+    public function newPixelIterator(Imagick $imagick): bool {}
 
     public function newPixelRegionIterator(
-        Imagick $wand,
+        Imagick $imagick,
         int $x,
         int $y,
         int $columns,
-        int $rows ): bool {}
+        int $rows): bool {}
 
     public function resetIterator(): bool {}
 

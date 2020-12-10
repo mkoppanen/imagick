@@ -7404,6 +7404,46 @@ PHP_METHOD(Imagick, getImagePixelColor)
 }
 /* }}} */
 
+
+/* {{{ proto ImagickPixel Imagick::getImagePixelColor(int x, int y)
+	Returns the color of the specified pixel.
+*/
+PHP_METHOD(Imagick, setImagePixelColor)
+{
+	php_imagick_object *intern;
+	zval *param;
+	MagickBooleanType status;
+	im_long x, y;
+	PixelWand *color_wand;
+	zend_bool allocated;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "llz", &x, &y, &param) == FAILURE) {
+		return;
+	}
+
+	color_wand = php_imagick_zval_to_pixelwand (param, IMAGICK_CLASS, &allocated TSRMLS_CC);
+	if (!color_wand)
+		return;
+
+	intern = Z_IMAGICK_P(getThis());
+	if (php_imagick_ensure_not_empty (intern->magick_wand) == 0)
+		return;
+
+	status = MagickSetImagePixelColor(intern->magick_wand, x, y , color_wand);
+
+	if (allocated)
+		color_wand = DestroyPixelWand (color_wand);
+
+	if (status == MagickFalse) {
+		php_imagick_convert_imagick_exception(intern->magick_wand, "Unable to set image pixel color" TSRMLS_CC);
+		return;
+	}
+
+	return;
+}
+/* }}} */
+
+
 /* {{{ proto string Imagick::getImageProfile(string name)
 	Returns the named image profile.
 */

@@ -2,7 +2,7 @@
 * Stub hash: regen with 'sh regen_arginfo.sh' */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixelIterator___construct, 0, 0, 1)
-	ZEND_ARG_OBJ_INFO(0, wand, Imagick, 0)
+	ZEND_ARG_OBJ_INFO(0, imagick, Imagick, 0)
 ZEND_END_ARG_INFO()
 
 
@@ -21,7 +21,7 @@ ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickPixelIterator_getPix
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixelIterator_getPixelIterator, 0, 0, 1)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, source, Imagick, 0)
+	ZEND_ARG_OBJ_INFO(0, imagick, Imagick, 0)
 ZEND_END_ARG_INFO()
 
 
@@ -31,7 +31,7 @@ ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_ImagickPixelIterator_getPix
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixelIterator_getPixelRegionIterator, 0, 0, 5)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, source, Imagick, 0)
+	ZEND_ARG_OBJ_INFO(0, imagick, Imagick, 0)
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, x, IS_LONG, 0)
@@ -97,7 +97,7 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixelIterator_newPi
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixelIterator_newPixelIterator, 0, 0, 1)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, wand, Imagick, 0)
+	ZEND_ARG_OBJ_INFO(0, imagick, Imagick, 0)
 ZEND_END_ARG_INFO()
 
 
@@ -107,7 +107,7 @@ ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_ImagickPixelIterator_newPi
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixelIterator_newPixelRegionIterator, 0, 0, 5)
 #endif
 
-	ZEND_ARG_OBJ_INFO(0, wand, Imagick, 0)
+	ZEND_ARG_OBJ_INFO(0, imagick, Imagick, 0)
 	
 #if PHP_VERSION_ID >= 80000
     ZEND_ARG_TYPE_INFO(0, x, IS_LONG, 0)
