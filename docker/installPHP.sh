@@ -16,7 +16,9 @@ cd /var/app/php_src/${SRCFILE}
 
 # ./buildconf
 # ./configure --disable-all --without-pear
-./configure --without-pear
+./configure --without-pear --without-sqlite3 --without-pdo-sqlite --with-openssl --enable-mbstring
+
+
 
 
 make -j 4
