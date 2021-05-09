@@ -95,7 +95,7 @@ PHP_IMAGICK_API zend_class_entry *php_imagickdraw_get_class_entry()
 
 PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 {
-	return php_imagickdraw_sc_entry;
+	return php_imagickpixel_sc_entry;
 }
 
 ///* Imagick */
