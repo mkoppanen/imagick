@@ -1,5 +1,6 @@
 /* This is a generated file, edit the .stub.php file instead.
-* Stub hash: regen with 'sh regen_arginfo.sh' */
+* Stub hash: regen with 'sh regen_arginfo.sh' 
+* file has been fixedup for different versions */
 
 #if MagickLibVersion > 0x628
 
@@ -1922,13 +1923,13 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_thumbnailImage, 0, 0, 2)
 
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, columns, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, columns, IS_LONG, 1)
 #else
     ZEND_ARG_INFO(0, columns)
 #endif
 	
 #if PHP_VERSION_ID >= 80000
-    ZEND_ARG_TYPE_INFO(0, rows, IS_LONG, 0)
+    ZEND_ARG_TYPE_INFO(0, rows, IS_LONG, 1)
 #else
     ZEND_ARG_INFO(0, rows)
 #endif

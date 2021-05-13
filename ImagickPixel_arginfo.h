@@ -1,5 +1,6 @@
 /* This is a generated file, edit the .stub.php file instead.
-* Stub hash: regen with 'sh regen_arginfo.sh' */
+* Stub hash: regen with 'sh regen_arginfo.sh' 
+* file has been fixedup for different versions */
 
 ZEND_BEGIN_ARG_INFO_EX(arginfo_class_ImagickPixel___construct, 0, 0, 1)
 	

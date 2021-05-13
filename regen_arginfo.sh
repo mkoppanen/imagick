@@ -1,4 +1,7 @@
 
+set -e
+set -x
+
 php /usr/local/lib/php/build/gen_stub.php Imagick.stub.php
 php util/fixup_arginfo.php Imagick_arginfo.h
 

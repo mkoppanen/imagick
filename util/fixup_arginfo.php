@@ -10,9 +10,18 @@ if ($argc !== 2) {
 
 $filename = $argv[1];
 
+$fixup_note = "file has been fixedup for different versions";
+
 echo "Fixing $filename\n";
 
 $input_lines = file($filename);
+
+foreach ($input_lines as $input_line) {
+    if (strpos($input_line, $fixup_note) !== false) {
+        echo "File has already been fixedup.\n";
+        exit(0);
+    }
+}
 
 $output_lines = [];
 
@@ -20,7 +29,7 @@ $search = [];
 $replace = [];
 
 $search[] = "#.*Stub hash: (.*) .*/#iu";
-$replace[] = "* Stub hash: regen with 'sh regen_arginfo.sh' */";
+$replace[] = "* Stub hash: regen with 'sh regen_arginfo.sh' \n* $fixup_note */";
 
 $search[] = "#ZEND_ARG_OBJ_INFO\(0, (\w*), IMAGICK_QUANTUM_TYPE, 0\)#iu";
 $replace[] = "
@@ -116,3 +125,4 @@ foreach ($input_lines as $input_line) {
 }
 
 file_put_contents($filename, implode("\n", $output_lines));
+echo "File has now been fixedup.\n";
