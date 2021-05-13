@@ -16,7 +16,7 @@ catch(ImagickException $ie) {
 }
 
 try {
-	$x = @(5 / 0);
+	$x = @file ('non_existent_file');
 	echo "Normal warning is suppressed".PHP_EOL;
 }
 catch(\Exception $e) {
