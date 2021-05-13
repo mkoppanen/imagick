@@ -278,7 +278,7 @@ class ImagickDraw
 //x ordinate of the end of the curve
 //y
 //y ordinate of the end of the curve
-  night night.
+
     public function pathCurveToAbsolute(float $x1, float $y1, float $x2, float $y2, float $x_end, float $y_end): bool {}
 
 //	PHP_ME(imagickdraw, pathcurvetorelative, imagickdraw_pathcurvetorelative_args, ZEND_ACC_PUBLIC)
