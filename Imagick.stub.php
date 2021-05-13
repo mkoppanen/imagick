@@ -464,8 +464,8 @@ class Imagick
 
 //    PHP_ME(imagick, thumbnailimage, imagick_thumbnailimage_args, ZEND_ACC_PUBLIC)
     public function thumbnailImage(
-        int $columns,
-        int $rows,
+        ?int $columns,
+        ?int $rows,
         bool $bestfit = false,
         bool $fill = false,
         bool $legacy = false): bool {}
