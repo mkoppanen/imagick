@@ -1172,6 +1172,7 @@ PHP_METHOD(imagickkernel, addunitykernel);
 #endif
 
 #if MagickLibVersion >= 0x700
+// Why is this set to UndefinedChannel, surely it should be AllChannels or DefaultChannels?
 #define IM_DEFAULT_CHANNEL UndefinedChannel
 #else
 #define IM_DEFAULT_CHANNEL DefaultChannels
