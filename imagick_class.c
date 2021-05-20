@@ -13007,4 +13007,81 @@ PHP_METHOD(Imagick, identifyImageType)
 /* }}} */
 #endif // #if MagickLibVersion >= 0x700
 
+
+#if MagickLibVersion >= 0x709
+/* {{{ proto Imagick Imagick::getImageMask()
+	returns one of the Imagick::PIXELMASK_* constants
+*/
+PHP_METHOD(Imagick, getImageMask)
+{
+	php_imagick_object *intern;
+	php_imagick_object *intern_return;
+	im_long pixelmask_type;
+	MagickWand *tmp_wand;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "l", &pixelmask_type) == FAILURE) {
+		return;
+	}
+
+	intern = Z_IMAGICK_P(getThis());
+	if (php_imagick_ensure_not_empty (intern->magick_wand) == 0)
+		return;
+
+	tmp_wand = MagickGetImageMask(intern->magick_wand, pixelmask_type);
+
+	/* No magick is going to happen */
+	if (!tmp_wand) {
+		RETURN_NULL();
+
+//		php_imagick_convert_imagick_exception(intern->magick_wand, "Unable to get image clip mask" TSRMLS_CC);
+//		return;
+	}
+
+	object_init_ex(return_value, php_imagick_sc_entry);
+	intern_return = Z_IMAGICK_P(return_value);
+
+	php_imagick_replace_magickwand(intern_return, tmp_wand);
+	return;
+}
+/* }}} */
+
+/* {{{ proto void Imagick::setImageMask(Imagick $clip_mask, int $pixelmask_type)
+	returns one of the Imagick::PIXELMASK_* constants
+*/
+PHP_METHOD(Imagick, setImageMask)
+{
+	php_imagick_object *intern;
+	php_imagick_object *clip_mask;
+	zval *objvar;
+	im_long pixelmask_type;
+
+    if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "Ol", &objvar, php_imagick_sc_entry, &pixelmask_type) == FAILURE) {
+        return;
+    }
+
+	intern = Z_IMAGICK_P(getThis());
+	if (php_imagick_ensure_not_empty (intern->magick_wand) == 0)
+		return;
+
+	clip_mask = Z_IMAGICK_P(objvar);
+	if (php_imagick_ensure_not_empty (clip_mask->magick_wand) == 0)
+		return;
+
+	MagickSetImageMask(
+		intern->magick_wand,
+		pixelmask_type,
+		clip_mask->magick_wand
+	);
+
+	// TODO - check that
+	//  wand->exception
+	//	You want ei->severity. ei->error_number
+	// the Go Imagick library does something like:
+	//return &MagickWandException{ExceptionType(C.int(et)), C.GoString(csdescription)}
+
+	RETURN_TRUE;
+}
+/* }}} */
+#endif // 0x709
+
 /* end of Imagick */

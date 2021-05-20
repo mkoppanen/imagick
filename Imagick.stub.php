@@ -1536,6 +1536,12 @@ proto bool Imagick::setImageBluePrimary(float x, float y, float z) */
 #endif
 
 
+#if MagickLibVersion >= 0x709
+    public function getImageMask(int $pixelmask_type): ?Imagick {}
+    public function setImageMask(Imagick $clip_mask, int $pixelmask_type): void {}
+#endif
+
+
     // TODO - needs deleting from docs.
 //    public function getImageMagickLicense(): string  {}
 

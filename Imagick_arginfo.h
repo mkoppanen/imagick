@@ -5070,6 +5070,41 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_identifyImageType, 0, 0, 0)
 ZEND_END_ARG_INFO()
 #endif
 
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+
+#if PHP_VERSION_ID >= 80000
+ZEND_BEGIN_ARG_WITH_RETURN_OBJ_INFO_EX(arginfo_class_Imagick_getImageMask, 0, 1, Imagick, 1)
+#else
+ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_getImageMask, 0, 0, 1)
+#endif
+
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, pixelmask_type, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, pixelmask_type)
+#endif
+ZEND_END_ARG_INFO()
+#endif
+
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+
+#if PHP_VERSION_ID >= 80000
+ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_class_Imagick_setImageMask, 0, 2, IS_VOID, 0)
+#else
+ZEND_BEGIN_ARG_INFO_EX(arginfo_class_Imagick_setImageMask, 0, 0, 2)
+#endif
+
+	ZEND_ARG_OBJ_INFO(0, clip_mask, Imagick, 0)
+	
+#if PHP_VERSION_ID >= 80000
+    ZEND_ARG_TYPE_INFO(0, pixelmask_type, IS_LONG, 0)
+#else
+    ZEND_ARG_INFO(0, pixelmask_type)
+#endif
+ZEND_END_ARG_INFO()
+#endif
+
 
 #if MagickLibVersion > 0x628
 ZEND_METHOD(Imagick, optimizeImageLayers);
@@ -5733,6 +5768,12 @@ ZEND_METHOD(Imagick, localContrastImage);
 #endif
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x700
 ZEND_METHOD(Imagick, identifyImageType);
+#endif
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+ZEND_METHOD(Imagick, getImageMask);
+#endif
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+ZEND_METHOD(Imagick, setImageMask);
 #endif
 
 
@@ -6413,6 +6454,12 @@ static const zend_function_entry class_Imagick_methods[] = {
 #endif
 #if MagickLibVersion > 0x628 && MagickLibVersion >= 0x700
 	ZEND_ME(Imagick, identifyImageType, arginfo_class_Imagick_identifyImageType, ZEND_ACC_PUBLIC)
+#endif
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+	ZEND_ME(Imagick, getImageMask, arginfo_class_Imagick_getImageMask, ZEND_ACC_PUBLIC)
+#endif
+#if MagickLibVersion > 0x628 && MagickLibVersion >= 0x709
+	ZEND_ME(Imagick, setImageMask, arginfo_class_Imagick_setImageMask, ZEND_ACC_PUBLIC)
 #endif
 	ZEND_FE_END
 };
