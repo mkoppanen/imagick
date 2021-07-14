@@ -17,7 +17,7 @@ $imagick->newPseudoImage(256, 256, 'xc:purple');
 $imagick->setImageAlpha(0.5);
 
 $imagick->setImageFormat('png');
-$imagick->writeImage("./setAlphaTest.png");
+$imagick->writeImage(__DIR__ . "/setAlphaTest.png");
 
 $pixelTypes = array(
 	Imagick::PIXEL_CHAR => array(128, 0, 128, 128),
@@ -70,6 +70,11 @@ foreach ($pixelTypes as $pixelType => $expectedValues) {
 
 echo "Ok";
 
+?>
+--CLEAN--
+<?php
+$f = __DIR__ . '/setAlphaTest.png';
+if (file_exists($f)) unlink($f);
 ?>
 --EXPECTF--
 Ok

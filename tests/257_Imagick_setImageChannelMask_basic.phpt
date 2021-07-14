@@ -14,7 +14,7 @@ $imagick->newPseudoImage(256, 256, "gradient:black-white");
 $initialMask = $imagick->setImageChannelMask(\Imagick::CHANNEL_RED);
 $imagick->brightnessContrastImage(-20, 20);
 $imagick->setImageFormat("png");
-$imagick->writeImage("./maskTest.png");
+$imagick->writeImage(__DIR__ . "/maskTest.png");
 
 $redMask = $imagick->setImageChannelMask(\Imagick::CHANNEL_DEFAULT);
 
@@ -27,6 +27,11 @@ if ($redMask != \Imagick::CHANNEL_RED) {
 }
 
 echo "Ok";
+?>
+--CLEAN--
+<?php
+$f = __DIR__ . '/maskTest.png';
+if (file_exists($f)) unlink($f);
 ?>
 --EXPECTF--
 Ok

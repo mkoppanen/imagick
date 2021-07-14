@@ -27,5 +27,10 @@ function houghLineImage() {
 houghLineImage() ;
 echo "Ok";
 ?>
+--CLEAN--
+<?php
+$f = __DIR__ . '/houghline_output_image.png';
+if (file_exists($f)) unlink($f);
+?>
 --EXPECTF--
 Ok

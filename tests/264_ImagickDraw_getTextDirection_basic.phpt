@@ -58,9 +58,14 @@ $imagick->drawImage($draw);
 $bytes = $imagick->getImageBlob();
 if (strlen($bytes) <= 0) { echo "Failed to generate image.";}
  
-$imagick->writeImage('./directionTest.png');
+$imagick->writeImage(__DIR__ . '/directionTest.png');
 
 echo "Ok";
+?>
+--CLEAN--
+<?php
+$f = __DIR__ . '/directionTest.png';
+if (file_exists($f)) unlink($f);
 ?>
 --EXPECTF--
 Ok
