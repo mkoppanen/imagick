@@ -13,7 +13,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee -a /
 RUN curl -L https://packages.sury.org/php/apt.gpg | apt-key add -
 
 RUN  apt-get update -qq \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y php8.0 php7.0-common php8.0-cli php8.0-fpm \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y php8.0 php8.0-common php8.0-cli php8.0-fpm \
     php8.0-mysql  php8.0-curl php8.0-xml php8.0-mbstring \
     php8.0-intl php8.0-redis php8.0-zip php8.0-sqlite \
 # How weird is this? Able to use Imagick when I haven't done a release for PHP 8 yet.
